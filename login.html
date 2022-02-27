@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>EASY PIECE C. | LOGIN</title>
+</head>
+    <div class="container-nav">
+        <div class="navbar">
+            <div class="logo">
+                <a href="index.html"><img src="images/logo.png" alt="Home" ></a>
+            </div>
+    
+
+            <div class="center">
+                <form action="search.php" method="get">
+                    <div class="search-box">
+                        <input type="search" name="search"  class="search" placeholder="Search Computer Components and Peripherals">
+                        <a href="#">
+                            <img src="images/Icons/search.png" class = "search-icon">
+                        </a>
+                    </div>
+                    
+                </form>
+        
+                <select name="categories" class="categories" value="categories">
+                    <option value="none" class="placeholder">Categories</option>
+                    <option value="cpu">Processor</option>
+                    <option value="gpu">Graphics Card</option>
+                    <option value="ram">Memory</option>
+                    <option value="storage">Storage</option>
+                    <option value="psu">Power Supply</option>
+                    <option value="motherboard">Motherboard</option>
+                    <option value="case">Case</option>
+                    <option value="monitor">Monitor</option>
+                    <option value="keyboard">Keyboard</option>
+                    <option value="mouse">Mouse</option>
+                    <option value="headset">Headset</option>
+                    <option value="webcam">Webcam</option>
+                    <option value="desktop">Pre-built Desktop</option>
+                    <option value="laptop">Laptop</option>
+                    <option value="cooling Fans">Cooling Fans</option>
+                    <option value="nic">Interface Cards</option>
+                    <option value="softwares">Softwares</option>
+                    <option value="others">Others</option>
+                </select>
+            </div>
+            
+    
+            <nav>
+                <ul id = "navbarItems">
+                    <li><a href="login.html">Login</a></li>
+                    <li><a href="regis-main.html">Register</a></li>
+                </ul>
+            </nav>
+            
+        </div>
+    </div>
+    
+    <div class="second-nav">
+        <ul>
+            <li><a href="">Browse Computer Parts</a></li>
+            <li><a href="">PC Builder</a></li>
+        </ul>
+    </div>
+
+
+    <div class="content-1">
+
+        
+        <img src="images/background-1.png" alt="">
+        
+        <div class="focus">
+            <div class="row-2">
+                <h1>LOGIN</h1>
+                <div class="row-text">
+                    <p>Don't have an account</p>
+                    <a href="regis-main.html">Create an Account</a>
+                </div>
+                
+                
+            </div>
+
+            <div class="row-2">
+                <form action="login-data.php" method="get">
+                    <fieldset>
+                        <label for="email">E-Mail</label><br>
+                        <input type="email" name="email" id="email" placeholder="Please Enter Your Email Address" required>
+
+                        <label for="password">Password</label><br>
+                        <input type="password" name="password" id="password" placeholder="Please Enter Your Password" required>
+
+                        <a href="">Forgot Password?</a>
+
+                        <input type="submit" class="btn" id="submit" value="Login">
+                    </fieldset>
+                </form>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="footer">
+        <div class="links">
+            <ul>
+                <li><a href="">About Us</a></li>
+                <li><a href="">Terms of Use</a></li>
+                <li><a href="">Privacy Policy</a></li>
+                <li><a href="">Frequently Asked Questions</a></li>
+            </ul>
+        </div>
+
+        <p class="footer-text">COPYRIGHT ©2022 | All Rights Reserved</p>
+
+        <div class="exit-shape"></div>
+    </div>
+
+</body>
+</html>
