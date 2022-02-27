@@ -6,25 +6,31 @@
         echo 'Failed to connect: ' . mysqli_connect_error();
     } else{
         
+        
+       $FullName = $_POST['fullName'];
+       $Email = $_POST['emailCustomer'];
+       $PhoneNumber = $_POST['numberCustomer'];
+       $Pass = $_POST['password'];
+       $BirthDate = $_POST['birthDate'];
+       $Sex = $_POST['sex'];
+       $Addrss = $_POST['address'];
+
        $query = "INSERT INTO registrationuser VALUES(
-           '$_POST[fullName]',
-           '$_POST[emailCustomer]', 
-            '$_POST[numberCustomer]',
-            '$_POST[password]',
-            '$_POST[birthDate]',
-            '$_POST[sex]', 
-            '$_POST[address]','')";
+           '$FullName',
+           '$Email',
+           '$PhoneNumber',
+           '$Pass',
+           '$BirthDate',
+           '$Sex',
+           '$Addrss',
+           '')";
        
 
 
        
-       if(mysqli_query($conn,$query))
-       {
-           echo 'record updated';
-       }else{
-           echo 'Error';
-       }
-
+       mysqli_query($conn,$query);
+       header("Location: login.html");
     }
     mysqli_close($conn);
+
 ?>
