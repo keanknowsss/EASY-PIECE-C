@@ -67,10 +67,67 @@
     </div>
 
 
-    <div class="content-1">
-        <img src="images/background-1.png" alt="">
+    <div class="content-1 mod-1">
+        <img src="images/background-1.png"alt="">
 
+        <div class="focus">
+            <div class="row-4 row-4-mod">
+                <div class="row-text-2">
+                    <h1>CREATE YOUR ACCOUNT</h1>
+                    <h2>BUSINESS</h2>
+                </div>
+            </div>
+            
+            <div class="row-4 row-4-mod">
+                <form action="regis-customer.php" method="post">
+                    <fieldset>
+                        <div class="col-form-1-mod">
+                            <label for="businessName">Business Name:</label><br>
+                            <input type="text" name="businessName" placeholder="Enter Business Name" required>
 
+                            <label for="businessContact">Business Contact Number:</label><br>
+                            <input type="tel" name="businessContact" placeholder="Please Enter your Business Number" required>
+                            
+                            <label for="businessEmail">Business Email Address:</label><br>
+                            <input type="email" name="businessEmail" placeholder="Please Enter your Business Email Address" required>
+
+                            <label for="businessAddress">Business Address:</label><br>
+                            <input type="text" name="businessAddress" placeholder="Please Enter your Business" required>
+
+                        </div>
+
+                        <div class="col-form-1 part2-mod">
+
+                            <label for="password">Password:</label><br>
+                            <input type="password" id="textinput-mod1" name="password" placeholder="Please Enter your Password" required>
+
+                            <br><label for="ownerName">Owner Name:</label><br>
+                            <input type="text" id="textinput-mod1" name="ownerName" placeholder="Please Enter Owner's Name" required>
+
+                            <br>
+                            <label for="ownerContactNumber">Owner Contact Number:</label><br>
+                            <input type="text" id="textinput-mod1" name="ownerName" placeholder="Please Enter Owner's Number" required>
+
+                            <br>
+                            <label for="businessID">Add Valid ID Photo:</label><br>
+                            <input type="file" id="businessID" name="businessID" accept="image/png, image/gif, image/jpeg" multiple required>
+
+                            <div class="check-with-text">
+                                <input type="checkbox" name="agreement" class="checkbox" required>
+                                <label for="agreement">I agree to Easy PC's <a href="">Terms of Use</a> and <a href="">Privacy Policy</a></label>
+                            </div>
+
+                            <br>
+                            <input type="submit" value="Sign Up" class="btn" id="business-mod1">
+                            <div class="links-2" id="business-mod1">
+                                <a href="login.html">Login</a><br>
+                                <a href="regis-customer.html">Create a customer account here</a>
+                            </div>
+                        </div>
+                    </fieldset>
+                </form>
+            </div>
+        </div>
     </div>
       
     <div class="footer">

@@ -1,4 +1,26 @@
-/* FONTS */
+/* ======================================================================================
+    TABLE OF CONTENTS
+        1. FONTS
+        2. CUSTOM PROPERTIES
+        3. GLOBAL
+        4. CUSTOM COMPONENTS
+            4.1 BUTTON
+            4.2 NAVBAR
+            4.3 FOOTER
+            4      
+        5. MAIN PAGE
+            5.1 HEADER
+            5.2 CONTENT
+              
+
+======================================================================================*/
+
+
+
+
+/* ======================
+        FONTS 
+========================*/
 
  
 @font-face {
@@ -32,8 +54,15 @@
     src: url(fonts/FuturaPTHeavy.otf);
 }
 
+@font-face {
+    font-family: Metropolis-Light;
+    src: url(fonts/Metropolis-Light.otf);
+}
 
-/* CUSTOM PROPERTIES */
+
+/* ======================
+    CUSTOM PROPERTIES
+========================*/
 :root {
     --clr-header: #1C012F;
     --clr-border: #707070;
@@ -41,11 +70,48 @@
 
 }
 
+a{
+    text-decoration: none;
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+::placeholder{
+    color: #C9C9C9;
+    font-family: Metropolis-Light, sans-serif;
+}
+
+/*  CUSTOM SCROLL BAR  */
+::-webkit-scrollbar {
+width: 12px;
+height: 12px;
+opacity: 0.5;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+background: rgb(100, 100, 100); 
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: rgb(194, 194, 194); 
+border-radius: 8px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: rgb(255, 255, 255); 
+opacity: 1;
+}
 
 
-/* NAVBAR */
+/* ======================
+    GLOBAL
+========================*/
 
- 
 * {
     font-family:'Metropolis-Regular', 'Arial Narrow', Arial, sans-serif;
     margin: 0;
@@ -55,12 +121,35 @@
 
 
 html {
+
 }
 
 
-/*      MAIN PAGE        */
+
+/* ======================
+    BIG COMPONENTS
+========================*/
 
 
+/*  BUTTON  */
+.btn {
+    font-family: Metropolis-Bold;
+    display:inline-block;
+    background: #6804AB;
+    text-decoration: none;
+    color: white;
+    padding: 8px 20px;
+    border-radius: 11px;
+    margin: 12px 18px;
+}
+
+.btn:hover{
+    filter: brightness(150%);
+    transition: filter 0.3s ease-out; 
+} 
+
+
+/*  NAVBAR  */
 .container-nav {
     background-color: var(--clr-header);
     height:58px;
@@ -200,177 +289,7 @@ nav ul li a:hover{
 
 
 
-/* HEADER */
-
- 
-.header{
-    margin-top:58px;
-    display:flex;
-    position: relative;
-    height: 233.56px;
-}
-
-.header img{
-    display:flex;
-    float: right;
-    height: 233.56px;
-    width: 100%;
-    object-fit: cover;
-    object-position: 50% 0;
-    position:absolute;
-}
-
-.header .head-title {
-    padding-top: 20px;
-
-    display: inline-block;
-    color: white;
-    position: absolute;
-    margin-left: 50px;
-}
-
-.header .head-title h2{
-    font-family: Futura-PT-Book;
-    letter-spacing: 1px;
-    font-size: 3.125em;
-    margin: 0;
-    padding: 0;
-    font-weight:200;
-}
-
-.header .head-title h1{
-    margin-top: -16px;
-    font-family: Futura-PT-Heavy;
-    font-size: 4.063em;
-
-}
-
-.header ul{
-    display:inline-flex;
-    list-style-type: none;
-}
-
-.btn {
-    font-family: Metropolis-Bold;
-    display:inline-block;
-    background: #6804AB;
-    text-decoration: none;
-    color: white;
-    padding: 8px 20px;
-    border-radius: 11px;
-    margin: 12px 18px;
-}
-
-.btn:hover{
-    filter: brightness(150%);
-    transition: filter 0.3s ease-out; 
-}
-
-.buffer {
-    display:flex;
-    background:#DBDBDB;
-    border-bottom: 5px solid black;
-    border-top: 5px solid black;
-    height: 65;
-}
-
-.buffer h1 {
-    display:inline-block;
-    font-size: 1.563em;
-    font-family: Metropolis-SemiBold;
-    text-align: center;
-    margin: 15px  auto ;
-    position:relative;
-    letter-spacing: 5px;
-}
-
-
-@supports (position:sticky) {
-    .container-nav{
-        position: sticky;
-        top:0;
-        height:58px;
-    }
-
-}
-
-
-/* CONTENT */
-
-
-.container-content {
-    padding-top: 15px;
-    max-width: 1080;
-    margin: auto;
-    height:max-content;
-    background: var(--clr-content);
-}
-
-.row {
-    display:flex;
-    align-items: center;
-    justify-content: space-around;
-    flex-wrap: wrap;
-}
-
-.col-1 {
-    flex-basis: 18%;
-    min-width: 200px;
-    margin-bottom: 50px;
-    height:290px;
-    border-radius: 50px;
-}
-
-.col-1 img{
-    width: 100%;
-    border: 4px solid black;
-    transition: background 0.5s;
-    border-radius: 10px;
-}
-
-    /* TRANSITION EFFECTS */
-    
-
-    .col-1:hover img {
-        opacity: 0.7;  
-        transition: opacity 0.4s ease-out; 
-    }
-
-    .col-1:hover h2{
-        opacity: 0.8;  
-        transition: opacity 0.7s ease-out; 
-    }
-
-    .col-1::after img{
-        opacity: 1;  
-        transition: opacity 0.4s ease-out; 
-    }
-
-
-.col-1 h2{
-    background: rgba(0,0,0, .9);
-    display:block;
-    width: 100%;    
-    padding: 10px auto;
-    color: white;
-    position:relative;
-    text-align: center;
-    margin-top:-43px;
-    padding-top: 9px;
-    padding-bottom: 9px;
-    font-family: Metropolis-Bold;
-    font-size: 1.25em;
-    border-bottom-left-radius: 11px;
-    border-bottom-right-radius: 11px;
-}
-
-.col-1 a {
-    text-decoration: none;
-}
-
-
-/* FOOTER */
-
+/*  FOOTER  */
 .footer {
     height: 95px;
     display:block;
@@ -419,8 +338,168 @@ nav ul li a:hover{
 
 
 
+/* ======================
+    MAIN PAGE
+========================*/
 
-/*      LOGIN PAGE        */
+
+/*  HEADER   */
+.header{
+    margin-top:58px;
+    display:flex;
+    position: relative;
+    height: 233.56px;
+}
+
+.header img{
+    display:flex;
+    float: right;
+    height: 233.56px;
+    width: 100%;
+    object-fit: cover;
+    object-position: 50% 0;
+    position:absolute;
+}
+
+.header .head-title {
+    padding-top: 20px;
+
+    display: inline-block;
+    color: white;
+    position: absolute;
+    margin-left: 50px;
+}
+
+.header .head-title h2{
+    font-family: Futura-PT-Book;
+    letter-spacing: 1px;
+    font-size: 3.125em;
+    margin: 0;
+    padding: 0;
+    font-weight:200;
+}
+
+.header .head-title h1{
+    margin-top: -16px;
+    font-family: Futura-PT-Heavy;
+    font-size: 4.063em;
+
+}
+
+.header ul{
+    display:inline-flex;
+    list-style-type: none;
+}
+
+
+.buffer {
+    display:flex;
+    background:#DBDBDB;
+    border-bottom: 5px solid black;
+    border-top: 5px solid black;
+    height: 65;
+}
+
+.buffer h1 {
+    display:inline-block;
+    font-size: 1.563em;
+    font-family: Metropolis-SemiBold;
+    text-align: center;
+    margin: 15px  auto ;
+    position:relative;
+    letter-spacing: 5px;
+}
+
+
+@supports (position:sticky) {
+    .container-nav{
+        position: sticky;
+        top:0;
+        height:58px;
+    }
+
+}
+
+
+/*  CONTENT */
+.container-content {
+    padding-top: 15px;
+    max-width: 1080;
+    margin: auto;
+    height:max-content;
+    background: var(--clr-content);
+}
+
+.row {
+    display:flex;
+    align-items: center;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.col-1 {
+    flex-basis: 18%;
+    min-width: 200px;
+    margin-bottom: 50px;
+    height:290px;
+    border-radius: 50px;
+}
+
+.col-1 img{
+    width: 100%;
+    border: 4px solid black;
+    transition: background 0.5s;
+    border-radius: 10px;
+}
+
+    /* TRANSITION EFFECTS */
+    
+
+    .col-1:hover img {
+        opacity: 0.7;  
+        transition: opacity 0.4s ease-out; 
+    }
+
+    .col-1:hover h2{
+        opacity: 0.8;  
+        transition: opacity 0.7s ease-out; 
+    }
+
+    .col-1:hover ::after img{
+        opacity: 1;  
+        transition: opacity 0.4s ease-out; 
+    }
+
+
+.col-1 h2{
+    background: rgba(0,0,0, .9);
+    display:block;
+    width: 100%;    
+    padding: 10px auto;
+    color: white;
+    position:relative;
+    text-align: center;
+    margin-top:-43px;
+    padding-top: 9px;
+    padding-bottom: 9px;
+    font-family: Metropolis-Bold;
+    font-size: 1.25em;
+    border-bottom-left-radius: 11px;
+    border-bottom-right-radius: 11px;
+}
+
+.col-1 a {
+    text-decoration: none;
+}
+
+
+
+
+
+/* ======================
+    FOR SINGLE PAGES
+========================*/
+
 
 .second-nav {
     margin-top:58px;
@@ -442,7 +521,7 @@ nav ul li a:hover{
 
 .second-nav ul li {
     font-family: Metropolis-SemiBold;
-    margin-right:42px;
+    margin-right:3.8em;
     font-weight: 200;
 }
 
@@ -452,7 +531,12 @@ nav ul li a:hover{
 }
 
 
-/* LOGIN CONTENT */
+
+
+/* ======================
+    LOGIN PAGE CONTENT
+========================*/
+
 
 .content-1 {
     position:relative;
@@ -474,7 +558,7 @@ nav ul li a:hover{
 }
 
 .focus {
-    margin-top: 1em;
+    margin-top: 0.2em;
     width:100%;
     display: block;
 }
@@ -562,13 +646,14 @@ nav ul li a:hover{
 #submit {
     margin-top: 40px;
     width: 20%;
-    cursor: pointer;
 }
 
 
 
 
-/*      REGISTRATION MAIN CONTENT       */
+/* ======================
+    REGISTRATION PAGE CONTENT
+========================*/
 
 
 .row-3 {
@@ -701,9 +786,11 @@ nav ul li a:hover{
 
 
 
+/* ======================
+    REGISTRATION PAGE CONTENT
+========================*/
 
-/*      REGISTRATION MAIN CONTENT    */
-
+/* CUSTOMER */
 .row-4 {
     margin-bottom: 10px;
     position: relative;
@@ -714,7 +801,6 @@ nav ul li a:hover{
     margin-top: 0.8em;
     margin-left: 5%;
     margin-right: 10px;
-    /* background: #DBDBDB; */
 }
 
 .row-text-2 {
@@ -737,6 +823,7 @@ nav ul li a:hover{
     font-size: 1.5em;
     font-family: Metropolis-ExtraBold;
     color: #707070;
+    margin-left: 2px;
 }
 
 
@@ -765,7 +852,7 @@ nav ul li a:hover{
     margin-left:1px;
 }
 
-.row-4 .col-form-1 input{
+.row-4 input{
     height: 30px;
     padding:5px 7px;
     border-radius: 8px;
@@ -778,6 +865,7 @@ nav ul li a:hover{
 }
 
 .row-4 .part2{
+    margin-top: -1px;
     margin-left: 3em;
     FLEX: 1;
 }
@@ -809,8 +897,8 @@ nav ul li a:hover{
     width: 100%;
 }
 
-.row-4 .col-form-1 input[type=checkbox] {
-    width: 1em;
+.row-4 input[type=checkbox] {
+    width: 1.1em;
     margin: 0;
     display:inline;
 }
@@ -826,9 +914,8 @@ nav ul li a:hover{
 
 .check-with-text{
     width: 140%;
-    /* background: black; */
     margin-top: -5px;
-    margin-left: 1em
+    margin-left:5px;
 }
 
 .check-with-text label{
@@ -838,21 +925,54 @@ nav ul li a:hover{
     margin-top: -1.7em;
 }
 
-a{
-    text-decoration: none;
-}
 
 .links-2 {
     margin-top: 5.2em;
     text-align: right;
     font-size: 0.9em;
-    margin-right:5px;
+    margin-right:6px;
+}
+
+.links-2 a {
+    display: inline-block;
+    margin-top:3px;
 }
 
 
-
-
-::placeholder{
-    color: #C9C9C9;
+/* BUSINESS */
+.mod-1 {
+    height:38rem;
 }
 
+.mod-1 .row-4 form{
+    height: 29em;
+}
+
+#textinput-mod1 {
+    width: 90%;
+}
+
+#businessID {
+    border: 0;
+    margin-left:-5px;
+    height:auto;
+}
+
+.row-4-mod {
+    flex-basis: 20%;
+    max-width: 55em;
+}
+
+.row-4 .part2-mod{
+    width: 100%;
+    margin-top: -1px;
+    margin-left: 3em;
+}
+
+.row-4 .col-form-1-mod {
+    width: 100%;
+}
+
+.row-4 .col-form-1-mod {
+    width:90%;
+}
