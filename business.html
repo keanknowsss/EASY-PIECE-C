@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Profile | EASY PIECE</title>
+    <title>Business Profile | EASY PIECE</title>
 
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -87,7 +87,7 @@
             <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
                 <ul>
                     <li>
-                        <h2><a href="customer.html"  class="profile-button-selected" id="try">PROFILE</a></h2>
+                        <h2><a href="business.html"  class="profile-button-selected" id="try">PROFILE</a></h2>
                     </li>
                     <li class="order-button">
                         <h2><a href="customer-order.html" class="profile-button-unselected">ORDERS</a></h2>
@@ -129,61 +129,57 @@
             </div>
 
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12" id="content-main">
-                <form action="editProf.php" method="post">
+                <form action="editBus.php" method="post"> 
                     <div class="container-fluid">
                         <div class="row  justify-content-start mr-5">
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Full Name:</h4>
+                                <h4>Business Name:</h4>
                                 <div class="profInfo">
-                                    <p>Your Name</p><hr class="hr-underline">
+                                    <p>businessName</p><hr class="hr-underline">
                                 </div>
-                                <input type="text" name="fullName" class="profEdit">
+                                <input type="text" name="businessName" class="profEdit">
                             </div>
-                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Birthdate:</h4>
+                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top: 3rem">
+                                <h4>Business Address:</h4>
                                 <div class="profInfo">
-                                    <p>MM/DD/YYYY</p><hr class="hr-underline">
+                                    <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis ad commodi, accusantium necessitatibus quo facilis. Numquam non quis laborum provident aut, enim consequatur tempore quod?</p><hr class="hr-underline">
                                 </div>
-                                <input type="date" name="birthDate" class="profEdit profBday">
+                                <input type="text" name="businessAddress" class="profEdit profAddress">
                             </div>
                         </div>
                         <div class="row  justify-content-start mr-5">
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Email:</h4>
+                                <h4>Business Contact Number:</h4>
                                 <div class="profInfo">
-                                    <p>jakebinuya@bbm.ph</p><hr class="hr-underline">
+                                    <p>09251618757</p><hr class="hr-underline">
                                 </div>
-                                <input type="email" name="emailCustomer" class="profEdit">
-
+                                <input type="tel" name="businessContact" class="profEdit profNum">
                             </div>
-                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Sex:</h4>
+                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top:2.9rem">
+                                <h4>Owner Name:</h4>
                                 <div class="profInfo">
-                                    <p>None</p><hr class="hr-underline">
+                                    <p>Lorem ipsum dolor sit</p><hr class="hr-underline">
                                 </div>
-                                <select name="sex" id="sex" class="profEdit profSex">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
+                                <input type="text" name="ownerName" class="profEdit">
                             </div>
                     
                         </div>
                         <div class="row  justify-content-start mr-5">
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Mobile Number:</h4>
+                                <h4>Business Email Address:</h4>
                                 <div class="profInfo">
-                                    <p>0925161875</p><hr class="hr-underline">
+                                    <p>jakebbm@arlene.ph</p><hr class="hr-underline">
                                 </div>
-                                <input type="tel" name="numberCustomer" class="profEdit profNum">
+                                <input type="email" name="businessEmail" class="profEdit">
+
                             </div>
-                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Address:</h4>
+                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top:3rem">
+                                <h4>Owner Mobile Number:</h4>
                                 <div class="profInfo">
-                                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Assumenda aut minus eos architecto soluta fugit enim. Minus quam blanditiis minima obcaecati possimus ab in ducimus.</p>
+                                    <p>09251618755</p>
                                     <hr class="hr-underline">
                                 </div>
-                                <input type="text" name="address" class="profEdit profAddress">
-
+                                <input type="tel" name="ownerContact" class="profEdit profNum">
                             </div>
                         </div>
                     </div>
