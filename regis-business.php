@@ -1,36 +1,46 @@
 <?php
-    $conn = mysqli_connect('localhost','root','','webdev');
+session_start();
 
-    if(mysqli_connect_error())
+    include('connection.php');
+    include('function2.php');
+
+    if($_SERVER['REQUEST_METHOD'] == "POST")
     {
-        echo 'Failed to connect: ' . mysqli_connect_error();
-    } else{
-        
-        
-       $BusName = $_POST['businessName'];
-       $BusContact = $_POST['businessContact'];
-       $Email = $_POST['Email'];
-       $BusAddress = $_POST['businessAddress'];
-       $BusPass = $_POST['password'];
-       $BusOwnerName = $_POST['ownerName'];
-       $BusOwnerCont = $_POST['ownerContact'];
+        //something was posted
+        $BusName = $_POST['businessName'];
+        $BusContact = $_POST['businessContact'];
+        $Email = $_POST['businessEmail'];
+        $BusAddress = $_POST['businessAddress'];
+        $BusPass = $_POST['password'];
+        $BusOwnerName = $_POST['ownerName'];
+        $BusOwnerCont = $_POST['contactOwner'];
 
-       $query = "INSERT INTO registrationbusiness VALUES(
-           '$BusName',
-           '$BusContact',
-           '$Email',
-           '$BusAddress',
-           '$BusPass',
-           '$BusOwnerName',
-           '$BusOwnerCont',
-           '')";
-       
+       if(!empty($BusName) && !empty($BusContact) && !empty($Email) && !empty($BusAddress) && !empty($BusPass) && !empty($BusOwnerName) && !empty($BusOwnerCont))
+       {
+            //save to database
 
+            $business_id = random_num(20);
+            $query = "INSERT INTO registrationbusiness VALUES(
+                '$BusName',
+                '$BusContact',
+                '$Email',
+                '$BusAddress',
+                '$BusPass',
+                '$BusOwnerName',
+                '$BusOwnerCont',
+                '$business_id',
+                '')";
 
-       
-       mysqli_query($conn,$query);
-       header("Location: login.html");
+                mysqli_query($con,$query);
+                header("Location: login.html");
+                die;
+       }else
+       {
+           echo "Please enter some valid information.";
+       }
     }
-    mysqli_close($conn);
 
 ?>
+
+
+

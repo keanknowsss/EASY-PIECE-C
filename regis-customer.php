@@ -1,12 +1,12 @@
 <?php
-    $conn = mysqli_connect('localhost','root','','webdev');
+session_start();
 
-    if(mysqli_connect_error())
+    include('connection.php');
+    include('function1.php');
+
+    if($_SERVER['REQUEST_METHOD'] == "POST")
     {
-        echo 'Failed to connect: ' . mysqli_connect_error();
-    } else{
-        
-        
+        //something was posted
        $FullName = $_POST['fullName'];
        $Email = $_POST['emailCustomer'];
        $PhoneNumber = $_POST['numberCustomer'];
@@ -15,22 +15,37 @@
        $Sex = $_POST['sex'];
        $Addrss = $_POST['address'];
 
-       $query = "INSERT INTO registrationuser VALUES(
-           '$FullName',
-           '$Email',
-           '$PhoneNumber',
-           '$Pass',
-           '$BirthDate',
-           '$Sex',
-           '$Addrss',
-           '')";
-       
+       if(!empty($FullName) && !empty($Email) && !empty($PhoneNumber) && !empty($Pass) && !empty($BirthDate) && !empty($Sex) && !empty($Addrss))
+       {
+            //save to database
 
+            $user_id = random_num(20);
+            $query = "INSERT INTO registrationuser VALUES(
+                '$FullName',
+                '$Email',
+                '$PhoneNumber',
+                '$Pass',
+                '$BirthDate',
+                '$Sex',
+                '$Addrss',
+                '$user_id',
+                '')";
 
-       
-       mysqli_query($conn,$query);
-       header("Location: login.html");
+                mysqli_query($con,$query);
+                header("Location: login.html");
+                die;
+       }else
+       {
+           echo "Please enter some valid information.";
+       }
     }
-    mysqli_close($conn);
 
 ?>
+
+
+       
+       
+
+
+       
+      
