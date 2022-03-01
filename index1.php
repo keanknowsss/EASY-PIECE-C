@@ -2,12 +2,12 @@
 session_start();
 
     include('connection.php');
-    include('function1.php');
+    include('function2.php');
 
      $user_data = check_login($con);
 
 
-?> 
+?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -79,7 +79,7 @@ session_start();
             </ul>
             <ul id = "navbar-nav" style="display:none;">
                 <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
-                <li class="nav-item"><a href="customer-profile.html" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome User  </a></li>
+                <li class="nav-item"><a href="customer-profile.html" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome User</a></li>
             </ul>
         </nav>
         
@@ -270,4 +270,3 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
-
