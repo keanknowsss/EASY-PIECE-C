@@ -1,3 +1,16 @@
+/* FOR BLANK PAGES */
+
+/* blank-page {
+    height: 72vh;
+    display:none;
+} */
+
+
+/* testing
+
+style="outline:5px solid black;" */
+
+
 /* ======================================================================================
     TABLE OF CONTENTS
         1. FONTS
@@ -66,7 +79,7 @@
 :root {
     --clr-header: #1C012F;
     --clr-border: #707070;
-    --clr-content: #F1F1F1;
+    --clr-content: #f6e9fe;
     --clr-darkSecondary: #DBDBDB;
 
     --ff-metroBold: Metropolis-Bold, sans-serif;
@@ -105,6 +118,10 @@ h2,
 h3,
 h4 {
     margin-bottom:0;
+}
+
+#debug, .debug {
+    outline: 5px red solid;
 }
 
 ::placeholder{
@@ -561,11 +578,6 @@ nav ul li a:hover{
     object-position: 60% 50%;
 }
 
-.focus {
-    /* margin-top: 0.2em;
-    width:100%;
-    display: block; */
-}
 
 
 .row-2 {
@@ -585,17 +597,26 @@ nav ul li a:hover{
 
 .row-2 h1 {
     font-family: var(--ff-metroExtraB);
-    font-size: 2.188em;
+    font-size: 2em;
     flex-basis:20%;
     height: inherit;
     min-width: 280px;
-    padding: 13px;
+    padding: 9.22px 13px;
     padding-left: 18px;
     background: var(--clr-darkSecondary);
     border: 1px var(--clr-border) solid;
     border-radius: 15px;
     margin-right: 20px;
     margin-bottom: 0;
+}
+
+.login-text {
+    display:block;
+    font-size: 1rem;
+    margin-left:rem;
+    font-weight: bold;
+    padding-top: 0;
+    margin-top: -0.5rem;
 }
 
 .row-text{
@@ -656,7 +677,7 @@ nav ul li a:hover{
 }
 
 #submit {
-    margin-top: 40px;
+    margin-top: 2rem;
     width: 20%;
     margin-left: 2px;;
 }
@@ -666,8 +687,15 @@ nav ul li a:hover{
     transition:filter 0.3s ease-in;
 }
 
+.space-1{
+    display:inline-block; 
+    margin-top: -0.3em;
+}
 
 
+#businesslogin {
+    display:none;
+}
 
 /* ======================
     REGISTRATION PAGE CONTENT
@@ -811,6 +839,10 @@ nav ul li a:hover{
 ========================*/
 
 /* CUSTOMER */
+
+
+
+
 .row-4 {
     margin-bottom: 10px;
     position: relative;
@@ -1009,4 +1041,184 @@ nav ul li a:hover{
 
 #business-mod1 {
     margin: 0;
+    width: auto;
 }
+
+
+/* ======================
+    CUSTOMER PROFILE PAGE CONTENT
+========================*/
+.col-buttons {
+    padding:0;
+    padding-top: 20px;
+    background: var(--clr-header);
+}
+
+.col-buttons ul {
+    list-style-type: none;
+    padding:0;
+}
+
+.col-buttons ul li{
+    margin-top: 1rem;
+    text-align: right;
+
+}
+
+.col-buttons a {
+    display:block;
+    padding: 1rem;
+    color:white;
+    font-family: var(--ff-metroBold);
+    font-weight: bolder;
+    font-size: 2.2rem;
+}
+
+
+.profile-button-selected {
+    border-right: 0.5rem RGB(27,202,29) solid;
+}
+
+.profile-button-selected:hover {
+    background: RGB(27,202,29);
+    transition:background 0.25s ease-in-out;
+}
+
+.profile-button-selected:hover::after {
+    background: transparent;
+    transition:all 0.25s ease-in-out;
+}
+
+
+.profile-button-unselected:hover {
+    border-right: 0.5rem var(--clr-border) solid;
+    background: var(--clr-border);
+    transition:border-right 0.2s ease-in-out;
+    transition:background 0.25s ease-in-out;
+}
+
+.profile-button-unselected:hover ::after {
+    border-right: none;
+    background: transparent;
+    transition:all 0.25s ease-in-out;
+
+}
+
+
+.content-bg{
+    background: #edd3fe;
+}
+
+.custo-info {
+    margin-top:3em;
+    color:black;
+}
+
+.custo-info h4{
+    font-family: var(--ff-metroBold)
+} 
+
+.custo-info p {
+    padding-top:-1.4em;
+    padding-top:0;
+    font-family: var(--ff-metroLight)
+
+}
+
+.hr-underline{
+    background: black;
+    color: black;
+    height: 5px;
+    border-radius: 5px;
+    margin: 0;
+    width:12rem;
+    opacity: 0.2;
+}
+
+.links-profile {
+    margin-left: -1rem;
+    padding-bottom: 2rem;
+}
+
+.links-profile ul {
+    list-style-type: none;
+}
+
+.links-profile ul li {
+    display: inline-block;
+    
+}
+
+.divider-1 {
+    margin:1.5rem auto;
+    background: rgba(0,0,0, .1);
+    height: 2px;
+
+}
+
+
+.container-pos{
+    /* margin:2rem; */
+    margin-top: 3.2rem;
+    padding-left: 5rem;
+}
+
+.column-card{
+    display:block;
+    background:white;
+    margin-right: 3rem;
+    padding: 5px;
+
+    box-shadow: 0px 0px 1rem 0.5px gray ;
+    
+}
+
+.show-items{
+    margin: 0.4rem auto;
+    margin-left: 1rem;
+    
+}
+
+
+.row-business-name {
+    padding-left: 1rem;
+    
+}
+
+.divider-mod-1 {
+    margin:0;
+    
+}
+
+.row-order-brief {
+    margin: 1rem 1rem;
+    font-size: 0.9rem;
+    
+}
+
+.row-order-brief img {
+    width: 6rem;
+    height: 5rem;
+    object-fit: cover;
+    object-position: 50% 50%;
+    outline: 1px black solid;
+    margin-right:0;
+}
+
+.order-item-name {
+    line-height: 1.5ch;
+}
+
+.link-black-none{
+    color: black;
+}
+
+.link-black-none:hover{
+    color: black;
+}
+
+
+#orderCustom {
+    display:none;
+}
+
