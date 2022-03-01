@@ -1,32 +1,45 @@
 <?php
-    $conn = mysqli_connect('localhost','root','','webdev');
+session_start();
 
-    if(mysqli_connect_error())
-    {
-        echo 'Failed to connect: ' . mysqli_connect_error();
-    } else{
+include('connection.php');
+include('function1.php');
 
-       
-            $Email = $_POST['emailCustomer'];
-            $Password = $_POST['password'];
+if($_SERVER['REQUEST_METHOD'] == "POST")
+{
+    //something was posted
+ 
+   $Email = $_POST['emailCustomer'];
+  
+   $Pass = $_POST['password'];
+  
 
-            $query = "SELECT * FROM `registrationuser` WHERE Email = '$Email' limit 1";
+   if(!empty($Email) && !empty($Pass))
+   {
+        //read to database
 
-            $result = mysqli_query($conn, $query);
+        $query = "SELECT * FROM `registrationuser` WHERE Email = '$Email' LIMIT 1";
+
+            $result = mysqli_query($con,$query);
 
             if($result)
             {
-                if($result && mysqli_num_rows($result)>0)
-                {
-                    $user_data = mysqli_fetch_assoc($result);
-
-                    if($user_data['password']=== $password)
+                if($result && mysqli_num_rows($result) > 0)
                     {
-                        header("Location: index.html");
+                        $user_data = mysqli_fetch_assoc($result);
+                        
+                        if($user_data['password'] === $password)
+                        {
+                            $_SESSION['user_id'] = $user_data['user_id'];
+                            header("Location: index.php");
+                            die;
+                        }
                     }
-                }
             }
-         
-    }
+            echo "Please enter some valid information.";
+   }else
+   {
+       echo "Please enter some valid information.";
+   }
+}
 
 ?>

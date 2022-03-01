@@ -9,7 +9,7 @@
         
        $BusName = $_POST['businessName'];
        $BusContact = $_POST['businessContact'];
-       $Email = $_POST['Email'];
+       $Email = $_POST['businessEmail'];
        $BusAddress = $_POST['businessAddress'];
        $BusPass = $_POST['password'];
        $BusOwnerName = $_POST['ownerName'];
