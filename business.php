@@ -2,7 +2,7 @@
 session_start();
 
     include('connection.php');
-    include('function1.php');
+    include('function2.php');
 
      $user_data = check_login($con);
 
@@ -15,7 +15,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customer Profile | EASY PIECE</title>
+    <title>Business Profile | EASY PIECE</title>
 
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -72,7 +72,7 @@ session_start();
 
         <nav class="navbar-collapse justify-content-end mt-3 ml-5" id="guest">
             <ul id = "navbar-nav">
-                <li class="nav-item"><a href="customer.php"><?php echo $user_data['FullName']; ?></a></li>
+                <li class="nav-item"><a href="business.php">Welcome, <?php echo $user_data['OwnerName']; ?></a></li>
                 <li class="nav-item"><a href="regis-main.html"></a></li>
             </ul>
             <ul id = "navbar-nav" style="display:none;">
@@ -98,7 +98,7 @@ session_start();
             <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
                 <ul>
                     <li>
-                        <h2><a href="customer.html"  class="profile-button-selected" id="try">PROFILE</a></h2>
+                        <h2><a href="business.html"  class="profile-button-selected" id="try">PROFILE</a></h2>
                     </li>
                     <li class="order-button">
                         <h2><a href="customer-order.html" class="profile-button-unselected">ORDERS</a></h2>
@@ -140,61 +140,57 @@ session_start();
             </div>
 
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12" id="content-main">
-                <form action="editProf.php" method="post">
+                <form action="editBus.php" method="post"> 
                     <div class="container-fluid">
                         <div class="row  justify-content-start mr-5">
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Full Name:</h4>
+                                <h4>Business Name:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['FullName']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $user_data['BusinessName']; ?></p><hr class="hr-underline">
                                 </div>
-                                <input type="text" name="fullName" class="profEdit">
+                                <input type="text" name="businessName" class="profEdit">
                             </div>
-                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Birthdate:</h4>
+                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top: 3rem">
+                                <h4>Business Address:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['BirthDate']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $user_data['BusinessAddress']; ?></p><hr class="hr-underline">
                                 </div>
-                                <input type="date" name="birthDate" class="profEdit profBday">
+                                <input type="text" name="businessAddress" class="profEdit profAddress">
                             </div>
                         </div>
                         <div class="row  justify-content-start mr-5">
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Email:</h4>
+                                <h4>Business Contact Number:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['Email']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $user_data['BusinessContact']; ?></p><hr class="hr-underline">
                                 </div>
-                                <input type="email" name="emailCustomer" class="profEdit">
-
+                                <input type="tel" name="businessContact" class="profEdit profNum">
                             </div>
-                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Sex:</h4>
+                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top:2.9rem">
+                                <h4>Owner Name:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['Sex']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $user_data['OwnerName']; ?></p><hr class="hr-underline">
                                 </div>
-                                <select name="sex" id="sex" class="profEdit profSex">
-                                    <option value="male">Male</option>
-                                    <option value="female">Female</option>
-                                </select>
+                                <input type="text" name="ownerName" class="profEdit">
                             </div>
                     
                         </div>
                         <div class="row  justify-content-start mr-5">
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Mobile Number:</h4>
+                                <h4>Business Email Address:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['PhoneNumber']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $user_data['BusinessEmail']; ?></p><hr class="hr-underline">
                                 </div>
-                                <input type="tel" name="numberCustomer" class="profEdit profNum">
+                                <input type="email" name="businessEmail" class="profEdit">
+
                             </div>
-                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
-                                <h4>Address:</h4>
+                            <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top:3rem">
+                                <h4>Owner Mobile Number:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['Addrss']; ?></p>
+                                    <p><?php echo $user_data['OwnerContact']; ?></p>
                                     <hr class="hr-underline">
                                 </div>
-                                <input type="text" name="address" class="profEdit profAddress">
-
+                                <input type="tel" name="ownerContact" class="profEdit profNum">
                             </div>
                         </div>
                     </div>
@@ -205,7 +201,7 @@ session_start();
                         <li><a href="#" onclick="editInfo()" class="btn btn-custom-1 btn-trans-1 btn-edit btn-profile" style="margin-left:1em;">Edit Profile</a></li>
                         <li><input type="submit" class="btn btn-custom-1 btn-trans-1 btn-save btn-profile" value="Save Profile"></li>
                         <li><a href="#" onclick="editPass()" id="pass-button" class="btn btn-custom-1 btn-trans-1 btn-profile">Change Password</a></li>
-                        <li><a href="logout.php" onclick="editPass()" id="pass-button" class="btn btn-custom-1 btn-trans-1 btn-log-out">Logout</a></li>
+                        <li><a href="logout1.php" onclick="editPass()" id="pass-button" class="btn btn-custom-1 btn-trans-1 btn-log-out">Logout</a></li>
                     </ul>
                 </div>
 
