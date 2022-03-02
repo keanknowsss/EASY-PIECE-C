@@ -74,8 +74,8 @@ session_start();
 
         <nav class="navbar-collapse justify-content-end mt-3 ml-5" id="guest">
             <ul id = "navbar-nav">
-                <li class="nav-item"><a href="login.html">Login</a></li>
-                <li class="nav-item"><a href="regis-main.html">Register</a></li>
+                <li class="nav-item"><a href="business.php">Welcome, <?php echo $user_data['OwnerName']; ?></a></li>
+                <li class="nav-item"><a href="regis-main.html"></a></li>
             </ul>
             <ul id = "navbar-nav" style="display:none;">
                 <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
