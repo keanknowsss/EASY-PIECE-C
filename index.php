@@ -81,6 +81,10 @@ session_start();
                 <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
                 <li class="nav-item"><a href="customer-profile.html" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome User  </a></li>
             </ul>
+            <ul id = "navbar-nav" style="display:none;">
+                <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
+                <li class="nav-item"><a href="business-profile.html" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome Business  </a></li>
+            </ul>
         </nav>
         
     </nav>

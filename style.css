@@ -1373,3 +1373,14 @@ nav ul li a:hover{
     background: RGB(27,202,29);
     transition: background 0.3s ease-in-out
 }
+
+
+
+
+/* ======================
+    Products Page CONTENT
+========================*/
+.full-screen-page{
+    height: 100vh;
+}
+
