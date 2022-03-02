@@ -4,7 +4,7 @@ session_start();
     include('connection.php');
     include('function1.php');
 
-     $user_data = check_login($con);
+     $user_data = check_user($con);
 
 
 ?>
@@ -29,7 +29,7 @@ session_start();
 <body>
     <nav class="navbar navbar-expand-lg sticky-top container-nav">
         <div class="logo col-lg-3" >
-            <a class="navbar-brand" href="index.html" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
+            <a class="navbar-brand" href="index.php" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
         </div>
 
@@ -38,7 +38,7 @@ session_start();
             <form class=" my-2 my-lg-0" action="search.php" method="get">
                 <div class="search-box ">
                     <input type="search" name="search"  class="search" placeholder="Search Computer Components and Peripherals">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="images/Icons/search.png" class = "search-icon">
                     </a>
                 </div>
@@ -72,8 +72,8 @@ session_start();
 
         <nav class="navbar-collapse justify-content-end mt-3 ml-5" id="guest">
             <ul id = "navbar-nav">
-                <li class="nav-item"><a href="customer.php"><?php echo $user_data['FullName']; ?></a></li>
-                <li class="nav-item"><a href="regis-main.html"></a></li>
+                <li class="nav-item"><a href="login.html">Login</a></li>
+                <li class="nav-item"><a href="regis-main.html">Register</a></li>
             </ul>
             <ul id = "navbar-nav" style="display:none;">
                 <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
@@ -98,10 +98,10 @@ session_start();
             <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
                 <ul>
                     <li>
-                        <h2><a href="customer.html"  class="profile-button-selected" id="try">PROFILE</a></h2>
+                        <h2><a href="customer.php"  class="profile-button-selected">PROFILE</a></h2>
                     </li>
                     <li class="order-button">
-                        <h2><a href="customer-order.html" class="profile-button-unselected">ORDERS</a></h2>
+                        <h2><a href="customer-order.php" class="profile-button-unselected massive-mb-0">ORDERS</a></h2>
                     </li>
                 </ul>
             </div>
@@ -146,14 +146,14 @@ session_start();
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Full Name:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['FullName']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $user_data['FullName'];?></p><hr class="hr-underline">
                                 </div>
                                 <input type="text" name="fullName" class="profEdit">
                             </div>
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Birthdate:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['BirthDate']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $user_data['BirthDate'];?></p><hr class="hr-underline">
                                 </div>
                                 <input type="date" name="birthDate" class="profEdit profBday">
                             </div>
@@ -162,7 +162,7 @@ session_start();
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Email:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['Email']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $user_data['Email'];?></p><hr class="hr-underline">
                                 </div>
                                 <input type="email" name="emailCustomer" class="profEdit">
 
@@ -170,7 +170,7 @@ session_start();
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Sex:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['Sex']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $user_data['Sex'];?></p><hr class="hr-underline">
                                 </div>
                                 <select name="sex" id="sex" class="profEdit profSex">
                                     <option value="male">Male</option>
@@ -183,14 +183,14 @@ session_start();
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Mobile Number:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['PhoneNumber']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $user_data['PhoneNumber'];?></p><hr class="hr-underline">
                                 </div>
                                 <input type="tel" name="numberCustomer" class="profEdit profNum">
                             </div>
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Address:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['Addrss']; ?></p>
+                                    <p><?php echo $user_data['Addrss'];?></p>
                                     <hr class="hr-underline">
                                 </div>
                                 <input type="text" name="address" class="profEdit profAddress">
@@ -293,5 +293,7 @@ session_start();
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 </body>
 </html>
+
+
 
 

@@ -25,11 +25,12 @@ session_start();
                     {
                         if($result && mysqli_num_rows($result) > 0)
                             {
-                                $user_data = mysqli_fetch_assoc($result);
+                                $business_data = mysqli_fetch_assoc($result);
                                 
-                                if($user_data['Password'] === $BusPass)
+                                if($business_data['Password'] === $BusPass)
                                 {
-                                    $_SESSION['business_id'] = $user_data['business_id'];
+                                    $_SESSION['privilage'] = 'business';
+                                    $_SESSION['business_id'] = $business_data['business_id'];
                                     header("Location: index1.php");
                                     die;
                                 }
