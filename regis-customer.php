@@ -28,7 +28,6 @@ session_start();
                 '$BirthDate',
                 '$Sex',
                 '$Addrss',
-                '$user_id',
                 '')";
 
                 mysqli_query($con,$query);
