@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Add ITEMS | Business Inventory</title>
+    <title>Edit ITEMS | Business Inventory</title>
 
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -18,7 +18,7 @@
 <body>
     <nav class="navbar navbar-expand-lg sticky-top container-nav">
         <div class="logo col-lg-3" >
-            <a class="navbar-brand" href="index.html" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
+            <a class="navbar-brand" href="index.php" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
         </div>
 
@@ -27,7 +27,7 @@
             <form class=" my-2 my-lg-0" action="search.php" method="get">
                 <div class="search-box ">
                     <input type="search" name="search"  class="search" placeholder="Search Computer Components and Peripherals">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="images/Icons/search.png" class = "search-icon">
                     </a>
                 </div>
@@ -85,16 +85,16 @@
             <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
                 <ul>
                     <li>
-                        <h2><a href="business.html"  class="profile-button-unselected">PROFILE</a></h2>
+                        <h2><a href="business.php"  class="profile-button-unselected">PROFILE</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-order.html" class="profile-button-unselected">ORDERS</a></h2>
+                        <h2><a href="business-order.php" class="profile-button-unselected">ORDERS</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-inventory.html" class="profile-button-selected" style="font-size:2rem;">INVENTORY</a></h2>
+                        <h2><a href="business-inventory.php" class="profile-button-selected" style="font-size:2rem;">INVENTORY</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-transactions.html" class="profile-button-unselected massive-mb" id="btn-transaction">TRANSACTION</a></h2>
+                        <h2><a href="business-transactions.php" class="profile-button-unselected massive-mb" id="btn-transaction">TRANSACTION</a></h2>
                     </li>
                 </ul>
             </div>
@@ -106,7 +106,7 @@
                                 
                                 <div class="col-lg-3 col-md-4 mt-4">
                                     <div class="img-with-add-file mb-0">
-                                        <img src="items/placeholder-image.png" alt="" class="add-item-pic mb-2" id="displayImg">
+                                        <img src="prev_img" alt="" class="add-item-pic mb-2" id="displayImg">
                                         <div class="input-img ml-2">
                                             <label for="inputImg" id="link-for-img" class="btn btn-custom-1 btn-custom-trans-1">Upload Image</label>
                                             <input type="file" name="productImg" id="inputImg" required>
@@ -117,18 +117,18 @@
                                 <div class="col-lg-7 col-md-12 p-1 pt-3">
                                     <div class="row justify-content-between">
                                         <label for="itemName" class="mt-1 addlabel">Item Name:&nbsp;</label>
-                                        <input type="text" name="itemName" class="addItem" placeholder="Please Input Name of Item" required> 
+                                        <input type="text" name="itemName" class="addItem" value="$item_name" required> 
                                     </div>
                                     
                                     <div class="row mt-2">
                                         <label for="brandName" class="mt-1 addlabel">Brand Name:&nbsp;</label>
-                                        <input type="text" name="brandName" class="addItem" placeholder="Please Input Brand of Item" required> 
+                                        <input type="text" name="brandName" class="addItem" value="$brand_name" required> 
                                     </div>
 
                                     <div class="row mt-2">
                                         <label for="category" class="addlabel">Category:&nbsp;</label>
-                                        <select name="category" class="addItem add-select-box" value="categories" id="addCat">
-                                            <option value="none" class="placeholder">Categories</option>
+                                        <select name="category" class="addItem add-select-box" value="$previous Value" id="addCat">
+                                            <option value="none" class="placeholder">$previous value</option>
                                             <option value="cpu">Processor</option>
                                             <option value="gpu">Graphics Card</option>
                                             <option value="ram">Memory</option>
@@ -152,7 +152,7 @@
 
                                     <div class="row mt-2" id="desc-add">
                                         <label for="description" class="mt-1 addlabel">Brand Name:&nbsp;</label>
-                                        <textarea name="description" id="" cols="32" rows="2" class="descText"  placeholder="Some Item Description . . ." required></textarea>
+                                        <textarea name="description" id="" cols="32" rows="2" class="descText" required>$Description</textarea>
                                     </div>
                                 </div>
                                 
@@ -160,7 +160,7 @@
                             </div>
 
                             <div class="row container mt-3 justify-content-lg-end justify-content-md-end justify-content-sm-center">
-                                <input type="submit" value="ADD ITEM" class="btn btn-custom-1  btn-add">
+                                <input type="submit" value="SAVE CHANGES" class="btn btn-custom-1  btn-add">
                             </div>
                         </form>
                     </div>

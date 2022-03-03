@@ -19,7 +19,7 @@ session_start();
        {
             //save to database
 
-            $business_id = random_num(20);
+           
             $query = "INSERT INTO registrationbusiness VALUES(
                 '$BusName',
                 '$BusContact',
@@ -28,7 +28,6 @@ session_start();
                 '$BusPass',
                 '$BusOwnerName',
                 '$BusOwnerCont',
-                '$business_id',
                 '')";
 
                 mysqli_query($con,$query);

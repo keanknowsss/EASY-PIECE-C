@@ -2,9 +2,9 @@
 session_start();
 
     include('connection.php');
-    include('function2.php');
+    include('function1.php');
 
-     $user_data = check_login($con);
+     $business_data = check_business($con);
 
 
 ?>
@@ -29,7 +29,7 @@ session_start();
 <body>
     <nav class="navbar navbar-expand-lg sticky-top container-nav">
         <div class="logo col-lg-3" >
-            <a class="navbar-brand" href="index.html" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
+            <a class="navbar-brand" href="index.php" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
         </div>
 
@@ -38,7 +38,7 @@ session_start();
             <form class=" my-2 my-lg-0" action="search.php" method="get">
                 <div class="search-box ">
                     <input type="search" name="search"  class="search" placeholder="Search Computer Components and Peripherals">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="images/Icons/search.png" class = "search-icon">
                     </a>
                 </div>
@@ -72,8 +72,8 @@ session_start();
 
         <nav class="navbar-collapse justify-content-end mt-3 ml-5" id="guest">
             <ul id = "navbar-nav">
-                <li class="nav-item"><a href="business.php">Welcome, <?php echo $user_data['OwnerName']; ?></a></li>
-                <li class="nav-item"><a href="regis-main.html"></a></li>
+                <li class="nav-item"><a href="login.html">Login</a></li>
+                <li class="nav-item"><a href="regis-main.html">Register</a></li>
             </ul>
             <ul id = "navbar-nav" style="display:none;">
                 <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
@@ -98,10 +98,16 @@ session_start();
             <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
                 <ul>
                     <li>
-                        <h2><a href="business.html"  class="profile-button-selected" id="try">PROFILE</a></h2>
+                        <h2><a href="business.php"  class="profile-button-selected">PROFILE</a></h2>
                     </li>
-                    <li class="order-button">
-                        <h2><a href="customer-order.html" class="profile-button-unselected">ORDERS</a></h2>
+                    <li>
+                        <h2><a href="business-order.php" class="profile-button-unselected">ORDERS</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="business-inventory.php" class="profile-button-unselected" style="font-size:2rem;">INVENTORY</a></h2>
+                    </li>
+                    <li>
+                        <h2><a href="business-transactions.php" class="profile-button-unselected" id="btn-transaction">TRANSACTION</a></h2>
                     </li>
                 </ul>
             </div>
@@ -142,18 +148,18 @@ session_start();
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12" id="content-main">
                 <form action="editBus.php" method="post"> 
                     <div class="container-fluid">
-                        <div class="row  justify-content-start mr-5">
+                        <div class="row justify-content-start mr-5">
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Business Name:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['BusinessName']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $business_data['BusinessName']; ?></p><hr class="hr-underline">
                                 </div>
                                 <input type="text" name="businessName" class="profEdit">
                             </div>
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top: 3rem">
                                 <h4>Business Address:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['BusinessAddress']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $business_data['BusinessAddress']; ?></p><hr class="hr-underline">
                                 </div>
                                 <input type="text" name="businessAddress" class="profEdit profAddress">
                             </div>
@@ -162,14 +168,14 @@ session_start();
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Business Contact Number:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['BusinessContact']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $business_data['BusinessContact']; ?></p><hr class="hr-underline">
                                 </div>
                                 <input type="tel" name="businessContact" class="profEdit profNum">
                             </div>
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top:2.9rem">
                                 <h4>Owner Name:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['OwnerName']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $business_data['OwnerName']; ?></p><hr class="hr-underline">
                                 </div>
                                 <input type="text" name="ownerName" class="profEdit">
                             </div>
@@ -179,7 +185,7 @@ session_start();
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Business Email Address:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['BusinessEmail']; ?></p><hr class="hr-underline">
+                                    <p><?php echo $business_data['BusinessEmail']; ?></p><hr class="hr-underline">
                                 </div>
                                 <input type="email" name="businessEmail" class="profEdit">
 
@@ -187,7 +193,7 @@ session_start();
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top:3rem">
                                 <h4>Owner Mobile Number:</h4>
                                 <div class="profInfo">
-                                    <p><?php echo $user_data['OwnerContact']; ?></p>
+                                    <p><?php echo $business_data['OwnerContact']; ?></p>
                                     <hr class="hr-underline">
                                 </div>
                                 <input type="tel" name="ownerContact" class="profEdit profNum">

@@ -4,9 +4,11 @@ session_start();
     include('connection.php');
     include('function1.php');
 
-     $user_data = check_login($con);
+     //$user_data = check_user($con);
+     $business_data = check_business($con);
+     
 
-
+     
 ?> 
 
 <!DOCTYPE html>
@@ -74,20 +76,34 @@ session_start();
 
         <nav class="navbar-collapse justify-content-end mt-3 ml-5" id="guest">
             <ul id = "navbar-nav">
-                <li class="nav-item"><a href="customer.php">Welcome, <?php echo $user_data['FullName'];?></a></li>
-                <li class="nav-item"><a href="regis-main.html"></a></li>
+                <li class="nav-item"><a href="login-user.php">Login</a></li>
+                <li class="nav-item"><a href="regis-main.html">Register</a></li>
             </ul>
-            <ul id = "navbar-nav" style="display:none;">
+            <ul id = "navbar-nav-user" style="display:none;">
+                <?php 
+                    if($_SESSION['privilage'] == 'customer')
+                    {
+                        echo '<script> document.getElementById("navbar-nav").style.display = "none";
+                             document.getElementById("navbar-nav-user").style.display = "inline" </script>';
+                    }
+                ?>
                 <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
-                <li class="nav-item"><a href="customer-profile.html" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome User  </a></li>
+                <li class="nav-item"><a href="customer.php" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome, <?php echo $user_data['FullName']; ?>  </a></li>
             </ul>
-            <ul id = "navbar-nav" style="display:none;">
+            <ul id = "navbar-nav-business" style="display:none;">
+                <?php 
+                        if($_SESSION['privilage'] == 'business')
+                        {
+                            echo '<script> document.getElementById("navbar-nav").style.display = "none";
+                                     document.getElementById("navbar-nav-business").style.display = "inline"</script>';
+                        }
+                    ?>
                 <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
-                <li class="nav-item"><a href="business-profile.html" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome Business  </a></li>
+                <li class="nav-item"><a href="business-profile.html" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome, <?php echo $business_data['OwnerName']; ?>  </a></li>
             </ul>
         </nav>
         
-    </nav>
+    </nav>         
         
 
     <div class="header">

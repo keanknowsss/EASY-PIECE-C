@@ -18,7 +18,7 @@
 <body>
     <nav class="navbar navbar-expand-lg sticky-top container-nav">
         <div class="logo col-lg-3" >
-            <a class="navbar-brand" href="index.html" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
+            <a class="navbar-brand" href="index.php" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
         </div>
 
@@ -27,7 +27,7 @@
             <form class=" my-2 my-lg-0" action="search.php" method="get">
                 <div class="search-box ">
                     <input type="search" name="search"  class="search" placeholder="Search Computer Components and Peripherals">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="images/Icons/search.png" class = "search-icon">
                     </a>
                 </div>
@@ -85,16 +85,16 @@
             <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
                 <ul>
                     <li>
-                        <h2><a href="business.html"  class="profile-button-unselected">PROFILE</a></h2>
+                        <h2><a href="business.php"  class="profile-button-unselected">PROFILE</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-order.html" class="profile-button-unselected">ORDERS</a></h2>
+                        <h2><a href="business-order.php" class="profile-button-selected">ORDERS</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-inventory.html" class="profile-button-unselected" style="font-size:2rem;">INVENTORY</a></h2>
+                        <h2><a href="business-inventory.php" class="profile-button-unselected" style="font-size:2rem;">INVENTORY</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-transactions.html" class="profile-button-selected massive-mb" id="btn-transaction">TRANSACTION</a></h2>
+                        <h2><a href="business-transactions.php" class="profile-button-unselected massive-mb" id="btn-transaction">TRANSACTION</a></h2>
                     </li>
                 </ul>
             </div>
@@ -105,10 +105,10 @@
                         <div class="show-items">
                             <span>Show:&nbsp;</span>
                             <select name="num_of_rows" id="">
-                                <option value="0">Last 5 Transactions</option>
-                                <option value="1">Last 10 Transactions</option>
-                                <option value="2">Last 15 Transactions</option>
-                                <option value="3">Last 20 Transactions</option>
+                                <option value="0">Last 5 Orders</option>
+                                <option value="1">Last 10 Orders</option>
+                                <option value="2">Last 15 Orders</option>
+                                <option value="3">Last 20 Orders</option>
                             </select>
                         </div>
                     </div>
@@ -116,7 +116,7 @@
                     <div class="row column-card mb-2">
                         <div class="order-card container-fluid">
                             <div class="row-business-name row justify-content-between mr-1">
-                                <p>Transactioned with: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
+                                <p>Sold by: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
                             </div>
 
                             <hr class="divider-1 divider-mod-1">
@@ -144,7 +144,7 @@
                     <div class="row column-card mb-2">
                         <div class="order-card container-fluid">
                             <div class="row-business-name row justify-content-between mr-1">
-                                <p>Transactioned with: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
+                                <p>Sold by: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
                             </div>
 
                             <hr class="divider-1 divider-mod-1">
@@ -172,7 +172,7 @@
                     <div class="row column-card mb-2">
                         <div class="order-card container-fluid">
                             <div class="row-business-name row justify-content-between mr-1">
-                                <p>Transactioned with: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
+                                <p>Sold by: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
                             </div>
 
                             <hr class="divider-1 divider-mod-1">
@@ -200,7 +200,7 @@
                     <div class="row column-card mb-5">
                         <div class="order-card container-fluid">
                             <div class="row-business-name row justify-content-between mr-1">
-                                <p>Transactioned with: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
+                                <p>Sold by: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
                             </div>
 
                             <hr class="divider-1 divider-mod-1">

@@ -18,7 +18,7 @@
 <body>
     <nav class="navbar navbar-expand-lg sticky-top container-nav">
         <div class="logo col-lg-3" >
-            <a class="navbar-brand" href="index.html" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
+            <a class="navbar-brand" href="index.php" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
         </div>
 
@@ -27,7 +27,7 @@
             <form class=" my-2 my-lg-0" action="search.php" method="get">
                 <div class="search-box ">
                     <input type="search" name="search"  class="search" placeholder="Search Computer Components and Peripherals">
-                    <a href="index.html">
+                    <a href="index.php">
                         <img src="images/Icons/search.png" class = "search-icon">
                     </a>
                 </div>
@@ -85,10 +85,10 @@
             <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
                 <ul>
                     <li>
-                        <h2><a href="customer.html" class="profile-button-unselected">PROFILE</a></h2>
+                        <h2><a href="customer.php" class="profile-button-unselected">PROFILE</a></h2>
                     </li>
                     <li>
-                        <h2><a href="customer-order.html" class="profile-button-selected massive-mb-0">ORDERS</a></h2>
+                        <h2><a href="customer-order.php" class="profile-button-selected massive-mb-0">ORDERS</a></h2>
                     </li>
                 </ul>
             </div>
