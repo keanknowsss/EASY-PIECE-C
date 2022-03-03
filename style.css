@@ -1,12 +1,9 @@
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.no-Arrow::-webkit-inner-spin-button,
+.no-Arrow::-webkit-outer-spin-button {
   -webkit-appearance: none;
-  margin: 0;
-}
-
-/* Firefox */
-input[type=number] {
   -moz-appearance: textfield;
+  margin: 0;
+  opacity:1;
 }
 
 
@@ -1356,10 +1353,26 @@ nav ul li a:hover{
     margin-left:0;
 }
 
+.addDeliver{
+    border: 0;
+}
+
+.qtyLbl{
+    font-size: 0.98rem;
+}
+
 .addlabel {
     display: inline-block;
     width: 7rem;
 }
+
+.addPrice {
+    width: 20%;
+    text-align:right;
+    margin-right:0;
+}
+
+
 
 .add-select-box{
     width: 40%;
@@ -1520,6 +1533,7 @@ footer {
     margin-left: -1rem;
     margin-top: 0;
     background:#212529;
+    outline: 5px red solid;
 }
 
 .inc-qty {
@@ -1528,5 +1542,13 @@ footer {
 }
 
 .inQty-widthMAX {
-   width: 18%;
+    width: 20px;
+}
+
+.list-cart {
+    margin-left: 5vw;
+}
+
+.add-padding {
+    padding-bottom: 20vh
 }

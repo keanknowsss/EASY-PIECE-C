@@ -102,7 +102,7 @@
                 <div class="container-pos container-fluid  mb-3">
                     <div class="row add-item-box column-card px-5 py-5">
                         <form action="">
-                            <div class="row px-5 justify-content-between">
+                            <div class="row px-5 justify-content-around">
                                 
                                 <div class="col-lg-3 col-md-4 mt-4">
                                     <div class="img-with-add-file mb-0">
@@ -115,11 +115,22 @@
                                 </div>
 
                                 <div class="col-lg-7 col-md-12 p-1 pt-3">
-                                    <div class="row justify-content-between">
-                                        <label for="itemName" class="mt-1 addlabel">Item Name:&nbsp;</label>
-                                        <input type="text" name="itemName" class="addItem" placeholder="Please Input Name of Item" required> 
+                                    <div class="row">
+                                        <label for="itemPrice" class="mt-1 addlabel">Item Price:&nbsp;</label>
+                                        <input type="number" name="itemPrice" min="0.00" class="no-Arrow addItem addPrice" placeholder="0.00" required>
                                     </div>
                                     
+
+                                    <div class="row mt-2 justify-content-start">
+                                        <label for="itemQuantity" class="mt-1 addlabel qtyLbl">Item Quantity:&nbsp;</label>
+                                        <input type="number" name="itemQuantity" min="1" class="addItem addPrice" value="1" required>
+                                    </div>
+
+                                    <div class="row mt-2">
+                                        <label for="itemName" class="mt-1 addlabel">Item Name:&nbsp;</label>
+                                        <input type="text" name="itemName" class="addItem" placeholder="Please Input Name of Item" required>
+                                    </div> 
+
                                     <div class="row mt-2">
                                         <label for="brandName" class="mt-1 addlabel">Brand Name:&nbsp;</label>
                                         <input type="text" name="brandName" class="addItem" placeholder="Please Input Brand of Item" required> 
@@ -150,8 +161,19 @@
                                         </select>
                                     </div>
 
+
+                                    <div class="row mt-2">
+                                        <label for="delivery-mode" class="mt-1 ml-0 addlabel mb-2">Delivery Mode:&nbsp;</label>
+                                        <ul class="list-group list-group-horizontal addDeliver" >
+                                            <li class="list-group-item addDeliver p-0 pt-3 mr-3">
+                                                <input type="checkbox" name="delivery" class="mr-2 ml-0">Delivery                                                   
+                                            </li>
+                                            <li class="list-group-item addDeliver p-0 pt-3"><input type="checkbox" name="walkIn" style="font-size: 2rem;" class="mr-2" id="">Walk-in Service</li>
+                                        </ul>
+                                    </div>
+
                                     <div class="row mt-2" id="desc-add">
-                                        <label for="description" class="mt-1 addlabel">Brand Name:&nbsp;</label>
+                                        <label for="description" class="mt-1 addlabel">Description:&nbsp;</label>
                                         <textarea name="description" id="" cols="32" rows="2" class="descText"  placeholder="Some Item Description . . ." required></textarea>
                                     </div>
                                 </div>
