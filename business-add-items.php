@@ -3,9 +3,10 @@ session_start();
 
     include('connection.php');
     include('function1.php');
+    
 
      $user_data = check_user($con);
-
+     
 
 ?>
 
@@ -75,9 +76,16 @@ session_start();
                 <li class="nav-item"><a href="login.html">Login</a></li>
                 <li class="nav-item"><a href="regis-main.html">Register</a></li>
             </ul>
-            <ul id = "navbar-nav" style="display:none;">
+            <ul id = "navbar-nav-business" style="display:none;">
+                <?php 
+                        if($_SESSION['privilage'] == 'business')
+                        {
+                            echo '<script> document.getElementById("navbar-nav").style.display = "none";
+                                     document.getElementById("navbar-nav-business").style.display = "inline"</script>';
+                        }
+                    ?>
                 <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
-                <li class="nav-item"><a href="" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome User</a></li>
+                <li class="nav-item"><a href="business.php" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome, <?php echo $user_data['OwnerName']; ?>  </a></li>
             </ul>
         </nav>
         
@@ -112,7 +120,7 @@ session_start();
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12">
                 <div class="container-pos container-fluid  mb-3">
                     <div class="row add-item-box column-card px-5 py-5">
-                        <form action="">
+                       <form action="business-add-items1.php" method="post"> 
                             <div class="row px-5 justify-content-around">
                                 
                                 <div class="col-lg-3 col-md-4 mt-4">

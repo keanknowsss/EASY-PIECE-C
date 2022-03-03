@@ -87,7 +87,7 @@ session_start();
                              document.getElementById("navbar-nav-user").style.display = "inline" </script>';
                     }
                 ?>
-                <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
+                <li class="nav-item"><a href="cart.html"><i class="fa fa-shopping-cart"></i></a></li>
                 <li class="nav-item"><a href="customer.php" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome, <?php echo $user_data['FullName']; ?>  </a></li>
             </ul>
             <ul id = "navbar-nav-business" style="display:none;">
@@ -99,7 +99,7 @@ session_start();
                         }
                     ?>
                 <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
-                <li class="nav-item"><a href="business-profile.html" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome, <?php echo $business_data['OwnerName']; ?>  </a></li>
+                <li class="nav-item"><a href="business.php" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome, <?php echo $user_data['OwnerName']; ?>  </a></li>
             </ul>
         </nav>
         

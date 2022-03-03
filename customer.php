@@ -136,7 +136,7 @@ session_start();
                             <hr class="divider-1 divider-mod-3">
                             <div class="links-profile col-12 mb-5">
                                 <ul>
-                                    <li><input type="submit" class="btn btn-custom-1 btn-trans-1 btn-profile" value="Save Password"></li>
+                                    <li><input type="submit" name="update" class="btn btn-custom-1 btn-trans-1 btn-profile" value="Save Password"></li>
                                     <li><a href="#" onclick="returntoProf()" id="pass-button" class="btn btn-custom-1 btn-trans-1 btn-profile">Cancel Change</a></li>
                                 </ul>
                             </div>

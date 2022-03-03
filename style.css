@@ -1487,10 +1487,11 @@ nav ul li a:hover{
     background-color: red;
 }
 
-/* html, body {
+html, body {
     height: 100%;
 }
 
+/* 
 #blah {
     overflow: y;
     min-height: 100%;
@@ -1533,7 +1534,6 @@ footer {
     margin-left: -1rem;
     margin-top: 0;
     background:#212529;
-    outline: 5px red solid;
 }
 
 .inc-qty {
@@ -1542,7 +1542,8 @@ footer {
 }
 
 .inQty-widthMAX {
-    width: 20px;
+    width: 50%;
+    max-width: 3rem;
 }
 
 .list-cart {
@@ -1551,4 +1552,85 @@ footer {
 
 .add-padding {
     padding-bottom: 20vh
+}
+
+.price-sum {
+    text-align: right;
+}
+
+
+/* ======================
+    Products Page CONTENT
+========================*/
+.table-prof {
+    font-size: 0.9rem;
+}
+
+.table-prof .profTitle {
+    width:7rem;
+    font-weight: bold;
+}
+
+.table-prof td {
+    vertical-align: top;
+}
+
+
+
+/* .radio {
+	background: #454857;
+	padding: 4px;
+	border-radius: 3px;
+	box-shadow: inset 0 0 0 3px rgba(35, 33, 45, 0.3),
+		0 0 0 3px rgba(185, 185, 185, 0.3);
+	position: relative;
+} */
+
+.radio input {
+    font-family: var(--ff-metroExtraB);
+	width: auto;
+	height: 100%;
+	appearance: none;
+	outline: none;
+	cursor: pointer;
+	border-radius: 2px;
+	background: white;
+	color: black;
+	font-size: 14px;
+	transition: all 100ms linear;
+    font-size: 1.1rem;
+    border:1px black solid;
+}
+
+#delivery-rb {
+    padding: 2vh 29%;
+}
+
+.radio input:hover{
+    background:#cadfdb;
+    transition: background 0.2s ease-in;
+}
+
+
+
+#walkin-rb {
+    padding: 2vh 30%;
+}
+
+.radio input:checked {
+	background-image: linear-gradient(180deg, #95d891, #74bbad);
+	color: #fff;
+	box-shadow: 0 1px 1px #0000002e;
+	text-shadow: 0 1px 0px #79485f7a;
+}
+
+.radio input:before {
+	content: attr(label);
+	display: inline-block;
+	text-align: center;
+	width: 100%;
+}
+
+.margin-mod {
+    margin-top: 1.1rem;
 }

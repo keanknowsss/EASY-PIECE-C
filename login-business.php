@@ -2,7 +2,7 @@
 session_start();
 
     include('connection.php');
-    include('function2.php');
+    include('function1.php');
 
     if($_SERVER['REQUEST_METHOD'] == "POST")
     {
@@ -31,7 +31,7 @@ session_start();
                                 {
                                     $_SESSION['privilage'] = 'business';
                                     $_SESSION['business_id'] = $business_data['business_id'];
-                                    header("Location: index1.php");
+                                    header("Location: index.php");
                                     die;
                                 }
                             }
