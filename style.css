@@ -1533,7 +1533,6 @@ footer {
     margin-left: -1rem;
     margin-top: 0;
     background:#212529;
-    outline: 5px red solid;
 }
 
 .inc-qty {
@@ -1542,7 +1541,8 @@ footer {
 }
 
 .inQty-widthMAX {
-    width: 20px;
+    width: 50%;
+    max-width: 3rem;
 }
 
 .list-cart {
@@ -1551,4 +1551,8 @@ footer {
 
 .add-padding {
     padding-bottom: 20vh
+}
+
+.price-sum {
+    text-align: right;
 }
