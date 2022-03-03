@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+    include('connection.php');
+    include('function1.php');
+
+     $user_data = check_user($con);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -64,9 +75,16 @@
                 <li class="nav-item"><a href="login.html">Login</a></li>
                 <li class="nav-item"><a href="regis-main.html">Register</a></li>
             </ul>
-            <ul id = "navbar-nav" style="display:none;">
+            <ul id = "navbar-nav-business" style="display:none;">
+                <?php 
+                        if($_SESSION['privilage'] == 'business')
+                        {
+                            echo '<script> document.getElementById("navbar-nav").style.display = "none";
+                                     document.getElementById("navbar-nav-business").style.display = "inline"</script>';
+                        }
+                    ?>
                 <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
-                <li class="nav-item"><a href="" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome User</a></li>
+                <li class="nav-item"><a href="business-profile.html" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome, <?php echo $user_data['OwnerName']; ?>  </a></li>
             </ul>
         </nav>
         
@@ -103,7 +121,7 @@
 
                     <div class="row column-card mb-5 pt-2 pb-2">
                         <div class="col-6">
-                            <h2 class="title-invent">$Business_Name's Items</h2>
+                            <h2 class="title-invent"><?php echo $user_data['BusinessName'];?>'s Items</h2>
                         </div>
 
                         <div class="col-2">

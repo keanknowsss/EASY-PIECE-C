@@ -1,3 +1,14 @@
+<?php
+session_start();
+
+    include('connection.php');
+    include('function1.php');
+
+     $user_data = check_user($con);
+
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>

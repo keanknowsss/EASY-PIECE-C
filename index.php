@@ -4,8 +4,8 @@ session_start();
     include('connection.php');
     include('function1.php');
 
-     //$user_data = check_user($con);
-     $business_data = check_business($con);
+     $user_data = check_user($con);
+   
      
 
      
