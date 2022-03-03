@@ -4,13 +4,16 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Profile | EASY PIECE</title>
+    <title>Product Description | EASY PIECE C</title>
 
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- JAVASCRIPT -->
+    <script type="text/JavaScript" src="script.js"></script>
 
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -81,9 +84,9 @@
 
    
 
-    <div class="content-bg container-fluid pb-4 full-screen-page" id="profileCustom">
-        <div class="row container-fluid justify-content-center pt-5">
-            <div class="column-card container-fluid col-lg-8 col-md-8 col-sm-12 mr-4 ">
+    <div class="some-container content-bg container-fluid pb-4" id="profileCustom">
+        <div class="row container-fluid justify-content-center pt-5 mb-5">
+            <div class="column-card container-fluid col-lg-8 col-md-8 col-sm-12 mr-3">
                 <form action="">
                     <div class="row ml-3 mr-2 mt-4 mb-5 justify-content-around">
                         <img src="items/placeholder-image.png" class="img-product-display" alt="">
@@ -104,9 +107,9 @@
                             <div class="row ml-1 mt-4">
                                 <div class="inc-qty">
                                     <label for="quantity">Quantity:</label>
-                                    <input type="button" class="btn-custom-1 btn-increment rounded" value="-">
-                                    <input type="number" value="1" name="quantity" id="" class="addItem no-mx inQty rounded">
-                                    <input type="button" class="btn-custom-1 btn-increment rounded" value="+">
+                                    <input type="button" class="btn-custom-1 btn-increment rounded" value="-" onclick="decrement(document.getElementById('qty'))">
+                                    <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem no-mx inQty rounded">
+                                    <input type="button" class="btn-custom-1 btn-increment rounded" value="+" onclick="increment(document.getElementById('qty'))">
                                 </div>
                             </div>
 
@@ -116,8 +119,7 @@
 
                             <hr class="divider-1 divider-mod-3 mt-3">
                             <div class="row ml-1 mt-1 mb-3">
-                                <h4>Description</h4>
-                                <p class="description-text mt-2">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Possimus, optio provident. Unde tempore exercitationem nostrum voluptate, corrupti, veritatis hic velit dolor iste alias temporibus porro animi eaque amet debitis quo!</p>
+                                <span><span class="desc-dis">Description</span> <br>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae molestias harum consequatur. Repellendus, quidem neque debitis nostrum, recusandae aliquid quas, nisi laudantium atque sequi laborum.</span>
                             </div>
 
                             <hr class="divider-1 divider-mod-3 mt-3">
@@ -128,33 +130,31 @@
 
             </div>
 
-            <div class="col-lg-2 col-md-3 col-sm-12 column-card p-3 ">
-                <div class="row ml-2">
-                    <h5 class="mb-1"><strong>Delivery Options Available:</strong></h5>
-                    <ul class="list-inline ">
-                        <li class="list-inline-item px-4 py-2" id="delivery">Delivery</li>
-                        <li class="list-inline-item px-4 py-2" id="walk-in">Walk-in</li>
-                    </ul>
-                </div>
-                
-                <div class="row ml-2 mt-3">
-                    <h5><strong>Owned by:</strong></h5>
-                </div>
-
-                <div class="row ml-2">
-                    <p>$BUSINESS_NAME</p>
-                </div>
-
-                <div class="row ml-2 mt-4">
-                    <h5><strong>Seller's Address:</strong></h5>
-                </div>
-
-                <div class="row ml-2">
-                    <p>$BUSINESS_ADDRESS</p>
-                </div>
-            
-                <div class="row ml-2">
-                    <a href="" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5">Visit Store</a>
+            <div class="col-lg-3 col-md-3 col-sm-12 ">
+                <div class="column-card">
+                    <div class="row ml-2 ">
+                        <h5 class="mb-1"><strong>Delivery Options Available:</strong></h5>
+                        <ul class="list-inline ">
+                            <li class="list-inline-item px-2 py-2" id="delivery">Delivery</li>
+                            <li class="list-inline-item px-2 py-2 mt-2" id="walk-in">Walk-in</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="row ml-2 mt-3">
+                        <h5><strong>Owned by:</strong></h5>
+                    </div>
+                    <div class="row ml-2">
+                        <p>$BUSINESS_NAME</p>
+                    </div>
+                    <div class="row ml-2 mt-4">
+                        <h5><strong>Seller's Address:</strong></h5>
+                    </div>
+                    <div class="row ml-2">
+                        <p>$BUSINESS_ADDRESS</p>
+                    </div>
+                    <div class="row ml-2">
+                        <a href="" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5">Visit Store</a>
+                    </div>
                 </div>
             </div>
             

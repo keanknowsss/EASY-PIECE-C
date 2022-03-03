@@ -1467,10 +1467,66 @@ nav ul li a:hover{
 }
 
 #delivery {
-    background-color: RGB(27,202,29);
+    background-color: lawngreen
 }
 
 #walk-in{
     background-color: red;
 }
 
+/* html, body {
+    height: 100%;
+}
+
+#blah {
+    overflow: y;
+    min-height: 100%;
+
+}
+
+.some-container {
+    overflow: auto;
+
+    min-height: 100%;
+}
+
+footer {
+    position: relative;
+    height: 100px;
+    margin-top: -100px;
+    clear:both;
+} */
+
+.blah{
+    display:block;
+    margin-bottom: 0;
+}
+
+.desc-dis {
+    font-size:1.8rem;
+}
+
+
+
+/* ======================
+    Products Page CONTENT
+========================*/
+.title-cart {
+    font-family: var(--ff-metroExtraB);
+    font-size: 2.5rem;
+}
+
+.divider-mod-5 {
+    margin-left: -1rem;
+    margin-top: 0;
+    background:#212529;
+}
+
+.inc-qty {
+    float:right;
+    margin:0;
+}
+
+.inQty-widthMAX {
+   width: 18%;
+}
