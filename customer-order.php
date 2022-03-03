@@ -81,7 +81,7 @@
    
     <div class="container-fluid profile-pos pb-4">
         
-        <div class="row gx-5">
+        <div class="row">
             <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
                 <ul>
                     <li>
