@@ -31,7 +31,7 @@ session_start();
 </head>
 <body>
         
-    <nav class="navbar navbar-expand-lg sticky-top container-nav">
+    <nav class="navbar navbar-expand-lg fixed-top container-nav">
         <div class="logo col-lg-3" >
             <a class="navbar-brand" href="index.html" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
