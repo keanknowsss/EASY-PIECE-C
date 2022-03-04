@@ -28,12 +28,18 @@ function check_user($con)
 
     //redirect to log in
 
-    header("Location: login.html"); 
+    header("Location: main-page.php"); 
     die;
 }
 
 
+function debug_to_console($data) {
+    $output = $data;
+    if (is_array($output))
+        $output = implode(',', $output);
 
+    echo "<script>console.log('Debug Objects: " . $output . "' );</script>";
+}
 
 
 function random_num($length)

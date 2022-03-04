@@ -1,13 +1,9 @@
-<?php
-session_start();
+<?php 
 
-    include('connection.php');
-    include('function2.php');
-
-     $user_data = check_login($con);
-
+    include('components.php');
 
 ?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -23,67 +19,16 @@ session_start();
     <!-- STYLE CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <!-- JAVASCRIPT -->
+    <script type="text/JavaScript" src="script.js"></script>
+
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
 </head>
 <body>
-        
-    <nav class="navbar navbar-expand-lg sticky-top container-nav">
-        <div class="logo col-lg-3" >
-            <a class="navbar-brand" href="index.html" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
-
-        </div>
-
-
-        <div class="justify-content-around form-inline mr-5">
-            <form class=" my-2 my-lg-0" action="search.php" method="get">
-                <div class="search-box ">
-                    <input type="search" name="search"  class="search" placeholder="Search Computer Components and Peripherals">
-                    <a href="index.html">
-                        <img src="images/Icons/search.png" class = "search-icon">
-                    </a>
-                </div>
-                
-            </form>
-            
-
-            <select name="categories" class="categories" value="categories">
-                <option value="none" class="placeholder">Categories</option>
-                <option value="cpu">Processor</option>
-                <option value="gpu">Graphics Card</option>
-                <option value="ram">Memory</option>
-                <option value="storage">Storage</option>
-                <option value="psu">Power Supply</option>
-                <option value="motherboard">Motherboard</option>
-                <option value="case">Case</option>
-                <option value="monitor">Monitor</option>
-                <option value="keyboard">Keyboard</option>
-                <option value="mouse">Mouse</option>
-                <option value="headset">Headset</option>
-                <option value="webcam">Webcam</option>
-                <option value="desktop">Pre-built Desktop</option>
-                <option value="laptop">Laptop</option>
-                <option value="cooling Fans">Cooling Fans</option>
-                <option value="nic">Interface Cards</option>
-                <option value="softwares">Softwares</option>
-                <option value="others">Others</option>
-            </select>
-        </div>
-        
-
-        <nav class="navbar-collapse justify-content-end mt-3 ml-5" id="guest">
-            <ul id = "navbar-nav">
-                <li class="nav-item"><a href="business.php">Welcome, <?php echo $user_data['OwnerName']; ?></a></li>
-                <li class="nav-item"><a href="regis-main.html"></a></li>
-            </ul>
-            <ul id = "navbar-nav" style="display:none;">
-                <li class="nav-item"><a href=""><i class="fa fa-shopping-cart"></i></a></li>
-                <li class="nav-item"><a href="customer-profile.html" style=letter-spacing:1px;><i class="fa fa-user"></i>&nbsp;&nbsp;Welcome User</a></li>
-            </ul>
-        </nav>
-        
-    </nav>
+    
+    <?php noAcc_mainNavbar(); ?>
         
 
     <div class="header">
@@ -94,7 +39,7 @@ session_start();
             <h1>For All Computer Parts and Peripherals</h1>
 
             <ul>
-                <li><a href="" class="btn btn-custom-1 btn-custom-trans-1">Browse Computer Parts</a></li>
+                <li><a href="allProducts.php" class="btn btn-custom-1 btn-custom-trans-1">Browse Computer Parts</a></li>
                 <li><a href="" class="btn btn-custom-1 btn-custom-trans-1">Proceed to PC Builder</a></li>
             </ul>
         </div>

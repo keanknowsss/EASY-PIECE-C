@@ -12,7 +12,15 @@ function decrement(id)
     }
 }
 
-function increment(id)
+function increment()
 {
-    id.value++;
+    console.log('xd');
+    // id.value++;
 }
+
+
+function searchCategory(category)
+{
+    window.location = "category-" + category.value +".php";
+}
+
