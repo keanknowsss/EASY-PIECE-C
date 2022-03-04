@@ -8,6 +8,8 @@ session_start();
     include('function1.php');
 
      $user_data = check_user($con);
+     $u_id = $user_data['user_id'];
+     //echo $u_id;
 
 
 ?>
