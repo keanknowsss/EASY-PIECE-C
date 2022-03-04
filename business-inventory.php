@@ -26,8 +26,8 @@ session_start();
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg sticky-top container-nav">
+<body class="d-flex flex-column">
+    <nav class="navbar navbar-expand-lg fixed-top container-nav">
         <div class="logo col-lg-3" >
             <a class="navbar-brand" href="index.php" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
@@ -97,10 +97,10 @@ session_start();
         </ul>
     </div>  
    
-    <div class="container-fluid profile-pos pb-4">
+    <div class="container-fluid profile-pos pb-4 content-1">
         
-        <div class="row gx-5">
-            <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
+        <div class="row content-1">
+            <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2">
                 <ul>
                     <li>
                         <h2><a href="business.php"  class="profile-button-unselected">PROFILE</a></h2>
@@ -117,7 +117,7 @@ session_start();
                 </ul>
             </div>
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12">
-                <div class="container-pos container-fluid">
+                <div class="container-pos container-fluid content-1 mb-5">
 
                     <div class="row column-card mb-5 pt-2 pb-2">
                         <div class="col-6">
@@ -129,114 +129,130 @@ session_start();
                         </div>
                     </div>
 
-                    <div class="row column-card mb-3">
+                    <div class="row column-card mb-3 ">
                         <div class="order-card container-fluid">
-                            <div class="row-business-name row">
-                                <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
+                            <div class="row">
+                                <div class="row-business-name">
+                                    <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
+                                </div>
                             </div>
 
                             <hr class="divider-1 divider-mod-1">
 
-                            <a href="" class="link-black-none">
-                                <div class="row row-order-brief container">
-                                    <div class="col-lg-1half">
-                                        <img src="items/placeholder-image.png" alt="product img">
+                            <div class="row pb-4">
+                                <a href="" class="link-black-none">
+                                    <div class="row row-order-brief container">
+                                        <div class="col">
+                                            <img src="items/placeholder-image.png" alt="product img">
+                                        </div>
+                                        <div class="col-7">
+                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
+                                        </div>
+                                        <div class="col">
+                                            <span>₱$num</span>
+                                        </div>
+                                        <div class="col">
+                                            <span>Qty: $num</span>
+                                        </div>
                                     </div>
-                                    <div class="col-7">
-                                        <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                    </div>
-                                    <div class="col">
-                                        <span>₱$num</span>
-                                    </div>
-                                    <div class="col">
-                                        <span>Qty: $num</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
 
                         </div>
                     </div>
 
-                    <div class="row column-card mb-3">
+                    <div class="row column-card mb-3 ">
                         <div class="order-card container-fluid">
-                            <div class="row-business-name row">
-                                <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
+                            <div class="row">
+                                <div class="row-business-name">
+                                    <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
+                                </div>
                             </div>
 
                             <hr class="divider-1 divider-mod-1">
 
-                            <a href="" class="link-black-none">
-                                <div class="row row-order-brief container">
-                                    <div class="col-lg-1half">
-                                        <img src="items/placeholder-image.png" alt="product img">
+                            <div class="row pb-4">
+                                <a href="" class="link-black-none">
+                                    <div class="row row-order-brief container">
+                                        <div class="col">
+                                            <img src="items/placeholder-image.png" alt="product img">
+                                        </div>
+                                        <div class="col-7">
+                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
+                                        </div>
+                                        <div class="col">
+                                            <span>₱$num</span>
+                                        </div>
+                                        <div class="col">
+                                            <span>Qty: $num</span>
+                                        </div>
                                     </div>
-                                    <div class="col-7">
-                                        <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                    </div>
-                                    <div class="col">
-                                        <span>₱$num</span>
-                                    </div>
-                                    <div class="col">
-                                        <span>Qty: $num</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
 
                         </div>
                     </div>
 
-                    <div class="row column-card mb-3">
+                    <div class="row column-card mb-3 ">
                         <div class="order-card container-fluid">
-                            <div class="row-business-name row">
-                                <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
+                            <div class="row">
+                                <div class="row-business-name">
+                                    <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
+                                </div>
                             </div>
 
                             <hr class="divider-1 divider-mod-1">
 
-                            <a href="" class="link-black-none">
-                                <div class="row row-order-brief container">
-                                    <div class="col-lg-1half">
-                                        <img src="items/placeholder-image.png" alt="product img">
+                            <div class="row pb-4">
+                                <a href="" class="link-black-none">
+                                    <div class="row row-order-brief container">
+                                        <div class="col">
+                                            <img src="items/placeholder-image.png" alt="product img">
+                                        </div>
+                                        <div class="col-7">
+                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
+                                        </div>
+                                        <div class="col">
+                                            <span>₱$num</span>
+                                        </div>
+                                        <div class="col">
+                                            <span>Qty: $num</span>
+                                        </div>
                                     </div>
-                                    <div class="col-7">
-                                        <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                    </div>
-                                    <div class="col">
-                                        <span>₱$num</span>
-                                    </div>
-                                    <div class="col">
-                                        <span>Qty: $num</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
 
                         </div>
                     </div>
 
-                    <div class="row column-card mb-3">
+                    <div class="row column-card mb-3 ">
                         <div class="order-card container-fluid">
-                            <div class="row-business-name row">
-                                <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
+                            <div class="row">
+                                <div class="row-business-name">
+                                    <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
+                                </div>
                             </div>
 
                             <hr class="divider-1 divider-mod-1">
 
-                            <a href="" class="link-black-none">
-                                <div class="row row-order-brief container">
-                                    <div class="col-lg-1half">
-                                        <img src="items/placeholder-image.png" alt="product img">
+                            <div class="row pb-4">
+                                <a href="" class="link-black-none">
+                                    <div class="row row-order-brief container">
+                                        <div class="col">
+                                            <img src="items/placeholder-image.png" alt="product img">
+                                        </div>
+                                        <div class="col-7">
+                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
+                                        </div>
+                                        <div class="col">
+                                            <span>₱$num</span>
+                                        </div>
+                                        <div class="col">
+                                            <span>Qty: $num</span>
+                                        </div>
                                     </div>
-                                    <div class="col-7">
-                                        <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                    </div>
-                                    <div class="col">
-                                        <span>₱$num</span>
-                                    </div>
-                                    <div class="col">
-                                        <span>Qty: $num</span>
-                                    </div>
-                                </div>
-                            </a>
+                                </a>
+                            </div>
 
                         </div>
                     </div>
@@ -249,25 +265,28 @@ session_start();
                
                 
             </div>
+
+            <footer class="footer" id="footer-mod-2">
+                <hr class="footer-line">
+
+                <div class="links">
+                    <ul>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Terms of Use</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Frequently Asked Questions</a></li>
+                    </ul>
+                    
+                </div>
+
+                <p class="footer-text">COPYRIGHT ©2022 | All Rights Reserved</p>
+            </footer>
+
         </div>
+        
     </div>
       
-    <footer class="footer" id="footer-mod-1">
-        <hr class="footer-line">
-
-        <div class="links">
-            <ul>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Terms of Use</a></li>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Frequently Asked Questions</a></li>
-            </ul>
-            
-        </div>
-
-        <p class="footer-text">COPYRIGHT ©2022 | All Rights Reserved</p>
-    </footer>
-
+    
 
 
 

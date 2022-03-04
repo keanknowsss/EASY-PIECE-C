@@ -16,7 +16,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg sticky-top container-nav">
+    <nav class="navbar navbar-expand-lg fixed-top container-nav">
         <div class="logo col-lg-3" >
             <a class="navbar-brand" href="index.html" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
@@ -80,71 +80,65 @@
     </div>
 
 
-    <div class="content-1">
-        <img src="images/background-1.png" alt="">
-        
-        <div class="container-fluid mr-5">
-            <div class="row row-4">
-                <div class="row-text-2">
-                    <h1>CREATE YOUR ACCOUNT</h1>
-                    <h2>CUSTOMER</h2>
-                </div>
-            </div>
+    <div class="content-1 container-fluid">
+        <div class="row">
+            <img src="images/background-1.png" class="content-1-background" alt="">
             
-            <div class="row-4">
-                <form action="regis-customer.php" method="post">
-                    <fieldset>
-                        <div class="col-form-1">
-                            <label for="fullName">Full Name:</label><br>
-                            <div class="name">
-                                <input type="text" name="fullName" placeholder="First Name Middle Initial Surname" required>
-                            </div>
-
-                            <label for="emailCustomer">Email:</label><br>
-                            <input type="email" name="emailCustomer" placeholder="Please Enter your Email Address" required>
-                            
-                            <label for="password">Password:</label><br>
-                            <input type="password" name="password" style="width: 74%" placeholder="Please Enter your Password" required>
-
-                            <label for="numberCustomer">Phone Number:</label><br>
-                            <input type="tel" name="numberCustomer" style="width: 74%" placeholder="Please Enter your Phone Number" required>
-
-                            
-
-                        </div>
-
-                        <div class="col-form-1 part2">
-                            
-                            <div id="birthdate-and-sex">
-                                <div class="birthdate">
-                                    <label for="birthDate">Birthdate:</label><br>
-                                    <input type="date" name="birthDate" id="birthDate" required>
+            <div class="container-fluid mt-5 ">
+                <div class="row row-4">
+                    <div class="row-text-2">
+                        <h1>CREATE YOUR ACCOUNT</h1>
+                        <h2>CUSTOMER</h2>
+                    </div>
+                </div>
+            
+                <div class="row-4">
+                    <form action="regis-customer.php" method="post">
+                        <fieldset>
+                            <div class="col-form-1">
+                                <label for="fullName">Full Name:</label><br>
+                                <div class="name">
+                                    <input type="text" name="fullName" placeholder="First Name Middle Initial Surname" required>
                                 </div>
-                                <div class="sex">
-                                    <label for="">Sex:</label><br>
-                                    <select name="sex" id="sex">
-                                        <option value="male">Male</option>
-                                        <option value="female">Female</option>
-                                    </select>
+                                <label for="emailCustomer">Email:</label><br>
+                                <input type="email" name="emailCustomer" placeholder="Please Enter your Email Address" required>
+            
+                                <label for="password">Password:</label><br>
+                                <input type="password" name="password" style="width: 74%" placeholder="Please Enter your Password" required>
+                                <label for="numberCustomer">Phone Number:</label><br>
+                                <input type="tel" name="numberCustomer" style="width: 74%" placeholder="Please Enter your Phone Number" required>
+            
+                            </div>
+                            <div class="col-form-1 part2">
+            
+                                <div id="birthdate-and-sex">
+                                    <div class="birthdate">
+                                        <label for="birthDate">Birthdate:</label><br>
+                                        <input type="date" name="birthDate" id="birthDate" required>
+                                    </div>
+                                    <div class="sex">
+                                        <label for="">Sex:</label><br>
+                                        <select name="sex" id="sex">
+                                            <option value="male">Male</option>
+                                            <option value="female">Female</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <br><label for="address">Address:</label><br>
+                                <input type="text" name="address" id="address" placeholder="Zip Code, Block No., House No., Street Name, Barangay, City" required>
+                                <div class="check-with-text">
+                                    <input type="checkbox" name="agreement" class="checkbox" required>
+                                    <label for="agreement">I agree to I agree to Easy PC's <a href="">Terms of Use</a> and <a href="">Privacy Policy</a></label>
+                                </div>
+                                <input type="submit" value="Sign Up" class="btn btn-custom-1 btn-custom-trans-1">
+                                <div class="links-2">
+                                    <a href="login.html">Login</a><br>
+                                    <a href="regis-business.html">Create a Business</a>
                                 </div>
                             </div>
-
-                            <br><label for="address">Address:</label><br>
-                            <input type="text" name="address" id="address" placeholder="Zip Code, Block No., House No., Street Name, Barangay, City" required>
-
-                            <div class="check-with-text">
-                                <input type="checkbox" name="agreement" class="checkbox" required>
-                                <label for="agreement">I agree to I agree to Easy PC's <a href="">Terms of Use</a> and <a href="">Privacy Policy</a></label>
-                            </div>
-
-                            <input type="submit" value="Sign Up" class="btn btn-custom-1 btn-custom-trans-1">
-                            <div class="links-2">
-                                <a href="login.html">Login</a><br>
-                                <a href="regis-business.html">Create a Business</a>
-                            </div>
-                        </div>
-                    </fieldset>
-                </form>
+                        </fieldset>
+                    </form>
+                </div>
             </div>
         </div>
 

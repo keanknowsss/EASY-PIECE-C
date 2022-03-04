@@ -4,7 +4,7 @@ session_start();
     include('connection.php');
     include('function1.php');
 
-     $user_data = check_user($con);
+    //  $user_data = check_user($con);
 
 
 ?>
@@ -26,8 +26,8 @@ session_start();
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg sticky-top container-nav">
+<body class="d-flex flex-column">
+    <nav class="navbar navbar-expand-lg fixed-top container-nav">
         <div class="logo col-lg-3" >
             <a class="navbar-brand" href="index.php" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
@@ -99,9 +99,9 @@ session_start();
 
    
 
-    <div class="container-fluid profile-pos pb-4" id="profileCustom">
+    <div class="container-fluid profile-pos pb-4 content-1" id="profileCustom">
         
-        <div class="row gx-5">
+        <div class="row content-1">
             <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
                 <ul>
                     <li>
@@ -120,7 +120,7 @@ session_start();
             </div>
             
             <div class="content-bg content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12" id="content-change-password">
-                <div class="container-fluid">
+                <div class="container-fluid content-1 mb-5">
                     <div class="change-password mt-5">
                         <h2>Change Password:</h2>
                         <hr class="divider-mod-2 rounded">
@@ -154,7 +154,7 @@ session_start();
 
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12" id="content-main">
                 <form action="editBus.php" method="post"> 
-                    <div class="container-fluid">
+                    <div class="container-fluid content-1 mb-5">
                         <div class="row justify-content-start mr-5">
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Business Name:</h4>
@@ -225,25 +225,26 @@ session_start();
                
                 
             </div>
+            <footer class="footer" id="footer-mod-2">
+                <hr class="footer-line">
+
+                <div class="links">
+                    <ul>
+                        <li><a href="">About Us</a></li>
+                        <li><a href="">Terms of Use</a></li>
+                        <li><a href="">Privacy Policy</a></li>
+                        <li><a href="">Frequently Asked Questions</a></li>
+                    </ul>
+                    
+                </div>
+
+                <p class="footer-text">COPYRIGHT ©2022 | All Rights Reserved</p>
+            </footer>
         </div>
     </div>
 
       
-    <footer class="footer" id="footer-mod-1">
-        <hr class="footer-line">
-
-        <div class="links">
-            <ul>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Terms of Use</a></li>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Frequently Asked Questions</a></li>
-            </ul>
-            
-        </div>
-
-        <p class="footer-text">COPYRIGHT ©2022 | All Rights Reserved</p>
-    </footer>
+    
 
 
     <!-- Main Script -->

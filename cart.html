@@ -18,8 +18,8 @@
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg sticky-top container-nav">
+<body class="d-flex flex-column min-vh-100 content-bg"> 
+    <nav class="navbar navbar-expand-lg fixed-top container-nav">
         <div class="logo col-lg-3" >
             <a class="navbar-brand" href="index.html" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
@@ -85,49 +85,23 @@
    
 
     <form action="goPlaceOrder.php" method="post">
-        <div class="content-bg some-container container-fluid pb-4 " id="profileCustom" >
-            <div class="row justify-content-center pt-3 mb-5 pb-5 add-padding">
+        <div class="content-bg some-container container-fluid pb-4 content-1" id="profileCustom" >
+            <div class="row pt-3 mb-5 pb-5 add-padding content-1">
                 <div class="container-fluid col-lg-8 col-md 8 col-sm-12 mr-0 list-cart">
                     <div class="row mt-2">
                         <h1 class="title-cart">MY CART <i class="fa fa-shopping-cart" style="font-size:3.5rem"></i></h1>
                     </div>
                     <hr class="divider-1 divider-mod-4 divider-mod-5">
                     <div class="row ml-3">
-                        <div class="row column-card">
-                            <div class="order-card container-fluid">
-                                <div class="row-business-name row justify-content-between mr-1">
-                                    <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
-                                </div>
-                                <hr class="divider-1 divider-mod-1">
-                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0">
-                                        <div class="col-lg-1half">
-                                            <input type="checkbox" name="" id="" class="mr-3">
-                                            <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
-                                        </div>
-                                        <div class="col-7 mr-0">
-                                            <a href="" class="link-black-none">
-                                                <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                            </a>
-                                        </div>
-                                        <div class="mr-3 ml-2 mr-2">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col inc-qty mx-0 my-0 px-0 ml-3">
-                                            <label for="quantity">Quantity:</label><br>
-                                                <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem  inQty-widthMAX no-mx inQty rounded">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
                         <div class="row column-card mt-2">
                             <div class="order-card container-fluid">
                                 <div class="row-business-name row justify-content-between mr-1">
                                     <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
                                 </div>
                                 <hr class="divider-1 divider-mod-1">
-                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0">
-                                        <div class="col-lg-1half">
-                                            <input type="checkbox" name="" id="" class="mr-3">
+                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
+                                        <div class="col">
+                                            <input type="checkbox" name="" id="" class="mr-3 mt-4">
                                             <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
                                         </div>
                                         <div class="col-7 mr-0">
@@ -145,62 +119,97 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="row column-card mt-2">
-                                <div class="order-card container-fluid">
-                                    <div class="row-business-name row justify-content-between mr-1">
-                                        <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
-                                    </div>
-                                    <hr class="divider-1 divider-mod-1">
-                                        <div class="row row-order-brief container-fluid p-0 ml-0 mr-0">
-                                            <div class="col-lg-1half">
-                                                <input type="checkbox" name="" id="" class="mr-3">
-                                                <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
-                                            </div>
-                                            <div class="col-7 mr-0">
-                                                <a href="" class="link-black-none">
-                                                    <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                                </a>
-                                            </div>
-                                            <div class="mr-3 ml-2 mr-2">
-                                                <span>₱$num</span>
-                                            </div>
-                                            <div class="col inc-qty mx-0 my-0 px-0 ml-3">
-                                                <label for="quantity">Quantity:</label><br>
-                                                    <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem  inQty-widthMAX no-mx inQty rounded">
-                                            </div>
+                        
+                    </div>
+                    <div class="row ml-3">
+                        <div class="row column-card mt-2">
+                            <div class="order-card container-fluid">
+                                <div class="row-business-name row justify-content-between mr-1">
+                                    <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
+                                </div>
+                                <hr class="divider-1 divider-mod-1">
+                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
+                                        <div class="col">
+                                            <input type="checkbox" name="" id="" class="mr-3 mt-4">
+                                            <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
+                                        </div>
+                                        <div class="col-7 mr-0">
+                                            <a href="" class="link-black-none">
+                                                <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
+                                            </a>
+                                        </div>
+                                        <div class="mr-3 ml-2 mr-2">
+                                            <span>₱$num</span>
+                                        </div>
+                                        <div class="col inc-qty mx-0 my-0 px-0 ml-3">
+                                            <label for="quantity">Quantity:</label><br>
+                                                <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem  inQty-widthMAX no-mx inQty rounded">
                                         </div>
                                     </div>
                                 </div>
-        
-                            <div class="row column-card mt-2">
-                                <div class="order-card container-fluid">
-                                    <div class="row-business-name row justify-content-between mr-1">
-                                        <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
-                                    </div>
-                                    <hr class="divider-1 divider-mod-1">
-                                        <div class="row row-order-brief container-fluid p-0 ml-0 mr-0">
-                                            <div class="col-lg-1half">
-                                                <input type="checkbox" name="" id="" class="mr-3">
-                                                <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
-                                            </div>
-                                            <div class="col-7 mr-0">
-                                                <a href="" class="link-black-none">
-                                                    <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                                </a>
-                                            </div>
-                                            <div class="mr-3 ml-2 mr-2">
-                                                <span>₱$num</span>
-                                            </div>
-                                            <div class="col inc-qty mx-0 my-0 px-0 ml-3">
-                                                <label for="quantity">Quantity:</label><br>
-                                                    <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem  inQty-widthMAX no-mx inQty rounded">
-                                            </div>
+                            </div>
+                        
+                    </div>
+                    <div class="row ml-3">
+                        <div class="row column-card mt-2">
+                            <div class="order-card container-fluid">
+                                <div class="row-business-name row justify-content-between mr-1">
+                                    <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
+                                </div>
+                                <hr class="divider-1 divider-mod-1">
+                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
+                                        <div class="col">
+                                            <input type="checkbox" name="" id="" class="mr-3 mt-4">
+                                            <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
+                                        </div>
+                                        <div class="col-7 mr-0">
+                                            <a href="" class="link-black-none">
+                                                <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
+                                            </a>
+                                        </div>
+                                        <div class="mr-3 ml-2 mr-2">
+                                            <span>₱$num</span>
+                                        </div>
+                                        <div class="col inc-qty mx-0 my-0 px-0 ml-3">
+                                            <label for="quantity">Quantity:</label><br>
+                                                <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem  inQty-widthMAX no-mx inQty rounded">
                                         </div>
                                     </div>
                                 </div>
+                            </div>
+                        
+                    </div>
+                    <div class="row ml-3">
+                        <div class="row column-card mt-2">
+                            <div class="order-card container-fluid">
+                                <div class="row-business-name row justify-content-between mr-1">
+                                    <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
+                                </div>
+                                <hr class="divider-1 divider-mod-1">
+                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
+                                        <div class="col">
+                                            <input type="checkbox" name="" id="" class="mr-3 mt-4">
+                                            <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
+                                        </div>
+                                        <div class="col-7 mr-0">
+                                            <a href="" class="link-black-none">
+                                                <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
+                                            </a>
+                                        </div>
+                                        <div class="mr-3 ml-2 mr-2">
+                                            <span>₱$num</span>
+                                        </div>
+                                        <div class="col inc-qty mx-0 my-0 px-0 ml-3">
+                                            <label for="quantity">Quantity:</label><br>
+                                                <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem  inQty-widthMAX no-mx inQty rounded">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        
                     </div>
                 </div>
-                <div class="col pt-5 ml-0 mt-5">
+                <div class="col pt-5 ml-0 mt-5 content-1">
                     <div class="column-card">
                         <div class="row ml-2 mt-2">
                             <h4 class="mb-1"><strong>Delivery Options Available:</strong></h4>
@@ -227,14 +236,16 @@
                         </div>
                     </div>
                 </div>
+                
+
+                
             </div>
+            
         </div>
+        
     </form>
     
-    
-
-      
-    <footer class="footer" id="footer-mod-1">
+    <footer class="footer mt-auto"  id="footer-mod-1">
         <hr class="footer-line">
 
         <div class="links">
@@ -249,6 +260,9 @@
 
         <p class="footer-text">COPYRIGHT ©2022 | All Rights Reserved</p>
     </footer>
+
+      
+    
 
 
 

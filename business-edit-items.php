@@ -15,8 +15,8 @@
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg sticky-top container-nav">
+<body class="d-flex flex-column">
+    <nav class="navbar navbar-expand-lg fixed-top container-nav">
         <div class="logo col-lg-3" >
             <a class="navbar-brand" href="index.php" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
@@ -79,10 +79,10 @@
         </ul>
     </div>  
    
-    <div class="container-fluid profile-pos pb-4">
+    <div class="container-fluid profile-pos pb-4 content-1">
         
-        <div class="row gx-5">
-            <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
+        <div class="row content-1">
+            <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2">
                 <ul>
                     <li>
                         <h2><a href="business.php"  class="profile-button-unselected">PROFILE</a></h2>
@@ -99,22 +99,37 @@
                 </ul>
             </div>
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12">
-                <div class="container-pos container-fluid  mb-3">
-                    <div class="row add-item-box column-card px-5 py-5">
+                <div class="container-pos container-fluid content-1">
+                    <div class="row add-item-box column-card px-5 mb-5 py-5">
                         <form action="">
-                            <div class="row px-5 justify-content-between">
+                            <div class="row px-5 justify-content-around">
                                 
                                 <div class="col-lg-3 col-md-4 mt-4">
                                     <div class="img-with-add-file mb-0">
-                                        <img src="prev_img" alt="" class="add-item-pic mb-2" id="displayImg">
-                                        <div class="input-img ml-2">
-                                            <label for="inputImg" id="link-for-img" class="btn btn-custom-1 btn-custom-trans-1">Upload Image</label>
-                                            <input type="file" name="productImg" id="inputImg" required>
+                                        <div class="row">
+                                            <img src="items/placeholder-image.png" alt="" class="add-item-pic mb-2" id="displayImg">
                                         </div>
+                                        <div class="row">
+                                            <div class="input-img ml-2">
+                                                <label for="inputImg" id="link-for-img" class="btn btn-custom-1 btn-custom-trans-1">Upload Image</label>
+                                                <input type="file" name="productImg" id="inputImg" required>
+                                            </div>
+                                        </div>
+                                        
                                     </div>
                                 </div>
 
                                 <div class="col-lg-7 col-md-12 p-1 pt-3">
+                                    <div class="row">
+                                        <label for="itemPrice" class="mt-1 addlabel">Item Price:&nbsp;</label>
+                                        <input type="number" name="itemPrice" min="0.00" class="no-Arrow addItem addPrice" placeholder="0.00" required>
+                                    </div>
+                                    
+
+                                    <div class="row mt-2 justify-content-start">
+                                        <label for="itemQuantity" class="mt-1 addlabel qtyLbl">Item Quantity:&nbsp;</label>
+                                        <input type="number" name="itemQuantity" min="1" class="addItem addPrice" value="1" required>
+                                    </div>
                                     <div class="row justify-content-between">
                                         <label for="itemName" class="mt-1 addlabel">Item Name:&nbsp;</label>
                                         <input type="text" name="itemName" class="addItem" value="$item_name" required> 
@@ -150,6 +165,16 @@
                                         </select>
                                     </div>
 
+                                    <div class="row mt-2">
+                                        <label for="delivery-mode" class="mt-1 ml-0 addlabel mb-2">Delivery Mode:&nbsp;</label>
+                                        <ul class="list-group list-group-horizontal addDeliver" >
+                                            <li class="list-group-item addDeliver p-0 pt-3 mr-3">
+                                                <input type="checkbox" name="delivery" class="mr-2 ml-0">Delivery                                                   
+                                            </li>
+                                            <li class="list-group-item addDeliver p-0 pt-3"><input type="checkbox" name="walkIn" style="font-size: 2rem;" class="mr-2" id="">Walk-in Service</li>
+                                        </ul>
+                                    </div>
+
                                     <div class="row mt-2" id="desc-add">
                                         <label for="description" class="mt-1 addlabel">Brand Name:&nbsp;</label>
                                         <textarea name="description" id="" cols="32" rows="2" class="descText" required>$Description</textarea>
@@ -174,24 +199,26 @@
                
                 
             </div>
+
+            <footer class="footer  footer-mod-2" id="footer-mod-2">
+                <hr class="footer-line">
+
+                <div class="links">
+                <ul>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Terms of Use</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Frequently Asked Questions</a></li>
+                </ul>
+            
+                </div>
+
+                <p class="footer-text">COPYRIGHT ©2022 | All Rights Reserved</p>
+            </footer>
         </div>
     </div>
       
-    <footer class="footer" id="footer-mod-1">
-        <hr class="footer-line">
-
-        <div class="links">
-            <ul>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Terms of Use</a></li>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Frequently Asked Questions</a></li>
-            </ul>
-            
-        </div>
-
-        <p class="footer-text">COPYRIGHT ©2022 | All Rights Reserved</p>
-    </footer>
+    
 
 
 

@@ -5,7 +5,7 @@ session_start();
     include('function1.php');
     
 
-     $user_data = check_user($con);
+    // $user_data = check_user($con);
      
 
 ?>
@@ -27,8 +27,8 @@ session_start();
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg sticky-top container-nav">
+<body class="d-flex flex-column">
+    <nav class="navbar navbar-expand-lg fixed-top container-nav">
         <div class="logo col-lg-3" >
             <a class="navbar-brand" href="index.php" ><img class="logo-link" src="images/logo.png" alt="Home" ></a>
 
@@ -98,10 +98,10 @@ session_start();
         </ul>
     </div>  
    
-    <div class="container-fluid profile-pos pb-4">
+    <div class="container-fluid profile-pos content-1">
         
-        <div class="row gx-5">
-            <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2 justify-content-center align-items-center">
+        <div class="row content-1">
+            <div class="col-buttons col-lg-2 col-md-3 col-sm-4 col-xs-2">
                 <ul>
                     <li>
                         <h2><a href="business.php"  class="profile-button-unselected">PROFILE</a></h2>
@@ -117,19 +117,24 @@ session_start();
                     </li>
                 </ul>
             </div>
-            <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12">
-                <div class="container-pos container-fluid  mb-3">
-                    <div class="row add-item-box column-card px-5 py-5">
+            <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12" >
+                <div class="container-pos container-fluid content-1">
+                    <div class="row add-item-box column-card px-5 mb-5 py-5">
                        <form action="business-add-items1.php" method="post"> 
                             <div class="row px-5 justify-content-around">
                                 
                                 <div class="col-lg-3 col-md-4 mt-4">
                                     <div class="img-with-add-file mb-0">
-                                        <img src="items/placeholder-image.png" alt="" class="add-item-pic mb-2" id="displayImg">
-                                        <div class="input-img ml-2">
-                                            <label for="inputImg" id="link-for-img" class="btn btn-custom-1 btn-custom-trans-1">Upload Image</label>
-                                            <input type="file" name="productImg" id="inputImg" required>
+                                        <div class="row">
+                                            <img src="items/placeholder-image.png" alt="" class="add-item-pic mb-2" id="displayImg">
                                         </div>
+                                        <div class="row">
+                                            <div class="input-img ml-2">
+                                                <label for="inputImg" id="link-for-img" class="btn btn-custom-1 btn-custom-trans-1">Upload Image</label>
+                                                <input type="file" name="productImg" id="inputImg" required>
+                                            </div>
+                                        </div>
+                                        
                                     </div>
                                 </div>
 
@@ -215,24 +220,27 @@ session_start();
                
                 
             </div>
+            
+            <footer class="footer  footer-mod-2" id="footer-mod-2">
+                <hr class="footer-line">
+
+                <div class="links">
+                <ul>
+                    <li><a href="">About Us</a></li>
+                    <li><a href="">Terms of Use</a></li>
+                    <li><a href="">Privacy Policy</a></li>
+                    <li><a href="">Frequently Asked Questions</a></li>
+                </ul>
+            
+                </div>
+
+                <p class="footer-text">COPYRIGHT ©2022 | All Rights Reserved</p>
+            </footer>
         </div>
+        
     </div>
       
-    <footer class="footer" id="footer-mod-1">
-        <hr class="footer-line">
-
-        <div class="links">
-            <ul>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Terms of Use</a></li>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Frequently Asked Questions</a></li>
-            </ul>
-            
-        </div>
-
-        <p class="footer-text">COPYRIGHT ©2022 | All Rights Reserved</p>
-    </footer>
+    
 
 
 
