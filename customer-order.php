@@ -4,7 +4,7 @@ session_start();
     include('connection.php');
     include('function1.php');
 
-    //  $user_data = check_user($con);
+    $user_data = check_user($con);
 
 
 ?>
