@@ -36,10 +36,12 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                         }
                     }
             }
-            echo "Please enter some valid information.";
+            echo '<script>alert("Please enter some valid information.");</script>';
+            
    }else
    {
-       echo "Please enter some valid information.";
+       echo '<script>alert("Please enter some valid information.");</script>';
+        
    }
 }
 

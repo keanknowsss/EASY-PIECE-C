@@ -48,18 +48,7 @@
             <ul id = \"navbar-nav-user\">
                
                 <li class=\"nav-item\"><a href=\"cart.php\"><i class=\"fa fa-shopping-cart\"></i></a></li>
-                <li class=\"nav-item\"><a href=\"customer.php\" style=letter-spacing:1px;><i class=\"fa fa-user\"></i>&nbsp;&nbsp;Welcome, $name  </a></li>
-            </ul>
-            <ul id = \"navbar-nav-business\" style=\"display:none;\">
-                <?php 
-                        if($privilege == \"business\")
-                        {
-                            echo \"<script> document.getElementById(\"navbar-nav\").style.display = \"none\";
-                                     document.getElementById(\"navbar-nav-business\").style.display = \"inline\"</script>\";
-                        }
-                    ?>
-                <li class=\"nav-item\"><a href=\"cart.php\"><i class=\"fa fa-shopping-cart\"></i></a></li>
-                <li class=\"nav-item\"><a href=\"business.php\" style=letter-spacing:1px;><i class=\"fa fa-user\"></i>&nbsp;&nbsp;Welcome, $name  </a></li>
+                <li class=\"nav-item\"><a href=\"$privilege.php\" style=letter-spacing:1px;><i class=\"fa fa-user\"></i>&nbsp;&nbsp;Welcome, $name  </a></li>
             </ul>
         </nav>
         
