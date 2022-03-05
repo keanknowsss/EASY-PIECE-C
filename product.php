@@ -148,7 +148,7 @@ session_start();
     </div>
 
       
-    <footer class="footer mt-auto" id="footer-mod-3">
+    <footer class="footer mt-auto" id="footer-mod-1">
         <hr class="footer-line">
 
         <div class="links">

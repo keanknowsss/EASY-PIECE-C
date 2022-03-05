@@ -68,7 +68,7 @@ session_start();
 
                 <div class="row mt-5 product-list rounded">
                     <div class="row pl-5 pr-5 mb-4 justify-content-around">
-                        <a href="product.html" class="product-card col-lg-2 col-md-4 col-sm-6">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
                             <div class="row justify-content-center pt-3">
                                 <img src="items/placeholder-image.png" class="product-img" alt="">
                             </div>
@@ -79,7 +79,7 @@ session_start();
                                 <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
                             </div>
                         </a>
-                        <a href="product.html" class="product-card col-lg-2 col-md-4 col-sm-6">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
                             <div class="row justify-content-center pt-3">
                                 <img src="items/placeholder-image.png" class="product-img" alt="">
                             </div>
@@ -90,7 +90,7 @@ session_start();
                                 <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
                             </div>
                         </a>
-                        <a href="product.html" class="product-card col-lg-2 col-md-4 col-sm-6">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
                             <div class="row justify-content-center pt-3">
                                 <img src="items/placeholder-image.png" class="product-img" alt="">
                             </div>
@@ -101,7 +101,7 @@ session_start();
                                 <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
                             </div>
                         </a>
-                        <a href="product.html" class="product-card col-lg-2 col-md-4 col-sm-6">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
                             <div class="row justify-content-center pt-3">
                                 <img src="items/placeholder-image.png" class="product-img" alt="">
                             </div>
@@ -112,7 +112,7 @@ session_start();
                                 <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
                             </div>
                         </a>
-                        <a href="product.html" class="product-card col-lg-2 col-md-4 col-sm-6">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
                             <div class="row justify-content-center pt-3">
                                 <img src="items/placeholder-image.png" class="product-img" alt="">
                             </div>
@@ -128,7 +128,7 @@ session_start();
 
                 <div class="row mt-5 product-list rounded">
                     <div class="row pl-5 pr-5 mb-4 justify-content-around">
-                        <a href="product.html" class="product-card col-lg-2 col-md-4 col-sm-6">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
                             <div class="row justify-content-center pt-3">
                                 <img src="items/placeholder-image.png" class="product-img" alt="">
                             </div>
@@ -139,7 +139,7 @@ session_start();
                                 <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
                             </div>
                         </a>
-                        <a href="product.html" class="product-card col-lg-2 col-md-4 col-sm-6">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
                             <div class="row justify-content-center pt-3">
                                 <img src="items/placeholder-image.png" class="product-img" alt="">
                             </div>
@@ -150,7 +150,7 @@ session_start();
                                 <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
                             </div>
                         </a>
-                        <a href="product.html" class="product-card col-lg-2 col-md-4 col-sm-6">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
                             <div class="row justify-content-center pt-3">
                                 <img src="items/placeholder-image.png" class="product-img" alt="">
                             </div>
@@ -161,7 +161,7 @@ session_start();
                                 <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
                             </div>
                         </a>
-                        <a href="product.html" class="product-card col-lg-2 col-md-4 col-sm-6">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
                             <div class="row justify-content-center pt-3">
                                 <img src="items/placeholder-image.png" class="product-img" alt="">
                             </div>
@@ -172,7 +172,127 @@ session_start();
                                 <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
                             </div>
                         </a>
-                        <a href="product.html" class="product-card col-lg-2 col-md-4 col-sm-6">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
+                            <div class="row justify-content-center pt-3">
+                                <img src="items/placeholder-image.png" class="product-img" alt="">
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2">
+                                <p class="product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quae perspiciatis excepturi eligendi, quidem numquam reprehenderit ipsam enim rerum atque. Temporibus aliquam error quibusdam sunt!</p>
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2 mb-2">
+                                <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
+                            </div>
+                        </a>
+                    </div>     
+                </div>
+
+                <div class="row mt-5 product-list rounded">
+                    <div class="row pl-5 pr-5 mb-4 justify-content-around">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
+                            <div class="row justify-content-center pt-3">
+                                <img src="items/placeholder-image.png" class="product-img" alt="">
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2">
+                                <p class="product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quae perspiciatis excepturi eligendi, quidem numquam reprehenderit ipsam enim rerum atque. Temporibus aliquam error quibusdam sunt!</p>
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2 mb-2">
+                                <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
+                            </div>
+                        </a>
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
+                            <div class="row justify-content-center pt-3">
+                                <img src="items/placeholder-image.png" class="product-img" alt="">
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2">
+                                <p class="product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quae perspiciatis excepturi eligendi, quidem numquam reprehenderit ipsam enim rerum atque. Temporibus aliquam error quibusdam sunt!</p>
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2 mb-2">
+                                <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
+                            </div>
+                        </a>
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
+                            <div class="row justify-content-center pt-3">
+                                <img src="items/placeholder-image.png" class="product-img" alt="">
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2">
+                                <p class="product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quae perspiciatis excepturi eligendi, quidem numquam reprehenderit ipsam enim rerum atque. Temporibus aliquam error quibusdam sunt!</p>
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2 mb-2">
+                                <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
+                            </div>
+                        </a>
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
+                            <div class="row justify-content-center pt-3">
+                                <img src="items/placeholder-image.png" class="product-img" alt="">
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2">
+                                <p class="product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quae perspiciatis excepturi eligendi, quidem numquam reprehenderit ipsam enim rerum atque. Temporibus aliquam error quibusdam sunt!</p>
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2 mb-2">
+                                <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
+                            </div>
+                        </a>
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
+                            <div class="row justify-content-center pt-3">
+                                <img src="items/placeholder-image.png" class="product-img" alt="">
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2">
+                                <p class="product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quae perspiciatis excepturi eligendi, quidem numquam reprehenderit ipsam enim rerum atque. Temporibus aliquam error quibusdam sunt!</p>
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2 mb-2">
+                                <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
+                            </div>
+                        </a>
+                    </div>     
+                </div>
+
+                <div class="row mt-5 product-list rounded">
+                    <div class="row pl-5 pr-5 mb-4 justify-content-around">
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
+                            <div class="row justify-content-center pt-3">
+                                <img src="items/placeholder-image.png" class="product-img" alt="">
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2">
+                                <p class="product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quae perspiciatis excepturi eligendi, quidem numquam reprehenderit ipsam enim rerum atque. Temporibus aliquam error quibusdam sunt!</p>
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2 mb-2">
+                                <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
+                            </div>
+                        </a>
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
+                            <div class="row justify-content-center pt-3">
+                                <img src="items/placeholder-image.png" class="product-img" alt="">
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2">
+                                <p class="product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quae perspiciatis excepturi eligendi, quidem numquam reprehenderit ipsam enim rerum atque. Temporibus aliquam error quibusdam sunt!</p>
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2 mb-2">
+                                <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
+                            </div>
+                        </a>
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
+                            <div class="row justify-content-center pt-3">
+                                <img src="items/placeholder-image.png" class="product-img" alt="">
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2">
+                                <p class="product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quae perspiciatis excepturi eligendi, quidem numquam reprehenderit ipsam enim rerum atque. Temporibus aliquam error quibusdam sunt!</p>
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2 mb-2">
+                                <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
+                            </div>
+                        </a>
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
+                            <div class="row justify-content-center pt-3">
+                                <img src="items/placeholder-image.png" class="product-img" alt="">
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2">
+                                <p class="product-name">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Deserunt quae perspiciatis excepturi eligendi, quidem numquam reprehenderit ipsam enim rerum atque. Temporibus aliquam error quibusdam sunt!</p>
+                            </div>
+                            <div class="row pl-3 pr-3 mt-2 mb-2">
+                                <h6 class="product-price">₱100.00</h6><strike class="mt-1 ml-2" style="color:darkgoldenrod">69.00</strike>
+                            </div>
+                        </a>
+                        <a href="product.php" class="product-card col-lg-2 col-md-4 col-sm-6">
                             <div class="row justify-content-center pt-3">
                                 <img src="items/placeholder-image.png" class="product-img" alt="">
                             </div>

@@ -16,6 +16,9 @@
     <!-- JAVASCRIPT -->
     <script type="text/JavaScript" src="script.js"></script>
 
+    <!-- STYLE CSS -->
+    <link rel="stylesheet" href="style.css">
+
     <!-- FONTAWESOME CDN -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>

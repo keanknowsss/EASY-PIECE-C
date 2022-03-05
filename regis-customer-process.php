@@ -31,7 +31,7 @@ session_start();
                 '')";
 
                 mysqli_query($con,$query);
-                header("Location: login.html");
+                header("Location: login.php");
                 die;
        }else
        {
