@@ -80,23 +80,26 @@ session_start();
 
                             <hr class="divider-1 divider-mod-1">
 
-                            <div class="row pb-4">
-                                <a href="" class="link-black-none">
+                            <div class="row pb-5">
                                     <div class="row row-order-brief container">
-                                        <div class="col">
+                                        <div class="col-lg-2">
+                                            <a href="" class="link-black-none">
                                             <img src="items/placeholder-image.png" alt="product img">
+                                            </a>
+                                       
                                         </div>
-                                        <div class="col-7">
-                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
+                                        <div class="col-5 d-block">
+                                            <a href="" class="link-black-none">
+                                            <p class="order-item-name">Lorem, ipsum.</p>
+                                            </a>
                                         </div>
-                                        <div class="col">
+                                        <div class="col-1 d-block">
                                             <span>₱$num</span>
                                         </div>
                                         <div class="col">
                                             <span>Qty: $num</span>
                                         </div>
                                     </div>
-                                </a>
                             </div>
 
                         </div>

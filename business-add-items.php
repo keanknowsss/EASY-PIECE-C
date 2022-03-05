@@ -62,15 +62,17 @@ session_start();
                 <div class="container-pos container-fluid content-1">
                     <div class="row add-item-box column-card px-5 mb-5 py-5">
                        <form action="business-add-items1.php" method="post"> 
-                            <div class="row px-5 justify-content-around">
+                            <div class="row px-5 justify-content-center">
                                 
-                                <div class="col-lg-3 col-md-4 mt-4">
+                                <div class="col-lg-5 col-md-4 mt-4">
                                     <div class="img-with-add-file mb-0">
                                         <div class="row">
-                                            <img src="items/placeholder-image.png" alt="" class="add-item-pic mb-2" id="displayImg">
+                                            <div class="image-preview">
+                                                <img src="items/placeholder-image.png" alt="" class="placeholder-img mb-2" id="displayImg">
+                                            </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="input-img ml-2">
+                                        <div class="row file-up">
+                                            <div class="input-img ml-5">
                                                 <label for="inputImg" id="link-for-img" class="btn btn-custom-1 btn-custom-trans-1">Upload Image</label>
                                                 <input type="file" name="productImg" id="inputImg" required>
                                             </div>
@@ -81,8 +83,8 @@ session_start();
 
                                 <div class="col-lg-7 col-md-12 p-1 pt-3">
                                     <div class="row">
-                                        <label for="itemPrice" class="mt-1 addlabel">Item Price:&nbsp;</label>
-                                        <input type="number" name="itemPrice" min="0.00" class="no-Arrow addItem addPrice" placeholder="0.00" required>
+                                        <label for="itemPrice" class="mt-1 addlabel" >Item Price:&nbsp;</label>
+                                        <input type="number" name="itemPrice" min="0.00" step=".01" class="no-Arrow addItem addPrice" placeholder="0.00" required>
                                     </div>
                                     
 
@@ -190,6 +192,8 @@ session_start();
     <script src="jquery-latest.min.js"></script>
 
     <script>
+        
+
         $(function(){
             $("#inputImg").change(function(event){
                 // Act on Event

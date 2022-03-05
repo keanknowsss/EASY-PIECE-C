@@ -72,10 +72,10 @@ session_start();
                                     <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
                                         <div class="col">
                                             <input type="checkbox" name="" id="" class="mr-3 mt-4">
-                                            <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
+                                            <a href="product.php" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
                                         </div>
                                         <div class="col-7 mr-0">
-                                            <a href="" class="link-black-none">
+                                            <a href="product.php" class="link-black-none">
                                                 <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
                                             </a>
                                         </div>
@@ -101,10 +101,10 @@ session_start();
                                     <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
                                         <div class="col">
                                             <input type="checkbox" name="" id="" class="mr-3 mt-4">
-                                            <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
+                                            <a href="product.php" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
                                         </div>
                                         <div class="col-7 mr-0">
-                                            <a href="" class="link-black-none">
+                                            <a href="product.php" class="link-black-none">
                                                 <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
                                             </a>
                                         </div>
@@ -130,10 +130,10 @@ session_start();
                                     <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
                                         <div class="col">
                                             <input type="checkbox" name="" id="" class="mr-3 mt-4">
-                                            <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
+                                            <a href="product.php" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
                                         </div>
                                         <div class="col-7 mr-0">
-                                            <a href="" class="link-black-none">
+                                            <a href="product.php" class="link-black-none">
                                                 <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
                                             </a>
                                         </div>
@@ -159,10 +159,10 @@ session_start();
                                     <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
                                         <div class="col">
                                             <input type="checkbox" name="" id="" class="mr-3 mt-4">
-                                            <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
+                                            <a href="product.php" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
                                         </div>
                                         <div class="col-7 mr-0">
-                                            <a href="" class="link-black-none">
+                                            <a href="product.php" class="link-black-none">
                                                 <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
                                             </a>
                                         </div>
@@ -202,7 +202,9 @@ session_start();
                         <hr class="divider-1 divider-mod-1 mt-3">
         
                         <div class="row ml-2 mt-2 justify-content-center">
-                            <input type="submit" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5" value="Proceed to Checkout">
+                            <a href="checkout.php" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5">Proceed to Checkout</a>
+
+                            <!-- <input type="submit" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5" value="Proceed to Checkout"> -->
                         </div>
                     </div>
                 </div>

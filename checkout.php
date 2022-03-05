@@ -67,7 +67,7 @@ session_start();
                         <div class="row column-card mt-2">
                             <div class="order-card container-fluid">
                                 <div class="row-business-name row justify-content-between mr-1">
-                                    <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
+                                    <p>Sold by: <a href="product.php" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
                                 </div>
                                 <hr class="divider-1 divider-mod-1">
                                     <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-4">
@@ -75,7 +75,7 @@ session_start();
                                             <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
                                         </div>
                                         <div class="col-7 mr-0">
-                                            <a href="" class="link-black-none">
+                                            <a href="product.php" class="link-black-none">
                                                 <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
                                             </a>
                                         </div>
@@ -88,10 +88,12 @@ session_start();
                                     </div>
                                 </div>
                             </div>
-        
-        
-        
-                    </div>
+                        
+                        
+                        </div>
+
+
+                    
                 </div>
                 <div class="col-lg-3 col-lg-4 col-sm-12 pt-5 ml-0 mt-4 mb-4 content-1">
                     <div class="p-3 column-card mb-3 margin-mod">

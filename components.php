@@ -1,4 +1,6 @@
 <?php
+
+
     function withAcc_mainNavbar($privilege, $name)
     {
         $x = "<nav class=\"navbar navbar-expand-lg fixed-top container-nav\">
@@ -118,10 +120,46 @@
         echo '<div class="second-nav">
                 <ul>
                     <li><a href="allProducts.php">Browse Computer Parts</a></li>
-                    <li><a href="">PC Builder</a></li>
+                    
                 </ul>
             </div>';
     }
 
+    function inventoryCard($product_img, $product_name, $product_price, $product_qty)
+    {
+        $x = "<div class=\"row column-card mb-3\">
+        <div class=\"order-card container-fluid\">
+            <div class=\"row\">
+                <div class=\"row-business-name\">
+                    <p><a href=\"business-edit-items.php\">Edit Item</a>&nbsp;|&nbsp;<a href=\"\">Delete Item</a></p>
+                </div>
+            </div>
 
-?>
+            <hr class=\"divider-1 divider-mod-1\">
+
+            <div class=\"row container-fluid pb-5\">
+                <div class=\"row row-order-brief container\">
+                    <div class=\"col-lg-2\">
+                        <a href=\"\" class=\"link-black-none\">
+                            <img src=\"items/placeholder-image.png\" alt=\"product img\">
+                        </a>
+                    </div>
+                    <div class=\"col-5 d-block\">
+                        <a href=\"\" class=\"link-black-none\">
+                            <p class=\"order-item-name\">$product_name</p>
+                        </a>
+                    </div>
+                    <div class=\"col-1 d-block\">
+                        <span>₱$product_price</span>
+                    </div>
+                    <div class=\"col\">
+                        <span>Qty: $product_qty</span>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>";
+
+    echo $x;
+    }

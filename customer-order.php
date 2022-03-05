@@ -74,7 +74,7 @@ session_start();
 
                             <hr class="divider-1 divider-mod-1">
 
-                            <a href="" class="link-black-none">
+                            <a href="product.php" class="link-black-none">
                                 <div class="row row-order-brief container">
                                     <div class="col">
                                         <img src="items/placeholder-image.png" alt="product img">
@@ -102,7 +102,7 @@ session_start();
 
                             <hr class="divider-1 divider-mod-1">
 
-                            <a href="" class="link-black-none">
+                            <a href="product.php" class="link-black-none">
                                 <div class="row row-order-brief container">
                                     <div class="col">
                                         <img src="items/placeholder-image.png" alt="product img">
@@ -130,7 +130,7 @@ session_start();
 
                             <hr class="divider-1 divider-mod-1">
 
-                            <a href="" class="link-black-none">
+                            <a href="product.php" class="link-black-none">
                                 <div class="row row-order-brief container">
                                     <div class="col">
                                         <img src="items/placeholder-image.png" alt="product img">
@@ -158,7 +158,7 @@ session_start();
 
                             <hr class="divider-1 divider-mod-1">
 
-                            <a href="" class="link-black-none">
+                            <a href="product.php" class="link-black-none">
                                 <div class="row row-order-brief container">
                                     <div class="col">
                                         <img src="items/placeholder-image.png" alt="product img">

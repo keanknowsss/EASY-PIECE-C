@@ -1,5 +1,8 @@
 <?php
 
+require "connection.php";
+
+
 function check_user($con)
 {
     if(isset($_SESSION['user_id']))
@@ -58,6 +61,17 @@ function random_num($length)
     }
 
     return $text;
+
 }
 
 
+function getItem_data($con)
+{
+
+    $sql ="SELECT * FROM `additem`";
+    $result=mysqli_query($con,$sql);
+
+    if(mysqli_num_rows($result)>0) {
+        return $result;
+    }
+}

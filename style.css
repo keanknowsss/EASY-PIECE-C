@@ -1235,7 +1235,6 @@ nav ul li a:hover{
 }
 
 .row-order-brief img {
-    width: 6rem;
     height: 5rem;
     object-fit: cover;
     object-position: 50% 50%;
@@ -1342,20 +1341,37 @@ nav ul li a:hover{
     margin-bottom: 30%;
 }
 
-.add-item-pic {
-    height:11em;
-    width:11em;
-    object-fit: cover;
+.image-preview {
+    height:20em;
+    width:20em;
+
+    display:flex;
+    justify-content: center;
+}
+
+.file-preview-img, .placeholder-img {
+
+    display:none;
+    height:20em;
+    width:20em;
+    object-fit: fill;
+}
+
+.placeholder-img {
     border: 2px var(--clr-header) solid;
     box-shadow: 0px 0px 1rem 0.5px gray;
+
 }
 
-#inputImg{
+
+
+.input-img {
+    position:relative;
+    left:1.5em;
+}
+
+#inputImg {
     display:none;
-}
-
-.input-img, .inputImg label {
-    margin:0;
 }
 
 
@@ -1365,7 +1381,7 @@ nav ul li a:hover{
 }
 
 .input-img {
-    margin-top: 8rem;
+    
     display:block;
     margin-right:0;
 }

@@ -70,133 +70,24 @@ session_start();
                         </div>
                     </div>
 
-                    <div class="row column-card mb-3 ">
-                        <div class="order-card container-fluid">
-                            <div class="row">
-                                <div class="row-business-name">
-                                    <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
-                                </div>
-                            </div>
+                    <?php 
+                        $i = 0;
+                        $result=getItem_data($con);
+                        while($row=mysqli_fetch_assoc($result))
+                        {
+                            
+                            if($row['business_id']==$user_data['business_id'])
+                            {
+                                $i++;
+                                inventoryCard('',$row['Name'],$row['item_price'],$row['Qty']);
+                                $_SESSION['invent_id'][$i] = $row['item_id'];
+                            }
+                        }
+            
 
-                            <hr class="divider-1 divider-mod-1">
+                    ?>
 
-                            <div class="row pb-4">
-                                <a href="" class="link-black-none">
-                                    <div class="row row-order-brief container">
-                                        <div class="col">
-                                            <img src="items/placeholder-image.png" alt="product img">
-                                        </div>
-                                        <div class="col-7">
-                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                        </div>
-                                        <div class="col">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col">
-                                            <span>Qty: $num</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row column-card mb-3 ">
-                        <div class="order-card container-fluid">
-                            <div class="row">
-                                <div class="row-business-name">
-                                    <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
-                                </div>
-                            </div>
-
-                            <hr class="divider-1 divider-mod-1">
-
-                            <div class="row pb-4">
-                                <a href="" class="link-black-none">
-                                    <div class="row row-order-brief container">
-                                        <div class="col">
-                                            <img src="items/placeholder-image.png" alt="product img">
-                                        </div>
-                                        <div class="col-7">
-                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                        </div>
-                                        <div class="col">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col">
-                                            <span>Qty: $num</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row column-card mb-3 ">
-                        <div class="order-card container-fluid">
-                            <div class="row">
-                                <div class="row-business-name">
-                                    <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
-                                </div>
-                            </div>
-
-                            <hr class="divider-1 divider-mod-1">
-
-                            <div class="row pb-4">
-                                <a href="" class="link-black-none">
-                                    <div class="row row-order-brief container">
-                                        <div class="col">
-                                            <img src="items/placeholder-image.png" alt="product img">
-                                        </div>
-                                        <div class="col-7">
-                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                        </div>
-                                        <div class="col">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col">
-                                            <span>Qty: $num</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row column-card mb-3 ">
-                        <div class="order-card container-fluid">
-                            <div class="row">
-                                <div class="row-business-name">
-                                    <p><a href="business-edit-items.php">Edit Item</a>&nbsp;|&nbsp;<a href="">Delete Item</a></p>
-                                </div>
-                            </div>
-
-                            <hr class="divider-1 divider-mod-1">
-
-                            <div class="row pb-4">
-                                <a href="" class="link-black-none">
-                                    <div class="row row-order-brief container">
-                                        <div class="col">
-                                            <img src="items/placeholder-image.png" alt="product img">
-                                        </div>
-                                        <div class="col-7">
-                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                        </div>
-                                        <div class="col">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col">
-                                            <span>Qty: $num</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
+                    
                 </div>
                     
                 
@@ -227,7 +118,26 @@ session_start();
         
     </div>
       
-    
+    <!-- Modal -->
+    <div class="modal fade" id="popUP" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLongTitle">User Confirmation</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    </div>
+                    <div class="modal-body">
+                        Are you sure you want to place the order?
+                    </div>
+                    <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                    <input type="submit" class="btn btn-primary" value="Ok">
+                    </div>
+                </div>
+                </div>
+            </div>
 
 
 

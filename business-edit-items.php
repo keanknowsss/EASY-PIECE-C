@@ -67,11 +67,13 @@ session_start();
                                 
                                 <div class="col-lg-3 col-md-4 mt-4">
                                     <div class="img-with-add-file mb-0">
-                                        <div class="row">
-                                            <img src="items/placeholder-image.png" alt="" class="add-item-pic mb-2" id="displayImg">
+                                    <div class="row">
+                                            <div class="image-preview">
+                                                <img src="items/placeholder-image.png" alt="" class="placeholder-img mb-2" id="displayImg">
+                                            </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="input-img ml-2">
+                                        <div class="row file-up">
+                                            <div class="input-img ml-5">
                                                 <label for="inputImg" id="link-for-img" class="btn btn-custom-1 btn-custom-trans-1">Upload Image</label>
                                                 <input type="file" name="productImg" id="inputImg" required>
                                             </div>
