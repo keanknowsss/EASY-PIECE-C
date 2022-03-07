@@ -9,7 +9,43 @@ session_start();
 
     $user_data = check_user($con);
 
+    if($_SERVER["REQUEST_METHOD"] == "POST")
+    {
+        //something was posted
+        $BusinessName = $_POST['businessName'];
+        $BusinessAddress = $_POST['businessAddress'];
+        $BusinessContact = $_POST['businessContact'];
+        $OwnerName = $_POST['ownerName'];
+        $BusinessEmail = $_POST['businessEmail'];
+        $OwnerContact = $_POST['ownerContact'];
+        $CurrentPassword = $_POST['currentPassword'];
+        $NewPassword = $_POST['password'];
+        
 
+        if(!empty($BusinessName) && !empty($BusinessAddress) && !empty($BusinessContact) && !empty($OwnerName) && !empty($BusinessEmail) && !empty($OwnerContact))
+        {
+                $query = "UPDATE registrationbusiness SET 
+            BusinessName = '$BusinessName', BusinessAddress = '$BusinessAddress', BusinessContact = '$BusinessContact', OwnerName = '$OwnerName', BusinessEmail = '$BusinessEmail', OwnerContact = '$OwnerContact' WHERE business_id = '{$_SESSION['business_id']}'";
+
+            mysqli_query($con,$query);
+            header("Location: business.php");
+        die;
+        }else
+
+        if(!empty($CurrentPassword) && !empty($NewPassword))
+        {
+            if($CurrentPassword === $user_data['Password'])
+                {
+                    $query1 = "UPDATE registrationbusiness SET 
+                    Password = '$NewPassword' WHERE business_id = '{$_SESSION['business_id']}'";
+        
+                    mysqli_query($con,$query1);
+                    header("Location: business.php"); 
+                    die;
+                }
+        }
+
+    }
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +100,7 @@ session_start();
                     <div class="change-password mt-5">
                         <h2>Change Password:</h2>
                         <hr class="divider-mod-2 rounded">
-                        <form action="changePassword.php" method="post">
+                        <form action=" " method="post">
                             <div class="row mt-4 ml-1">
                                 <label for="currentPassword">Current Password: </label>
                             </div>
@@ -93,7 +129,7 @@ session_start();
             </div>
 
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12" id="content-main">
-                <form action="editBus.php" method="post"> 
+                <form action=" " method="POST"> 
                     <div class="container-fluid content-1 mb-5">
                         <div class="row justify-content-start mr-5">
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
