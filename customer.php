@@ -7,9 +7,46 @@ session_start();
     include('connection.php');
     include('function1.php');
 
-     $user_data = check_user($con);
-     $u_id = $user_data['user_id'];
-     //echo $u_id;
+     $user_data = check_user($con);    
+
+     
+     
+     
+     if($_SERVER["REQUEST_METHOD"] == "POST")
+{
+    //something was posted
+    $FullName = $_POST['fullName'];
+    $Email = $_POST['emailCustomer'];
+    $PhoneNumber = $_POST['numberCustomer'];
+    $BirthDate = $_POST['birthDate'];
+    $Sex = $_POST['sex'];
+    $Addrss = $_POST['address'];
+    $CurrentPassword = $_POST['currentPassword'];
+    $NewPassword = $_POST["password"];
+
+    if(!empty($FullName) && !empty($Email) && !empty($PhoneNumber) && !empty($BirthDate) && !empty($Sex) && !empty($Addrss) && empty($CurrentPassword) && empty($NewPassword))
+    {
+            $query = "UPDATE registrationuser SET 
+        FullName = '$FullName', Email = '$Email', PhoneNumber = '$PhoneNumber', BirthDate = '$BirthDate', Sex = '$Sex', Addrss = '$Addrss' WHERE user_id = '{$_SESSION['user_id']}'";
+
+        mysqli_query($con,$query);
+        header("Location: customer.php");
+    die;
+    }else if(!empty($CurrentPassword) && !empty($NewPassword) && empty($FullName) && empty($Email) && empty($PhoneNumber) && empty($BirthDate) && empty($Sex) && empty($Addrss))
+        {
+            if($CurrentPassword === $user_data['Pass'])
+            {
+                $query1 = "UPDATE registrationuser SET
+                pass ='$NewPassword' WHERE user_id = '{$_SESSION['user_id']}'";
+                mysqli_query($con,$query1);
+                header("Location: customer.php");
+            }else{
+                echo "Password doesn't match!";
+            }
+        }else echo "fuck off";
+
+    
+}
 
 
 ?>
@@ -61,7 +98,7 @@ session_start();
                     <div class="change-password mt-5">
                         <h2>Change Password:</h2>
                         <hr class="divider-mod-2 rounded">
-                        <form action="changePassword.php" method="post">
+                        <form action="" method="post">
                             <div class="row mt-4 ml-1">
                                 <label for="currentPassword">Current Password: </label>
                             </div>
@@ -90,7 +127,7 @@ session_start();
             </div>
 
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12" id="content-main">
-                <form action="editProf.php" method="post">
+                <form action="" method="post">
                     <div class="container-fluid content-1">
                         <div class="row  justify-content-start mr-5">
                             <div class="custo-info col-lg-5 col-md-6 col-sm-6 col-xs-12">
