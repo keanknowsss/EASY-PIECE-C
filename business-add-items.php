@@ -61,7 +61,7 @@ session_start();
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12" >
                 <div class="container-pos container-fluid content-1">
                     <div class="row add-item-box column-card px-5 mb-5 py-5">
-                       <form action="business-add-items1.php" method="post"> 
+                       <form action="business-add-items1.php" method="post"  enctype="multipart/form-data"> 
                             <div class="row px-5 justify-content-center">
                                 
                                 <div class="col-lg-5 col-md-4 mt-4">
@@ -74,7 +74,7 @@ session_start();
                                         <div class="row file-up">
                                             <div class="input-img ml-5">
                                                 <label for="inputImg" id="link-for-img" class="btn btn-custom-1 btn-custom-trans-1">Upload Image</label>
-                                                <input type="file" name="productImg" id="inputImg" required>
+                                                <input type="file" name="image" id="inputImg" accept="image/png, image/gif, image/jpeg" required>
                                             </div>
                                         </div>
                                         
@@ -107,24 +107,24 @@ session_start();
                                         <label for="category" class="addlabel">Category:&nbsp;</label>
                                         <select name="category" class="addItem add-select-box" value="categories" id="addCat">
                                             <option value="none" class="placeholder">Categories</option>
-                                            <option value="cpu">Processor</option>
-                                            <option value="gpu">Graphics Card</option>
-                                            <option value="ram">Memory</option>
-                                            <option value="storage">Storage</option>
-                                            <option value="psu">Power Supply</option>
-                                            <option value="motherboard">Motherboard</option>
-                                            <option value="case">Case</option>
-                                            <option value="monitor">Monitor</option>
-                                            <option value="keyboard">Keyboard</option>
-                                            <option value="mouse">Mouse</option>
-                                            <option value="headset">Headset</option>
-                                            <option value="webcam">Webcam</option>
-                                            <option value="desktop">Pre-built Desktop</option>
-                                            <option value="laptop">Laptop</option>
-                                            <option value="cooling Fans">Cooling Fans</option>
-                                            <option value="nic">Interface Cards</option>
-                                            <option value="softwares">Softwares</option>
-                                            <option value="others">Others</option>
+                                            <option value="Processor">Processor</option>
+                                            <option value="Graphics Card">Graphics Card</option>
+                                            <option value="Memory">Memory</option>
+                                            <option value="Storage">Storage</option>
+                                            <option value="Power Supply">Power Supply</option>
+                                            <option value="Motherboard">Motherboard</option>
+                                            <option value="Case">Case</option>
+                                            <option value="Monitor">Monitor</option>
+                                            <option value="Keyboard">Keyboard</option>
+                                            <option value="Mouse">Mouse</option>
+                                            <option value="Headset">Headset</option>
+                                            <option value="Webcam">Webcam</option>
+                                            <option value="Desktop">Pre-built Desktop</option>
+                                            <option value="Laptop">Laptop</option>
+                                            <option value="Cooling Fans">Cooling Fans</option>
+                                            <option value="Interface Cards">Interface Cards</option>
+                                            <option value="Softwares">Softwares</option>
+                                            <option value="Others">Others</option>
                                         </select>
                                     </div>
 

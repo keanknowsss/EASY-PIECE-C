@@ -34,7 +34,7 @@
     <div class="header">
         <img src="images/header-1.png">
 
-        <div class="head-title">
+        <div class="head-title mt-2">
             <h2>One Stop Comp Shop</h2>
             <h1>For All Computer Parts and Peripherals</h1>
 

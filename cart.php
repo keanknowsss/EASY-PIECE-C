@@ -6,9 +6,21 @@ session_start();
     include('connection.php');
     include('function1.php');
 
-     $user_data = check_user($con);
+    $user_data = check_user($con);
+    
 
-     
+    switch($_SESSION['privilage'])
+    {
+        case "customer":
+            $id = $_SESSION['user_id'];
+            break;
+        case "business":
+            $id = $_SESSION['business_id'];
+            break;
+    }
+
+    $cart =  getCart(createCart($con), $con);
+
 ?> 
 
 <!DOCTYPE html>
@@ -62,122 +74,28 @@ session_start();
                         <h1 class="title-cart">MY CART <i class="fa fa-shopping-cart" style="font-size:3.5rem"></i></h1>
                     </div>
                     <hr class="divider-1 divider-mod-4 divider-mod-5">
-                    <div class="row ml-3">
-                        <div class="row column-card mt-2">
-                            <div class="order-card container-fluid">
-                                <div class="row-business-name row justify-content-between mr-1">
-                                    <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
-                                </div>
-                                <hr class="divider-1 divider-mod-1">
-                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
-                                        <div class="col">
-                                            <input type="checkbox" name="" id="" class="mr-3 mt-4">
-                                            <a href="product.php" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
-                                        </div>
-                                        <div class="col-7 mr-0">
-                                            <a href="product.php" class="link-black-none">
-                                                <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                            </a>
-                                        </div>
-                                        <div class="mr-3 ml-2 mr-2">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col inc-qty mx-0 my-0 px-0 ml-3">
-                                            <label for="quantity">Quantity:</label><br>
-                                                <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem  inQty-widthMAX no-mx inQty rounded">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                    </div>
-                    <div class="row ml-3">
-                        <div class="row column-card mt-2">
-                            <div class="order-card container-fluid">
-                                <div class="row-business-name row justify-content-between mr-1">
-                                    <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
-                                </div>
-                                <hr class="divider-1 divider-mod-1">
-                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
-                                        <div class="col">
-                                            <input type="checkbox" name="" id="" class="mr-3 mt-4">
-                                            <a href="product.php" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
-                                        </div>
-                                        <div class="col-7 mr-0">
-                                            <a href="product.php" class="link-black-none">
-                                                <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                            </a>
-                                        </div>
-                                        <div class="mr-3 ml-2 mr-2">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col inc-qty mx-0 my-0 px-0 ml-3">
-                                            <label for="quantity">Quantity:</label><br>
-                                                <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem  inQty-widthMAX no-mx inQty rounded">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                    </div>
-                    <div class="row ml-3">
-                        <div class="row column-card mt-2">
-                            <div class="order-card container-fluid">
-                                <div class="row-business-name row justify-content-between mr-1">
-                                    <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
-                                </div>
-                                <hr class="divider-1 divider-mod-1">
-                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
-                                        <div class="col">
-                                            <input type="checkbox" name="" id="" class="mr-3 mt-4">
-                                            <a href="product.php" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
-                                        </div>
-                                        <div class="col-7 mr-0">
-                                            <a href="product.php" class="link-black-none">
-                                                <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                            </a>
-                                        </div>
-                                        <div class="mr-3 ml-2 mr-2">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col inc-qty mx-0 my-0 px-0 ml-3">
-                                            <label for="quantity">Quantity:</label><br>
-                                                <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem  inQty-widthMAX no-mx inQty rounded">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                    </div>
-                    <div class="row ml-3">
-                        <div class="row column-card mt-2">
-                            <div class="order-card container-fluid">
-                                <div class="row-business-name row justify-content-between mr-1">
-                                    <p>Sold by: <a href="#" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
-                                </div>
-                                <hr class="divider-1 divider-mod-1">
-                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-2">
-                                        <div class="col">
-                                            <input type="checkbox" name="" id="" class="mr-3 mt-4">
-                                            <a href="product.php" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
-                                        </div>
-                                        <div class="col-7 mr-0">
-                                            <a href="product.php" class="link-black-none">
-                                                <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                            </a>
-                                        </div>
-                                        <div class="mr-3 ml-2 mr-2">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col inc-qty mx-0 my-0 px-0 ml-3">
-                                            <label for="quantity">Quantity:</label><br>
-                                                <input type="number" value="1" name="quantity" MIN="1" id="qty" class="addItem  inQty-widthMAX no-mx inQty rounded">
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        
-                    </div>
+
+                    <?php 
+                        // echo <input type="hidden" name="">
+
+                        if (mysqli_num_rows($cart)>0)
+                        {
+                            while($row=mysqli_fetch_assoc($cart))
+                            {
+                                $item_cart = getProduct($row['item_id'], $con);
+                                $business = getBusiness($item_cart['business_id'], $con);
+
+                                cartCard($business['BusinessName'], $row['cart_id'], $row['item_id'],$item_cart['Name'], $item_cart['item_price'], $row['qty'], $item_cart['Image']);
+                                // $_SESSION['invent_id'][$i] = $row['item_id'];
+                            }
+                        }
+                        else
+                        {
+                            echo '<p class="msg-none" style="font-size: 3em;"><strong>NO ITEMS IN CART</strong></p>';
+                        }
+
+                    ?>
+                
                 </div>
                 <div class="col pt-5 ml-0 mt-5 content-1">
                     <div class="column-card">
@@ -202,9 +120,9 @@ session_start();
                         <hr class="divider-1 divider-mod-1 mt-3">
         
                         <div class="row ml-2 mt-2 justify-content-center">
-                            <a href="checkout.php" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5">Proceed to Checkout</a>
+                            <!-- <a href="checkout.php" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5">Proceed to Checkout</a> -->
 
-                            <!-- <input type="submit" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5" value="Proceed to Checkout"> -->
+                            <input type="submit" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5" value="Proceed to Checkout">
                         </div>
                     </div>
                 </div>
@@ -214,6 +132,7 @@ session_start();
             </div>
             
         </div>
+
         
     </form>
     

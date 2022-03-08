@@ -10,6 +10,21 @@ session_start();
     {
         $user_data = check_user($con);
     }
+
+    if($_GET['id'])
+    {
+        $item_id = $_GET['id'];
+    }
+    else
+    {
+        header(location: allProducts.php);
+    }
+    $item = getProduct($item_id, $con);
+
+    $business = getBusiness($item['business_id'], $con);
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -54,27 +69,41 @@ session_start();
     }
     second_Nav(); 
 
+    
     ?>
 
-   
 
     <div class="some-container content-bg container-fluid pb-4" id="profileCustom">
         <div class="row container-fluid justify-content-center pt-5 mb-5 ">
             <div class="column-card container-fluid col-lg-8 col-md-8 col-sm-12 mr-3">
-                <form action="">
+                <form action="addToCart.php" method="POST">
+                    <?php 
+                        switch($_SESSION['privilage'])
+                        {
+                            case "customer":
+                                echo "<input type='hidden' name='id' value="; echo $user_data['user_id']; echo ">";
+                                break;
+                            case "business":
+                                echo "<input type='hidden' name='id' value='"; echo $user_data['business_id']; echo "'>";
+                                break;
+                        }
+                    
+                    ?>    
+                    <input type='hidden' name='item_id' value="<?php echo $item['item_id'] ?>">
+
                     <div class="row ml-3 mr-2 mt-4 mb-5 justify-content-around">
-                        <img src="items/placeholder-image.png" class="img-product-display" alt="">
+                        <img src="products/<?php echo $item['Image'] ?>" class="img-product-display" alt="">
                         <div class="display-product col-lg-7 col-md-7 col-sm-12 mt-2">
                             <div class="row">
-                                <h2 class="display-product-name pr-1">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Dolore, maiores.</h2>
+                                <h2 class="display-product-name pr-1"><?php echo $item['Name'] ?></h2>
                             </div>
                             <div class="row ml-1 mt-2 some-product-text">
-                                <p><b>Brand:</b>&nbsp;$BRAND_NAME <div class="ml-5"><b>Category:</b>&nbsp;$CATEGORY</div></p>
+                                <p><b>Brand:</b>&nbsp;<?php echo $item['BrandName'] ?><div class="ml-5"><b>Category:</b>&nbsp;<?php echo $item['Category'] ?></div></p>
                             </div>
                             <hr class="divider-1 divider-mod-1 mt-1">
                             <div class="row mt-3 ml-1">
-                                <h3 class="product-price"><strong>₱$PRODUCT_PRICE</strong></h3>
-                                <strike class="mt-2 ml-3">$PREVIOUS_PRICE</strike>
+                                <h3 class="product-price" style="font-size: 2.5rem"><strong>&#8369;<?php echo $item['item_price'] ?></strong></h3>
+                                <strike class="mt-3 ml-3">$PREVIOUS_PRICE</strike>
                             </div>
                             <hr class="divider-1 divider-mod-1 mt-3">
                     
@@ -88,7 +117,7 @@ session_start();
                             </div>
 
                             <div class="row ml-1">
-                                <input type="submit" value=" Add to Cart" class="mt-4 btn-custom-1 btn-custom-trans-1 add-to-cart">
+                                <input type="submit" value="Add to Cart" name="submit" class="mt-4 btn-custom-1 btn-custom-trans-1 add-to-cart">
                             </div>
 
                             <hr class="divider-1 divider-mod-3 mt-3">
@@ -98,7 +127,7 @@ session_start();
                             </div>
 
                             <div class="row ml-1 mb-3">
-                                <span> Lorem, ipsum dolor sit amet consectetur adipisicing elit. Vitae molestias harum consequatur. Repellendus, quidem neque debitis nostrum, recusandae aliquid quas, nisi laudantium atque sequi laborum.</span>
+                                <span><?php echo $item['Description'] ?></span>
                             </div>
 
                             <hr class="divider-1 divider-mod-3 mt-3">
@@ -117,23 +146,24 @@ session_start();
 
                     <div class="row ml-2 mt-2 justify-content-center">
                         <ul class="list-inline mr-5">
-                            <li class="border list-inline-item px-4 py-2" id="delivery">Delivery</li>
-                            <li class="border list-inline-item px-4 py-2" id="walk-in">Walk-in</li>
+                            <li class="border list-inline-item px-4 py-2" id="<?php if ($item['ForDelivery']) {echo 'accept';} else {echo 'reject';} ?>">Delivery</li>
+                            <li class="border list-inline-item px-4 py-2" id="<?php if ($item['ForWalkin']) {echo 'accept';} else {echo 'reject';} ?>">Walk-in</li>
                         </ul>
+
                     </div>
                     <hr class="divider-1 divider-mod-1">
                     
                     <div class="row ml-2 mt-3">
-                        <h5><strong>Owned by:</strong></h5>
+                        <h5><strong>Sold by:</strong></h5>
                     </div>
                     <div class="row ml-2">
-                        <p>$BUSINESS_NAME</p>
+                        <p><?php echo $business['BusinessName'] ?></p>
                     </div>
                     <div class="row ml-2 mt-4">
                         <h5><strong>Seller's Address:</strong></h5>
                     </div>
                     <div class="row ml-2">
-                        <p>$BUSINESS_ADDRESS</p>
+                        <p><?php echo $business['BusinessAddress'] ?></p>
                     </div>
                     <hr class="mt-2 divider-1 divider-mod-1">
 
@@ -148,7 +178,7 @@ session_start();
     </div>
 
       
-    <footer class="footer mt-auto" id="footer-mod-1">
+    <footer class="footer mt-auto" id="footer-mod-1"> 
         <hr class="footer-line">
 
         <div class="links">

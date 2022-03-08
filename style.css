@@ -1341,7 +1341,7 @@ nav ul li a:hover{
     margin-bottom: 30%;
 }
 
-.image-preview {
+.image-preview{
     height:20em;
     width:20em;
 
@@ -1518,11 +1518,11 @@ nav ul li a:hover{
     font-size:0.9rem;
 }
 
-#delivery {
-    background-color: lawngreen
+#accept {
+    background-color: lawngreen;
 }
 
-#walk-in{
+#reject {
     background-color: red;
 }
 
@@ -1702,10 +1702,10 @@ footer {
 }
 
 .product-img{
-    width: 90%;
+    width: 40em;
+    height: 12em;
     object-fit: cover;
     object-position: center;
-    border: 0.2px gray solid;
 }
 
 
@@ -1722,6 +1722,11 @@ footer {
     font-family: var(--ff-metroLight);
     font-size: 1.5rem;
     color: #CE9205;
+}
+
+.strike-price {
+    font-size: 0.8em;
+    padding-top: 0.3em;
 }
 
 .product-list{
@@ -1742,5 +1747,4 @@ footer {
 .product-card:focus {
     color: black;
 }
-
 

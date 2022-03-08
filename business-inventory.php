@@ -73,16 +73,25 @@ session_start();
                     <?php 
                         $i = 0;
                         $result=getItem_data($con);
-                        while($row=mysqli_fetch_assoc($result))
+
+                        if (mysqli_num_rows($result)>0)
                         {
-                            
-                            if($row['business_id']==$user_data['business_id'])
+                            while($row=mysqli_fetch_assoc($result))
                             {
-                                $i++;
-                                inventoryCard('',$row['Name'],$row['item_price'],$row['Qty']);
-                                $_SESSION['invent_id'][$i] = $row['item_id'];
+                                
+                                if($row['business_id']==$user_data['business_id'])
+                                {
+                                    $i++;
+                                    inventoryCard($row['Image'],$row['Name'],$row['item_price'],$row['Qty']);
+                                    $_SESSION['invent_id'][$i] = $row['item_id'];
+                                }
                             }
                         }
+                        else
+                        {
+                            echo '<p class="msg-none" style="font-size: 3em;"><strong>NO ITEMS ADDED YET</strong></p>';
+                        }
+                        
             
 
                     ?>

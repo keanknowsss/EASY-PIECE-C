@@ -36,6 +36,7 @@ function check_user($con)
 }
 
 
+// FOR DEBUGGING PURPOSES
 function debug_to_console($data) {
     $output = $data;
     if (is_array($output))
@@ -65,13 +66,115 @@ function random_num($length)
 }
 
 
+// GET ITEM DATA
 function getItem_data($con)
 {
 
     $sql ="SELECT * FROM `additem`";
     $result=mysqli_query($con,$sql);
 
-    if(mysqli_num_rows($result)>0) {
-        return $result;
+    return $result;
+}
+
+
+// GET SPECIFIC ITEM DATA
+function getProduct($id, $con)
+{
+    $query = "SELECT * FROM `additem` WHERE item_id = '$id' LIMIT 1";
+    
+    $result = mysqli_query($con, $query);
+
+    if($result && mysqli_num_rows($result) > 0)
+    {
+        $item_data = mysqli_fetch_assoc($result);
+        return $item_data;
     }
 }
+
+
+// GET BUSINESS DATA
+function getBusiness($id, $con)
+{
+    $query = "SELECT * FROM `registrationbusiness` WHERE business_id = '$id' LIMIT 1";
+    
+    $result = mysqli_query($con, $query);
+
+    if($result && mysqli_num_rows($result) > 0)
+    {
+        $getData = mysqli_fetch_assoc($result);
+        return $getData;
+    }
+}
+
+
+function createCart($con)
+{
+    $query = "";
+    switch($_SESSION['privilage'])
+    {
+        case "customer":
+            $tablename = "user_".$_SESSION['user_id']."_cart";
+            break;
+        case "business":
+            $tablename = "business_".$_SESSION['business_id']."_cart";
+            break;
+    }
+    $query = "CREATE TABLE IF NOT EXISTS $tablename
+            (cart_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            user_id INT(11) NOT NULL, item_id INT(11) NOT NULL,
+            qty INT(11) NOT NULL)";
+
+
+    if(!mysqli_query($con, $query))
+    {
+        echo "Error Creating Table: ".mysqli_error($con);
+    }
+
+    return $tablename;
+}
+
+
+
+function getItemDuplicate($id, $item_id, $con)
+{
+    switch($_SESSION['privilage'])
+    {
+        case "customer":
+            $tablename = "user_".$id."_cart";
+            break;
+        case "business":
+            $tablename = "business_".$id."_cart";
+            break;
+    }
+
+    $query = "SELECT * FROM `$tablename` WHERE item_id = '$item_id'";
+
+    if(!($result = mysqli_query($con, $query)))
+    {
+        echo "Error Retrieving Item Data by ID: ".mysqli_error($con);
+    }
+    else 
+    {
+        $getData = mysqli_fetch_assoc($result);
+        return $getData;
+    }
+    
+
+}
+
+
+
+
+function getCart($tablename, $con)
+{
+
+    $sql = "SELECT * FROM $tablename";
+    
+    $result = mysqli_query($con, $sql);
+    return $result;
+
+    // debug_to_console("test");
+
+}
+
+
