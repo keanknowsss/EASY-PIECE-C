@@ -35,10 +35,35 @@ session_start();
                                     die;
                                 }
                             }
+                            // if wala email sa business database
+                            else
+                            {
+                                $query = "SELECT * FROM `admin` WHERE admin_email = '$Email' LIMIT 1";
+
+                                $result=mysqli_query($con,$query);
+                                if($result && mysqli_num_rows($result) > 0)
+                                {
+                                    $admin_data = mysqli_fetch_assoc($result);
+                                
+                                    if($admin_data['admin_pass'] === $BusPass)
+                                    {
+                                        header("Location: test.html");
+                                        die;
+                                    }
+                                }
+                            }
                     }
+                    else
+                    {
+
+
+                    }
+
+
        }else
        {
-           echo "Please enter some valid information.";
+        echo '<script>alert("Please enter some valid information.");</script>';
+
        }
     }
 

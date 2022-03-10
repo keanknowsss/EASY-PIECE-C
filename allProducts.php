@@ -98,7 +98,7 @@ session_start();
                                 ?>
                             <a href="product.php?id=<?php echo $row['item_id']; ?>" class="product-card col-lg-2 col-md-4 col-sm-6">
                                     <div class="row justify-content-center pt-3">
-                                        <img src="products/<?php echo $row['Image']; ?>" class="product-img" style="height:11em; width:13em;object-fit:cover;object-position:center;" alt="">
+                                        <img src="products/<?php echo $row['Image']; ?>" class="product-img" style="height:11em; width:13em;" alt="">
                                     </div>
                                     <div class="row pl-3 pr-3 mt-2">
                                         <p class="product-name"><?php echo $row['Name'] ?><br></p>
