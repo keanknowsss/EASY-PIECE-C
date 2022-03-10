@@ -6,8 +6,38 @@ session_start();
     include('connection.php');
     include('function1.php');
 
-     $user_data = check_user($con);
+    $user_data = check_user($con);
 
+
+    // check if page is from the cart submit
+    if(isset($_POST['submitCart']))
+    {
+        // check if page has selected values/items
+        if(strlen($_POST['selectedValues'])>0)
+        {
+            $selectedItems =  $_POST['selectedValues'];
+            $selectedItemsArray = explode(",",$selectedItems);
+
+
+            if(count($selectedItemsArray)>0)
+            {
+                
+            }
+            else
+            {
+                header("location: cart.php");
+            }
+        }
+        else
+        {
+            header("location: cart.php");
+
+        }
+    }
+    else
+    {
+        header("location: cart.php");
+    }
      
 ?> 
 
@@ -62,39 +92,41 @@ session_start();
                         <h1 class="title-cart">CHECKOUT</h1>
                     </div>
                     <hr class="divider-1 divider-mod-4 divider-mod-5 mt-0">
-                    <div class="row ml-3">
-        
-                        <div class="row column-card mt-2">
-                            <div class="order-card container-fluid">
+                    
+                        
+                        <div class="row column-card mt-2 pb-4">
+                            <div class="order-card container-fluid pb-2">
                                 <div class="row-business-name row justify-content-between mr-1">
                                     <p>Sold by: <a href="product.php" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
                                 </div>
                                 <hr class="divider-1 divider-mod-1">
-                                    <div class="row row-order-brief container-fluid p-0 ml-0 mr-0 pb-4">
-                                        <div class="col mr-3">
-                                            <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
+                                    <div class="row row-order-brief container p-0 ml-0 mr-0 pb-4">
+                                        <div class="col-lg-2">
+                                            <div class="row">
+                                                <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
+                                            </div>
                                         </div>
-                                        <div class="col-7 mr-0">
+                                        <div class="col-5 d-block">
                                             <a href="product.php" class="link-black-none">
-                                                <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
+                                                <p class="d-block order-item-name">que optio.</p>
                                             </a>
                                         </div>
-                                        <div class="mr-3 ml-2 mr-2">
+                                        <div class="col-lg-2 d-block ml-3">
                                             <span>₱$num</span>
                                         </div>
-                                        <div class="col inc-qty mx-0 my-0 px-0 ml-3">
+                                        <div class="col">
                                             <p>Qty:&nbsp;$QUANTITY</p>
                                         </div>
                                     </div>
-                                </div>
                             </div>
-                        
-                        
                         </div>
+                        
+                        
 
 
                     
                 </div>
+                
                 <div class="col-lg-3 col-lg-4 col-sm-12 pt-5 ml-0 mt-4 mb-4 content-1">
                     <div class="p-3 column-card mb-3 margin-mod">
                         <div class="row justify-content-between">

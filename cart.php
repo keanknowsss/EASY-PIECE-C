@@ -73,7 +73,7 @@ session_start();
     ?>
    
 
-    <form action="goPlaceOrder.php" method="post">
+    <form action="checkout.php" method="post">
         <div id="main-cont" class="content-bg some-container container-fluid pb-4 content-1" id="profileCustom" >
             <div class="row pt-3 mb-5 pb-5 add-padding content-1">
                 <div class="container-fluid col-lg-8 col-md 8 col-sm-12 mr-0 list-cart">
@@ -142,7 +142,7 @@ session_start();
                         }
 
                         
-                        echo '<input type="hidden" id="selectedValues" class="toJavafromPHP" >';
+                        echo '<input type="hidden" id="selectedValues" name="selectedValues" >';
 
                     ?>
                 
@@ -176,7 +176,7 @@ session_start();
                         <div class="row ml-2 mt-2 justify-content-center">
                             <!-- <a href="checkout.php" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5">Proceed to Checkout</a> -->
 
-                            <input type="submit" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5" value="Proceed to Checkout">
+                            <input type="submit" name="submitCart" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5" value="Proceed to Checkout">
                         </div>
                     </div>
                 </div>
@@ -319,7 +319,7 @@ session_start();
 
             }
             document.getElementById("price-sum").innerHTML = "&#8369;&nbsp;" + subtotal.toFixed(2);
-            document.getElementById("").value
+            document.getElementById("selectedValues").value = cart_id;
         }
 
 
