@@ -36,11 +36,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST")
                         }
                     }
             }
+            
+            header("Location: login.php");
             echo '<script>alert("Please enter some valid information.");</script>';
             
    }else
    {
        echo '<script>alert("Please enter some valid information.");</script>';
+       header("Location: login.php");
         
    }
 }

@@ -33,7 +33,10 @@ session_start();
                                     $_SESSION['business_id'] = $business_data['business_id'];
                                     header("Location: index.php");
                                     die;
-                                }
+                                }else
+                                    {
+                                        header("Location: login.php");
+                                    }
                             }
                             // if wala email sa business database
                             else
@@ -47,15 +50,18 @@ session_start();
                                 
                                     if($admin_data['admin_pass'] === $BusPass)
                                     {
-                                        header("Location: test.html");
+                                        header("Location: admin_profile.php");
                                         die;
+                                    }else
+                                    {
+                                        header("Location: login.php");
                                     }
                                 }
                             }
                     }
                     else
                     {
-
+                        header("Location: login.php");
 
                     }
 
@@ -63,6 +69,7 @@ session_start();
        }else
        {
         echo '<script>alert("Please enter some valid information.");</script>';
+        header("Location: login.php");
 
        }
     }
