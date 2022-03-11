@@ -42,7 +42,7 @@
                 </div>
             
                 <div class="row-4">
-                    <form action="regis-customer.php" method="post">
+                    <form action="regis-customer-process.php" method="post">
                         <fieldset>
                             <div class="col-form-1">
                                 <label for="fullName">Full Name:</label><br>
