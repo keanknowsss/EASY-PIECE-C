@@ -3,6 +3,8 @@ session_start();
 require "connection.php";
 require "function1.php";
 
+$user_data = check_user($con);
+
 if($_POST['submit'])
 {
     $order = createOrder($con);
@@ -60,6 +62,17 @@ if($_POST['submit'])
         $transaction = createTransaction($con, $business['business_id']);
 
         $subtotal = $item['item_price']*$qty;
+        $customer_privilege = $_SESSION['privilage'];
+
+        switch($_SESSION['privilage'])
+        {
+            case "customer":
+                $customer_id = $user_data['user_id'];
+                break;
+            case "business":
+                $customer_id = $user_data['business_id'];
+                break;
+        }
 
         $query = "INSERT INTO $transaction VALUES(
             '',
@@ -67,7 +80,9 @@ if($_POST['submit'])
             '$qty',
             '$order_placement_id',
             '$subtotal',
-            '$procurement'
+            '$procurement',
+            '$customer_privilege',
+            '$customer_id'
         )";
     
         $result = mysqli_query($con, $query);

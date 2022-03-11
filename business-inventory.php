@@ -50,17 +50,17 @@ session_start();
                         <h2><a href="business-order.php" class="profile-button-unselected">ORDERS</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-inventory.php" class="profile-button-selected" style="font-size:2rem;">INVENTORY</a></h2>
+                        <h2><a href="business-inventory.php" class="profile-button-selected">INVENTORY</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-transactions.php" class="profile-button-unselected massive-mb" id="btn-transaction">TRANSACTION</a></h2>
+                        <h2><a href="business-transactions.php" class="profile-button-unselected">TRANSACTION</a></h2>
                     </li>
                 </ul>
             </div>
             <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12">
                 <div class="container-pos container-fluid content-1 mb-5">
 
-                    <div class="row column-card mb-5 pt-2 pb-2">
+                    <div class="row column-card mb-4 pt-2 pb-2">
                         <div class="col-6">
                             <h2 class="title-invent"><?php echo $user_data['BusinessName'];?>'s Items</h2>
                         </div>
@@ -71,7 +71,6 @@ session_start();
                     </div>
 
                     <?php 
-                        $i = 0;
                         $result=getItem_data($con);
 
                         if (mysqli_num_rows($result)>0)
@@ -81,15 +80,49 @@ session_start();
                                 
                                 if($row['business_id']==$user_data['business_id'])
                                 {
-                                    $i++;
-                                    inventoryCard($row['Image'],$row['Name'],$row['item_price'],$row['Qty']);
-                                    $_SESSION['invent_id'][$i] = $row['item_id'];
+
+                                    echo '<div class="row column-card mb-3">
+                                        <div class="order-card container-fluid mb-5">
+                                            <div class="row">
+                                                <div class="row-business-name">
+                                                    <p><a href="business-edit-items.php?id='.$row['item_id'].'">Edit Item</a>&nbsp;|&nbsp;<a href="#" data-toggle="modal" data-target="#popUP" onclick="moveId('.$row['item_id'].')">Delete Item</a></p>
+                                                </div>
+                                            </div>
+
+                                            <hr class="divider-1 divider-mod-1">
+
+                                            <div class="row container-fluid pb-4">
+                                                <div class="row row-order-brief container pb-2">
+                                                    <div class="col-lg-2 pb-1">
+                                                        <div class="row pb-4">
+                                                            <a href="product.php?id='.$row['item_id'].'" class="link-black-none">
+                                                            <img src="products/'.$row['Image'].'" alt="product img" class="" style="width: 9.5em; height:9em; margin-top: -0.7em; object-fit: cover;">
+                                                            </a>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="col-5 d-block">
+                                                        <a href="product.php?id='.$row['item_id'].'" class="link-black-none">
+                                                            <p class="order-item-name">'.$row['Name'].'</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-1 d-block">
+                                                        <span>&#8369;&nbsp;'.number_format($row['item_price'],2).'</span>
+                                                    </div>
+                                                    <div class="col">
+                                                        <span>Qty: '.$row['Qty'].'</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>';
                                 }
                             }
                         }
                         else
                         {
-                            echo '<p class="msg-none" style="font-size: 3em;"><strong>NO ITEMS ADDED YET</strong></p>';
+                           
                         }
                         
             
@@ -128,29 +161,39 @@ session_start();
     </div>
       
     <!-- Modal -->
-    <div class="modal fade" id="popUP" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
-                <div class="modal-dialog modal-dialog-centered" role="document">
-                <div class="modal-content">
-                    <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLongTitle">User Confirmation</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
+    
+            <form action="business-inventory-delete.php" method="post">
+                <div class="modal fade" id="popUP" tabindex="-1" role="dialog" aria-labelledby="" aria-hidden="true">
+                    <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLongTitle">User Confirmation</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                        </div>
+                        <div class="modal-body">
+                            Are you sure you want to Remove the Item?
+                        </div>
+                        <div class="modal-footer">
+                            <input type="hidden" name="modalVal" id="modalVal" value="">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
+                        <input type="submit" class="btn btn-primary" value="OK">
+                        </div>
                     </div>
-                    <div class="modal-body">
-                        Are you sure you want to place the order?
-                    </div>
-                    <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <input type="submit" class="btn btn-primary" value="Ok">
                     </div>
                 </div>
-                </div>
-            </div>
+            </form>
 
 
 
 
+    <script>
+        function moveId(id)
+        {
+            document.getElementById("modalVal").value = id;
+        }
+    </script>
 
 
     <!-- JavaScript Bootstrap -->

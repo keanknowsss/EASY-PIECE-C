@@ -87,10 +87,10 @@ session_start();
                         <h2><a href="business-order.php" class="profile-button-unselected">ORDERS</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-inventory.php" class="profile-button-unselected" style="font-size:2rem;">INVENTORY</a></h2>
+                        <h2><a href="business-inventory.php" class="profile-button-unselected" >INVENTORY</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-transactions.php" class="profile-button-unselected" id="btn-transaction">TRANSACTION</a></h2>
+                        <h2><a href="business-transactions.php" class="profile-button-unselected">TRANSACTION</a></h2>
                     </li>
                 </ul>
             </div>

@@ -107,6 +107,22 @@ function getBusiness($id, $con)
 }
 
 
+// GET BUSINESS DATA
+function getCustomer($id, $con)
+{
+    $query = "SELECT * FROM `registrationuser` WHERE user_id = '$id' LIMIT 1";
+    
+    $result = mysqli_query($con, $query);
+
+    if($result && mysqli_num_rows($result) > 0)
+    {
+        $getData = mysqli_fetch_assoc($result);
+        return $getData;
+    }
+}
+
+
+
 function createCart($con)
 {
     $query = "";
@@ -191,7 +207,6 @@ function itemsinCart($tablename, $cartId, $con)
     {
         echo '<script>alert("Error: "'.mysql_error().'</script>';
     }
-
     
 }
 
@@ -232,7 +247,8 @@ function createTransaction($con, $id)
     $query = "CREATE TABLE IF NOT EXISTS $tablename
             (transaction_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
             item_id INT(11) NOT NULL, qty INT(11) NOT NULL, 
-            order_placement_id INT(11) NOT NULL, subtotal FLOAT NOT NULL, procurement VARCHAR(100) NOT NULL)";
+            order_placement_id INT(11) NOT NULL, subtotal FLOAT NOT NULL, procurement VARCHAR(100) NOT NULL,
+            customer_privilege VARCHAR(100) NOT NULL, customer_id INT(11) NOT NULL)";
 
 
     if(!mysqli_query($con, $query))
@@ -242,3 +258,5 @@ function createTransaction($con, $id)
 
     return $tablename;
 }
+
+

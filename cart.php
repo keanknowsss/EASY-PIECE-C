@@ -113,7 +113,7 @@ session_start();
                                                                 </a>
                                                             </div>
                                                         <div class="col-1 d-block">
-                                                            <span>&#8369;'.$item_cart['item_price'].'</span>
+                                                            <span>&#8369;'.number_format($item_cart['item_price'],2).'</span>
                                                         </div>
                                                         <div class="col">
                                                             <label for="quantity">Quantity:</label><br>

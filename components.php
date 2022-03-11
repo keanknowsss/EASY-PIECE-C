@@ -137,12 +137,12 @@
 
             <hr class=\"divider-1 divider-mod-1\">
 
-            <div class=\"row container-fluid pb-5\">
-                <div class=\"row row-order-brief container\">
+            <div class=\"row container-fluid pb-4\">
+                <div class=\"row row-order-brief container pb-2\">
                     <div class=\"col-lg-2 pb-1\">
                         <div class=\"row pb-4\">
                             <a href=\"\" class=\"link-black-none\">
-                            <img src=\"products/$product_img\" alt=\"product img\" class=\"\" style=\"width: 10.5em; height:10em; margin-top: -0.5em; object-fit: cover;\">
+                            <img src=\"products/$product_img\" alt=\"product img\" class=\"\" style=\"width: 9.5em; height:9em; margin-top: -0.7em; object-fit: cover;\">
                             </a>
                         </div>
                         

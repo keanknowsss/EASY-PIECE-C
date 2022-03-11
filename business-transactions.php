@@ -7,7 +7,10 @@ session_start();
     include('connection.php');
     include('function1.php');
 
-     $user_data = check_user($con);
+    $user_data = check_user($con);
+
+
+    $transaction_table = createTransaction($con, $user_data['business_id']);
 
 
 ?>
@@ -18,7 +21,7 @@ session_start();
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Business Orders | EASY PIECE</title>
+    <title>Business Transactions | EASY PIECE</title>
 
     <!-- BOOTSTRAP CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -50,150 +53,93 @@ session_start();
                         <h2><a href="business-order.php" class="profile-button-unselected">ORDERS</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-inventory.php" class="profile-button-unselected" style="font-size:2rem;">INVENTORY</a></h2>
+                        <h2><a href="business-inventory.php" class="profile-button-unselected">INVENTORY</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-transactions.php" class="profile-button-selected massive-mb" id="btn-transaction">TRANSACTION</a></h2>
+                        <h2><a href="business-transactions.php" class="profile-button-selected">TRANSACTION</a></h2>
                     </li>
                 </ul>
             </div>
-            <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12">
+            <div class="content-bg col-lg-10 col-md-9 col-sm-8 col-xs-12 pb-5">
                 <div class="container-pos container-fluid content-1 mb-5">
 
-                    <div class="row column-card mb-4">
-                        <div class="show-items">
-                            <span>Show:&nbsp;</span>
-                            <select name="num_of_rows" id="">
-                                <option value="0">Last 5 Transactions</option>
-                                <option value="1">Last 10 Transactions</option>
-                                <option value="2">Last 15 Transactions</option>
-                                <option value="3">Last 20 Transactions</option>
-                            </select>
-                        </div>
-                    </div>
+            
 
-                    <div class="row column-card mb-2">
-                        <div class="order-card container-fluid">
-                            <div class="row-business-name row justify-content-between mr-1">
-                                <p>Transactioned with: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
-                            </div>
+                <?php
 
-                            <hr class="divider-1 divider-mod-1">
+                    $sql = "SELECT * FROM $transaction_table";
 
-                            <div class="row pb-5">
-                                    <div class="row row-order-brief container">
-                                        <div class="col-lg-2">
-                                            <a href="" class="link-black-none">
-                                            <img src="items/placeholder-image.png" alt="product img">
-                                            </a>
-                                       
+                    if($result = mysqli_query($con, $sql))
+                    {
+                        if(mysqli_num_rows($result)>0)
+                        {
+                            while($row = mysqli_fetch_assoc($result))
+                            {
+                                $item = getProduct($row['item_id'], $con);
+
+                                switch($row['customer_privilege'])
+                                {
+                                    case "customer":
+                                        $customer = getCustomer($row['customer_id'], $con);
+                                        break;
+                                    case "business":
+                                        $customer = getBusiness($row['customer_id'], $con);
+                                        break;
+                                }
+                                
+                                echo '<div class="row column-card pb-5 mb-3">
+                                    <div class="order-card container-fluid">
+                                        <div class="row-business-name row justify-content-between mr-1">';
+
+                                        switch($row['customer_privilege'])
+                                        {
+                                            case "customer":
+                                                echo '<p>Transactioned with: '.$customer['FullName'].' <p><p>Order ID: '.$row['order_placement_id'].'</span>';
+                                                break;
+                                            case "business":
+                                                echo '<p>Transactioned with: '.$customer['BusinessName'].' <p><p>Order ID: '.$row['order_placement_id'].'</span>';
+                                                break;
+                                        }
+                                            
+                                echo   '</div>
+
+                                        <hr class="divider-1 divider-mod-1">
+
+                                        <div class="row pb-5">
+                                                <div class="row row-order-brief container">
+                                                    <div class="col-lg-2">
+                                                        <a href="product.php?id='.$row['item_id'].'" class="link-black-none"><img src="products/'.$item['Image'].'" alt="product img" class="" style="width: 9.5em; height:9em; margin-top: -0.7em; object-fit: cover;"></a>
+                                                    </div>
+                                                    <div class="col-lg-8 d-block">
+                                                        <a href="product.php?id='.$row['item_id'].'" class="link-black-none">
+                                                            <p class="order-item-name">'.$item['Name'].'</p>
+                                                        </a>
+                                                    </div>
+                                                    <div class="col-lg-1">
+                                                        <span>&#8369;&nbsp;'.$item['item_price'].'</span>
+                                                    </div>
+                                                    <div class="col">
+                                                        <span>Qty: '.$row['qty'].'</span>
+                                                    </div>
+                                                </div>
                                         </div>
-                                        <div class="col-5 d-block">
-                                            <a href="" class="link-black-none">
-                                            <p class="order-item-name">Lorem, ipsum.</p>
-                                            </a>
-                                        </div>
-                                        <div class="col-1 d-block">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col">
-                                            <span>Qty: $num</span>
-                                        </div>
+
                                     </div>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row column-card mb-2">
-                        <div class="order-card container-fluid">
-                            <div class="row-business-name row justify-content-between mr-1">
-                                <p>Transactioned with: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
-                            </div>
-
-                            <hr class="divider-1 divider-mod-1">
-
-                            <div class="row pb-4">
-                                <a href="" class="link-black-none">
-                                    <div class="row row-order-brief container">
-                                        <div class="col">
-                                            <img src="items/placeholder-image.png" alt="product img">
-                                        </div>
-                                        <div class="col-7">
-                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                        </div>
-                                        <div class="col">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col">
-                                            <span>Qty: $num</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row column-card mb-2">
-                        <div class="order-card container-fluid">
-                            <div class="row-business-name row justify-content-between mr-1">
-                                <p>Transactioned with: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
-                            </div>
-
-                            <hr class="divider-1 divider-mod-1">
-
-                            <div class="row pb-4">
-                                <a href="" class="link-black-none">
-                                    <div class="row row-order-brief container">
-                                        <div class="col">
-                                            <img src="items/placeholder-image.png" alt="product img">
-                                        </div>
-                                        <div class="col-7">
-                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                        </div>
-                                        <div class="col">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col">
-                                            <span>Qty: $num</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
-
-                    <div class="row column-card mb-2">
-                        <div class="order-card container-fluid">
-                            <div class="row-business-name row justify-content-between mr-1">
-                                <p>Transactioned with: $CUSTOMER_NAME <p><p>Order ID: $ORDER_ID</span>
-                            </div>
-
-                            <hr class="divider-1 divider-mod-1">
-
-                            <div class="row pb-4">
-                                <a href="" class="link-black-none">
-                                    <div class="row row-order-brief container">
-                                        <div class="col">
-                                            <img src="items/placeholder-image.png" alt="product img">
-                                        </div>
-                                        <div class="col-7">
-                                            <p class="order-item-name">Lorem ipsum dolor sit amet consectetur adipisicing elit. Aut voluptate dolorem eum delectus ex vitae non consequatur totam quisquam repellat illum, et minus dolorum minima!</p>
-                                        </div>
-                                        <div class="col">
-                                            <span>₱$num</span>
-                                        </div>
-                                        <div class="col">
-                                            <span>Qty: $num</span>
-                                        </div>
-                                    </div>
-                                </a>
-                            </div>
-
-                        </div>
-                    </div>
+                                </div>';
+                            }
+                        }
+                        else
+                        {
+                            echo '<p class="msg-none" style="font-size: 3em;"><strong>NO ITEMS TRANSACTED YET</strong></p>';
+                        }
+                    }
+                    else
+                    {
+                        debug_to_console("Error".mysql_error());
+                    }
+                
+                ?>
+                    
 
                 </div>
                     

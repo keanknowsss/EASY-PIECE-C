@@ -51,10 +51,10 @@ session_start();
                         <h2><a href="business-order.php" class="profile-button-unselected">CUSTOMERS</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-inventory.php" class="profile-button-unselected" style="font-size:2rem;">BUSINESSES</a></h2>
+                        <h2><a href="business-inventory.php" class="profile-button-unselected">BUSINESSES</a></h2>
                     </li>
                     <li>
-                        <h2><a href="business-transactions.php" class="profile-button-unselected" id="btn-transaction" style="font-size:2rem;">ITEMS</a></h2>
+                        <h2><a href="business-transactions.php" class="profile-button-unselected">ITEMS</a></h2>
                     </li>
                 </ul>
             </div>
