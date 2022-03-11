@@ -24,6 +24,17 @@ if($_POST['submit'])
 
     $procurement = $_POST['procurement'];
 
+    if($procurement=="delivery")
+    {
+        $shipping = $_POST['shipping'];
+    }
+    else
+    {
+        $shipping = 0;
+    }
+    
+
+    
 
     for($i = 0; $i<count($selectedItemsArray); $i++)
     {
@@ -42,7 +53,8 @@ if($_POST['submit'])
             '$qty',
             '$order_placement_id',
             '$total',
-            '$procurement'
+            '$procurement',
+            '$shipping'
         )";
     
         $result = mysqli_query($con, $query);
@@ -82,7 +94,8 @@ if($_POST['submit'])
             '$subtotal',
             '$procurement',
             '$customer_privilege',
-            '$customer_id'
+            '$customer_id',
+            '$shipping'
         )";
     
         $result = mysqli_query($con, $query);
@@ -113,6 +126,6 @@ if($_POST['submit'])
 
 
 
-header('location: '.$_SESSION['privilage'].'-order.php');
+header('location: invoice.php?orderid='.$order_placement_id.'');
 
 ?>

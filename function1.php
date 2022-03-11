@@ -70,7 +70,7 @@ function random_num($length)
 function getItem_data($con)
 {
 
-    $sql ="SELECT * FROM `additem`";
+    $sql ="SELECT * FROM additem";
     $result=mysqli_query($con,$sql);
 
     return $result;
@@ -226,7 +226,7 @@ function createOrder($con)
     $query = "CREATE TABLE IF NOT EXISTS $tablename
             (order_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
             item_id INT(11) NOT NULL, qty INT(11) NOT NULL, 
-            order_placement_id INT(11) NOT NULL, total FLOAT NOT NULL, procurement VARCHAR(100) NOT NULL)";
+            order_placement_id INT(11) NOT NULL, total FLOAT NOT NULL, procurement VARCHAR(100) NOT NULL, shipping_fee FLOAT NOT NULL)";
 
 
     if(!mysqli_query($con, $query))
@@ -248,7 +248,7 @@ function createTransaction($con, $id)
             (transaction_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
             item_id INT(11) NOT NULL, qty INT(11) NOT NULL, 
             order_placement_id INT(11) NOT NULL, subtotal FLOAT NOT NULL, procurement VARCHAR(100) NOT NULL,
-            customer_privilege VARCHAR(100) NOT NULL, customer_id INT(11) NOT NULL)";
+            customer_privilege VARCHAR(100) NOT NULL, customer_id INT(11) NOT NULL, shipping_fee FLOAT NOT NULL)";
 
 
     if(!mysqli_query($con, $query))

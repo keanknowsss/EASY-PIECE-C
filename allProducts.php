@@ -75,86 +75,46 @@ session_start();
 
 
                 <?php
+                    // need to check if the rows are greater than 5 to avoid getting destroyed
                     while($x>5)
                     {
-                        if($x>5)
-                        {
-                            $x-=5;
-                        }
-                        else
-                        {
-                            break;
-                        }
-
-                        echo '<div class="row mt-5 product-list rounded">';
-                        echo '<div class="row pl-5 pr-5 mb-4 justify-content-around">';
+                        debug_to_console($row = mysqli_fetch_assoc($result));
                         
-                        $i=0;
-                        while ($row = mysqli_fetch_assoc($result))
-                        {
-                    // debug_to_console($row['Name']);
+                        echo '<div class="row pl-5 pr-5 mb-4 mt-5 justify-content-between">';
 
-                            
-                                ?>
-                            <a href="product.php?id=<?php echo $row['item_id']; ?>" class="product-card col-lg-2 col-md-4 col-sm-6">
-                                    <div class="row justify-content-center pt-3">
-                                        <img src="products/<?php echo $row['Image']; ?>" class="product-img" style="height:11em; width:13em;" alt="">
-                                    </div>
-                                    <div class="row pl-3 pr-3 mt-2">
-                                        <p class="product-name"><?php echo $row['Name'] ?><br></p>
-                                    </div>
-                                    <div class="row pl-3 pr-3 mt-2 mb-2 container">
-                                        <h6 class="product-price">&#8369;<?php echo $row['item_price'] ?></h6><strike class="mt-1 ml-2 strike-price" style="color:darkgoldenrod">&#8369;69.00</strike>
-                                    </div>
-                                </a>
-
-                                
-                    <?php    
-                        if($i<4)
+                        $i = 0;
+                        while($row = mysqli_fetch_assoc($result))
                         {
+
+                            // debug_to_console($row['item_price']);
+                            echo '<a href="product.php?id='.$row['item_id'].'" class="product-card col-lg-2 col-md-4 col-sm-6">
+                                        <div class="row justify-content-center pt-3">
+                                            <img src="products/'.$row['Image'].'" class="product-img" style="height:11em; width:13em;" alt="">
+                                        </div>
+                                        <div class="row pl-3 pr-3 mt-2">
+                                            <p class="product-name">'.$row['Name'].'<br></p>
+                                        </div>
+                                        <div class="row pl-3 pr-3 mt-2 mb-2 container">
+                                            <h6 class="product-price">&#8369;'.$row['item_price'].'</h6><strike class="mt-1 ml-2 strike-price" style="color:darkgoldenrod">&#8369;69.00</strike>
+                                        </div>
+                                    </a>';
+
                             $i++;
+                            if ($i==5)
+                            {
+                                break;
+                            }
+
                         }
-                        else
-                        {
-                            break 2;
-
-                        }    
-                }
-                    
-
 
                         echo '</div>';     
-                        echo '</div>';
-
+                        
+                        $x -=5;
                     }
-                
-                if ($x<=5)
-                {?>
-                    <div class="row mt-5 product-list rounded">
-                            <div class="row pl-5 pr-5 mb-4 justify-content-around">
-            <?php  
-                
-            
-            while ($row = mysqli_fetch_assoc($result))
-                        {
-                            ?>
-                            <a href="product.php?id=<?php echo $row['item_id']; ?>" class="product-card col-lg-2 col-md-4 col-sm-6">
-                                    <div class="row justify-content-center pt-3">
-                                        <img src="products/<?php echo $row['Image']; ?>" class="product-img px-1" alt="">
-                                    </div>
-                                    <div class="row pl-3 pr-3 mt-2">
-                                        <p class="product-name"><?php echo $row['Name'] ?><br></p>
-                                    </div>
-                                    <div class="row pl-3 pr-3 mt-2 mb-2 container">
-                                        <h6 class="product-price">&#8369;<?php echo $row['item_price'] ?></h6><strike class="mt-1 ml-2 strike-price" style="color:darkgoldenrod">&#8369;69.00</strike>
-                                    </div>
-                                </a>
-                    <?php    }
-                    echo '</div>';     
-                    echo '</div>';
 
-                }
-            ?>
+                    ?>
+
+                    
                    
     
                 
@@ -164,8 +124,7 @@ session_start();
             </div>
         </div>
     </div>
-            </div>
-            </div>
+            
 
 
 

@@ -5,7 +5,6 @@ session_start();
 
 include('connection.php');
 include('function1.php');
-include('function2.php');
 
 $user_data = check_user($con);
 

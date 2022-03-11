@@ -82,7 +82,7 @@ session_start();
                                         <div class="row file-up">
                                             <div class="input-img ml-5">
                                                 <label for="inputImg" id="link-for-img" class="btn btn-custom-1 btn-custom-trans-1">Upload Image</label>
-                                                <input type="file" name="image" id="inputImg" accept="image/png, image/gif, image/jpeg" required>
+                                                <input type="file" name="image" id="inputImg" accept="image/png, image/gif, image/jpeg" value="<?php echo $item['Image'] ?>">
                                             </div>
                                         </div>
                                         
@@ -158,8 +158,14 @@ session_start();
                             </div>
 
                             <div class="row container mt-3 justify-content-lg-end justify-content-md-end justify-content-sm-center">
-                                <input type="submit" value="ADD ITEM" class="btn btn-custom-1 btn-add" style="margin-right: 0em;">
-                                <a href="#" href="#" data-toggle="modal" data-target="#popUP" onclick="moveId(<?php echo $item['item_id'] ?>)" class="btn btn-custom-1 btn-add position-absolute" style="background: gray; right: 10em;">Remove Item</a>
+                                <div class="col-3">
+                                    <input type="hidden" name="id" value="<?php echo $item['item_id'] ?>">
+                                    <input type="submit" name="submit" value="UPDATE ITEM" class="btn btn-custom-1 btn-add" style="margin: 0;">
+                                </div>
+                                <div class="col-4">
+                                    <a href="#" href="#" data-toggle="modal" data-target="#popUP" onclick="moveId(<?php echo $item['item_id'] ?>)" class="btn btn-custom-1 btn-add" style="background: gray; margin:0;">Remove Item</a>
+
+                                </div>
 
                             </div>
                         </form>

@@ -137,9 +137,14 @@ session_start();
                         </div>';
                         }
                         
-                        $order_total = $total + $shipping;
+                        $order_total = $total;
+                        echo '<script>var total='.$order_total.';</script>';
+                        echo '<script>var shipping='.$shipping.';</script>';
+                        echo '<script>var sub='.$total.';</script>';
+
+
                         echo '<input type="hidden" name="idString" value="'.$selectedItems.'">';
-                        echo '<input type="hidden" name="total" value="'.number_format($order_total,2).'">';
+                        echo '<input type="hidden" name="total" id="totalhidden" value="'.number_format($order_total,2).'">';
                         
                     ?>
 
@@ -184,10 +189,10 @@ session_start();
                         <h4><b>Procurement Option:</b></h4>
                         <div class="radio">
                             <div class="row ml-2 justify-content-center mr-2">
-                                <input label="DELIVERY" type="radio" id="delivery-rb" name="procurement" value="delivery" >
+                                <input label="DELIVERY" type="radio" id="delivery-rb" name="procurement" value="delivery" onclick="displayShipping()">
                             </div>
                             <div class="row ml-2 justify-content-center mr-2">
-                                <input label="WALK-IN" type="radio" id="walkin-rb" name="procurement" value="walkin"checked>
+                                <input label="WALK-IN" type="radio" id="walkin-rb" name="procurement" onclick="hideShipping()" value="walkin"checked>
                             </div>
                         </div>
                     </div>
@@ -200,7 +205,7 @@ session_start();
                             <div class="col-2 mr-4">Subtotal:</div>
                             <div class="col-3 price-sum mr-5 ml-3"><b>&#8369;&nbsp;<?php echo number_format($total,2); ?></b></div>
                         </div>
-                        <div class="row ml-2 mt-3 justify-content-start">
+                        <div class="row ml-2 mt-3 justify-content-start" id="shippingcontent" style = "display:none;">
                             <div class="col-2 mr-4">Shipping Fee(Delivery):</div>
                             <div class="col-3 price-sum mr-5 ml-2"><b>&#8369;&nbsp;<?php echo number_format($shipping,2); ?></b></div>
                         </div>
@@ -208,7 +213,8 @@ session_start();
         
                         <div class="row ml-2 mt-3 justify-content-start">
                             <div class="col-2 mr-4">Total</div>
-                            <div class="col-3 price-sum mr-5 ml-2"><b>&#8369;&nbsp;<?php echo number_format($order_total,2); ?></b></div>
+                            <div class="col-3 price-sum mr-5 ml-2"><b id="totalvalue">&#8369;&nbsp;<?php echo number_format($order_total,2); ?></b></div>
+                            <input type="hidden" name="shipping" value="<?php echo number_format($order_total,2); ?>">
                         </div>
                         <div class="row ml-2 mt-2 justify-content-center">
                             <a href="#" data-toggle="modal" data-target="#popUP" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5">PLACE ORDER NOW</a>
@@ -262,6 +268,25 @@ session_start();
 
 
 
+    <script>
+        function displayShipping()
+        {
+            var total = sub + shipping;
+
+            document.getElementById("shippingcontent").style.display = "flex";
+            document.getElementById("totalhidden").value = total;
+            document.getElementById("totalvalue").innerHTML = "&#8369;&nbsp;" + total.toFixed(2);
+        }
+
+        function hideShipping()
+        {
+            var total = sub;
+
+            document.getElementById("shippingcontent").style.display = "none";
+            document.getElementById("totalhidden").value = total;
+            document.getElementById("totalvalue").innerHTML = "&#8369;&nbsp;" + total.toFixed(2);
+        }
+    </script>
 
 
     <!-- JavaScript Bootstrap -->
