@@ -86,7 +86,6 @@ session_start();
 
                         if (mysqli_num_rows($cart)>0)
                         {
-                            $check_id = array();
 
                             while($row=mysqli_fetch_assoc($cart))
                             {
@@ -129,11 +128,7 @@ session_start();
                                     </div>';
 
 
-                                if(!(in_array($row['cart_id'], $check_id)))
-                                {
-                                    array_push($check_id, $row['cart_id']);
-                                }
-                                
+                               
                             }
                         }
                         else

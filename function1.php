@@ -173,8 +173,26 @@ function getCart($tablename, $con)
     $result = mysqli_query($con, $sql);
     return $result;
 
-    // debug_to_console("test");
 
+}
+
+
+
+function itemsinCart($tablename, $cartId, $con)
+{
+    $sql = "SELECT * FROM $tablename WHERE cart_id = $cartId LIMIT 1";
+
+    if($result = mysqli_query($con, $sql))
+    {
+
+        return $result;
+    }
+    else
+    {
+        echo '<script>alert("Error: "'.mysql_error().'</script>';
+    }
+
+    
 }
 
 

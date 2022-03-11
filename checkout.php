@@ -21,7 +21,6 @@ session_start();
 
             if(count($selectedItemsArray)>0)
             {
-                
             }
             else
             {
@@ -93,7 +92,15 @@ session_start();
                     </div>
                     <hr class="divider-1 divider-mod-4 divider-mod-5 mt-0">
                     
-                        
+
+                    <?php 
+                        for($i = 0; $i<count($selectedItemsArray); $i++)
+                        {
+                            $data = itemsinCart(createCart($con), $selectedItemsArray[$i], $con);
+
+                        }
+
+                    ?>
                         <div class="row column-card mt-2 pb-4">
                             <div class="order-card container-fluid pb-2">
                                 <div class="row-business-name row justify-content-between mr-1">
