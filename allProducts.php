@@ -86,7 +86,7 @@ session_start();
                         while($row = mysqli_fetch_assoc($result))
                         {
 
-                            // debug_to_console($row['item_price']);
+                            debug_to_console("test");
                             echo '<a href="product.php?id='.$row['item_id'].'" class="product-card col-lg-2 col-md-4 col-sm-6">
                                         <div class="row justify-content-center pt-3">
                                             <img src="products/'.$row['Image'].'" class="product-img" style="height:11em; width:13em;" alt="">
