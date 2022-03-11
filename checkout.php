@@ -83,7 +83,7 @@ session_start();
     ?>
    
 
-    <form action="placeOrder.php" method="post">
+    <form action="checkout-process.php" method="post">
         <div class="content-bg some-container container-fluid pb-4 content-1" id="profileCustom" >
             <div class="row justify-content-center pt-3 mb-5 pb-5 add-padding content-1">
                 <div class="container-fluid col-lg-7 col-md 8 col-sm-12 mr-0 list-cart content-1">
@@ -94,42 +94,54 @@ session_start();
                     
 
                     <?php 
+                        $total = 0;
+                        $shipping = rand(20,50);
+
                         for($i = 0; $i<count($selectedItemsArray); $i++)
                         {
-                            $data = itemsinCart(createCart($con), $selectedItemsArray[$i], $con);
+                            $cart = itemsinCart(createCart($con), $selectedItemsArray[$i], $con);
 
-                        }
+                            $item_data = getProduct($cart['item_id'], $con);
+                            $business = getBusiness($item_data['business_id'], $con);
 
-                    ?>
-                        <div class="row column-card mt-2 pb-4">
-                            <div class="order-card container-fluid pb-2">
+
+                            $total += ($cart['qty']*$item_data['item_price']);
+
+                            //item card
+                            echo '
+                            <div class="row column-card mt-2 pb-4">
+                            <div class="order-card container-fluid pb-3">
                                 <div class="row-business-name row justify-content-between mr-1">
-                                    <p>Sold by: <a href="product.php" class="link-black-none">$CUSTOMER_NAME</a> <p><a href="">Remove</a></p>
+                                    <p>Sold by: <a href="#" class="link-black-none">'.$business['BusinessName'].'</a> <p><a href="cart-remove.php?cartid='.$cart['cart_id'].'">Remove</a></p>
                                 </div>
                                 <hr class="divider-1 divider-mod-1">
-                                    <div class="row row-order-brief container p-0 ml-0 mr-0 pb-4">
+                                    <div class="row row-order-brief container p-0 ml-0 mr-0 pb-4 mb-5">
                                         <div class="col-lg-2">
-                                            <div class="row">
-                                                <a href="" class="link-black-none"><img src="items/placeholder-image.png" alt="product img"></a>
+                                            <div class="row ml-1 mt-1">
+                                                <a href="product.php?id='.$cart['item_id'].'" class="link-black-none"><img src="products/'.$item_data['Image'].'" alt="product img"  style="width: 9.5em; height:9em; margin-top: -0.7em; object-fit: cover;"></a>
                                             </div>
                                         </div>
                                         <div class="col-5 d-block">
-                                            <a href="product.php" class="link-black-none">
-                                                <p class="d-block order-item-name">que optio.</p>
+                                            <a href="product.php?id='.$cart['item_id'].'" class="link-black-none">
+                                                <p class="d-block order-item-name">'.$item_data['Name'].'</p>
                                             </a>
                                         </div>
                                         <div class="col-lg-2 d-block ml-3">
-                                            <span>₱$num</span>
+                                            <span>&#8369;'.$item_data['item_price'].'</span>
                                         </div>
-                                        <div class="col">
-                                            <p>Qty:&nbsp;$QUANTITY</p>
+                                        <div>
+                                            <p>Qty:&nbsp;'.$cart['qty'].'</p>
                                         </div>
                                     </div>
                             </div>
-                        </div>
+                        </div>';
+                        }
                         
+                        $order_total = $total + $shipping;
+                        echo '<input type="hidden" name="idString" value="'.$selectedItems.'">';
+                        echo '<input type="hidden" name="total" value="'.number_format($order_total,2).'">';
                         
-
+                    ?>
 
                     
                 </div>
@@ -143,7 +155,7 @@ session_start();
                             </div>
                             
                             <div class="col">
-                                <a href="">Edit</a>
+                                <a href="<?php echo $_SESSION['privilage'] ?>.php">Edit</a>
                             </div>
                         </div>
                         <hr class="divider-1 divider-mod-1 m-0 mb-2">
@@ -151,19 +163,19 @@ session_start();
                         <table class="table-prof">
                             <tr>
                                 <td class="profTitle">Name:</td>
-                                <td>&CUSTOMER_NAME</td>
+                                <td><?php if($_SESSION['privilage']=='customer') {echo $user_data['FullName'];} else {echo $user_data['BusinessName'];}?></td>
                             </tr>
                             <tr>
                                 <td class="profTitle">Address:</td>
-                                <td >Lorem ipsum dolor sit amet consectetur, adipisicing elit. Commodi iure minima ab est obcaecati nisi!</td>
+                                <td ><?php if($_SESSION['privilage']=='customer') {echo $user_data['Addrss'];} else {echo $user_data['BusinessAddress'];}?></td>
                             </tr>
                             <tr>
                                 <td class="profTitle"> Phone Number:</td>
-                                <td>&CUSTOMER NUMBER</td>
+                                <td><?php if($_SESSION['privilage']=='customer') {echo $user_data['PhoneNumber'];} else {echo $user_data['BusinessContact'];}?></td>
                             </tr>
                             <tr>
                                 <td class="profTitle">Email:</td>
-                                <td>&CUSTOMER EMAIL</td>
+                                <td><?php if($_SESSION['privilage']=='customer') {echo $user_data['Email'];} else {echo $user_data['BusinessEmail'];}?></td>
                             </tr>
                         </table>
         
@@ -172,10 +184,10 @@ session_start();
                         <h4><b>Procurement Option:</b></h4>
                         <div class="radio">
                             <div class="row ml-2 justify-content-center mr-2">
-                                <input label="DELIVERY" type="radio" id="delivery-rb" name="gender" value="delivery" >
+                                <input label="DELIVERY" type="radio" id="delivery-rb" name="procurement" value="delivery" >
                             </div>
                             <div class="row ml-2 justify-content-center mr-2">
-                                <input label="WALK-IN" type="radio" id="walkin-rb" name="gender" value="female"checked>
+                                <input label="WALK-IN" type="radio" id="walkin-rb" name="procurement" value="walkin"checked>
                             </div>
                         </div>
                     </div>
@@ -186,17 +198,17 @@ session_start();
                         <hr class="divider-1 divider-mod-1">
                         <div class="row ml-2 mt-3 justify-content-start">
                             <div class="col-2 mr-4">Subtotal:</div>
-                            <div class="col-3 price-sum mr-5 ml-3"><b>$SUBTOTAL</b></div>
+                            <div class="col-3 price-sum mr-5 ml-3"><b>&#8369;&nbsp;<?php echo number_format($total,2); ?></b></div>
                         </div>
                         <div class="row ml-2 mt-3 justify-content-start">
                             <div class="col-2 mr-4">Shipping Fee(Delivery):</div>
-                            <div class="col-3 price-sum mr-5 ml-2"><b>$RANDOM NUMBER </b></div>
+                            <div class="col-3 price-sum mr-5 ml-2"><b>&#8369;&nbsp;<?php echo number_format($shipping,2); ?></b></div>
                         </div>
                         <hr class="divider-1 divider-mod-1 mt-3">
         
                         <div class="row ml-2 mt-3 justify-content-start">
                             <div class="col-2 mr-4">Total</div>
-                            <div class="col-3 price-sum mr-5 ml-2"><b>$SUBTOTAL + $SF</b></div>
+                            <div class="col-3 price-sum mr-5 ml-2"><b>&#8369;&nbsp;<?php echo number_format($order_total,2); ?></b></div>
                         </div>
                         <div class="row ml-2 mt-2 justify-content-center">
                             <a href="#" data-toggle="modal" data-target="#popUP" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5">PLACE ORDER NOW</a>
@@ -222,7 +234,7 @@ session_start();
                     </div>
                     <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-                    <input type="submit" class="btn btn-primary" value="Ok">
+                    <input type="submit" name="submit" class="btn btn-primary" value="OK">
                     </div>
                 </div>
                 </div>
@@ -251,8 +263,6 @@ session_start();
 
 
 
-
-    </script>
 
     <!-- JavaScript Bootstrap -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>

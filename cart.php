@@ -169,7 +169,6 @@ session_start();
                         <hr class="divider-1 divider-mod-1 mt-3">
         
                         <div class="row ml-2 mt-2 justify-content-center">
-                            <!-- <a href="checkout.php" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5">Proceed to Checkout</a> -->
 
                             <input type="submit" name="submitCart" class="btn btn-custom-1 btn-custom-trans-2 ml-0 px-5" value="Proceed to Checkout">
                         </div>

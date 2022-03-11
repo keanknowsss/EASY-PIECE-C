@@ -184,8 +184,8 @@ function itemsinCart($tablename, $cartId, $con)
 
     if($result = mysqli_query($con, $sql))
     {
-
-        return $result;
+        $getData = mysqli_fetch_assoc($result);
+        return $getData;
     }
     else
     {
@@ -196,3 +196,49 @@ function itemsinCart($tablename, $cartId, $con)
 }
 
 
+function createOrder($con)
+{
+    $query = "";
+    switch($_SESSION['privilage'])
+    {
+        case "customer":
+            $tablename = "user_".$_SESSION['user_id']."_order";
+            break;
+        case "business":
+            $tablename = "business_".$_SESSION['business_id']."_order";
+            break;
+    }
+    $query = "CREATE TABLE IF NOT EXISTS $tablename
+            (order_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            item_id INT(11) NOT NULL, qty INT(11) NOT NULL, 
+            order_placement_id INT(11) NOT NULL, total FLOAT NOT NULL, procurement VARCHAR(100) NOT NULL)";
+
+
+    if(!mysqli_query($con, $query))
+    {
+        echo "Error Creating Table: ".mysqli_error($con);
+    }
+
+    return $tablename;
+}
+
+
+
+function createTransaction($con, $id)
+{
+    $query = "";
+    $tablename = "business_".$id."_transaction";
+
+    $query = "CREATE TABLE IF NOT EXISTS $tablename
+            (transaction_id INT(11) NOT NULL AUTO_INCREMENT PRIMARY KEY,
+            item_id INT(11) NOT NULL, qty INT(11) NOT NULL, 
+            order_placement_id INT(11) NOT NULL, subtotal FLOAT NOT NULL, procurement VARCHAR(100) NOT NULL)";
+
+
+    if(!mysqli_query($con, $query))
+    {
+        echo "Error Creating Table: ".mysqli_error($con);
+    }
+
+    return $tablename;
+}
