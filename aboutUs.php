@@ -102,10 +102,10 @@ The Easy Piece C will include different features such as: PC Builder, and PC Par
 
         <div class="links">
             <ul>
-                <li><a href="">About Us</a></li>
-                <li><a href="">Terms of Use</a></li>
-                <li><a href="">Privacy Policy</a></li>
-                <li><a href="">Frequently Asked Questions</a></li>
+                <li><a href="aboutUs.php">About Us</a></li>
+                <li><a href="termsOfUse.php">Terms of Use</a></li>
+                <li><a href="privacyPolicy.php">Privacy Policy</a></li>
+                <li><a href="FAQ.php">Frequently Asked Questions</a></li>
             </ul>
             
         </div>
