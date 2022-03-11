@@ -323,7 +323,7 @@ nav ul li a:hover{
 
 }
 
-#footer-mod-1 ,#footer-mod-2 {
+#footer-mod-1 ,#footer-mod-2 ,#footer-mod-3 {
     position:absolute;
     margin-top:-23px;
     padding-top:20px;
@@ -341,12 +341,13 @@ nav ul li a:hover{
 }
 
 #footer-mod-3 {
-    position: absolute;
+    position: fixed;
     width: 100%;
     right: 0;
     bottom: 0;
     left: 0;
-    clear: both;
+    clear: both; 
+    
 } 
 
 
