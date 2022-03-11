@@ -74,7 +74,7 @@ session_start();
                     // need to check if the rows are greater than 5 to avoid getting destroyed
                     while($x>5)
                     {
-                        debug_to_console($row = mysqli_fetch_assoc($result));
+                        // debug_to_console($row = mysqli_fetch_assoc($result));
                         
                         echo '<div class="row pl-5 pr-5 mb-4 mt-5 justify-content-between">';
 
@@ -82,25 +82,26 @@ session_start();
                         while($row = mysqli_fetch_assoc($result))
                         {
                             if($row['Category']=="Processor")
-                            // debug_to_console($row['item_price']);
-                            echo '<a href="product.php?id='.$row['item_id'].'" class="product-card col-lg-2 col-md-4 col-sm-6">
-                                        <div class="row justify-content-center pt-3">
-                                            <img src="products/'.$row['Image'].'" class="product-img" style="height:11em; width:13em;" alt="">
-                                        </div>
-                                        <div class="row pl-3 pr-3 mt-2">
-                                            <p class="product-name">'.$row['Name'].'<br></p>
-                                        </div>
-                                        <div class="row pl-3 pr-3 mt-2 mb-2 container">
-                                            <h6 class="product-price">&#8369;'.$row['item_price'].'</h6><strike class="mt-1 ml-2 strike-price" style="color:darkgoldenrod">&#8369;69.00</strike>
-                                        </div>
-                                    </a>';
-
-                            $i++;
-                            if ($i==5)
                             {
-                                break;
-                            }
+                                // debug_to_console($row['item_price']);
+                                echo '<a href="product.php?id='.$row['item_id'].'" class="product-card col-lg-2 col-md-4 col-sm-6">
+                                            <div class="row justify-content-center pt-3">
+                                                <img src="products/'.$row['Image'].'" class="product-img" style="height:11em; width:13em;" alt="">
+                                            </div>
+                                            <div class="row pl-3 pr-3 mt-2">
+                                                <p class="product-name">'.$row['Name'].'<br></p>
+                                            </div>
+                                            <div class="row pl-3 pr-3 mt-2 mb-2 container">
+                                                <h6 class="product-price">&#8369;'.$row['item_price'].'</h6><strike class="mt-1 ml-2 strike-price" style="color:darkgoldenrod">&#8369;69.00</strike>
+                                            </div>
+                                        </a>';
 
+                                $i++;
+                                if ($i==5)
+                                {
+                                    break;
+                                }
+                            }
                         }
 
                         echo '</div>';     
