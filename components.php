@@ -13,9 +13,9 @@
         <div class=\"justify-content-around form-inline mr-5\">
             <form class=\" my-2 my-lg-0\" action=\"search.php\" method=\"get\">
                 <div class=\"search-box\">
-                    <input type=\"search\" name=\"search\"  class=\"search\" placeholder=\"Search Computer Components and Peripherals\">
-                    <a href=\"index.html\">
-                        <img src=\"images/Icons/search.png\" class = \"search-icon\">
+                    <input type=\"search\" name=\"search\" id=\"searchInput\"  class=\"search\" placeholder=\"Search Computer Components and Peripherals\">
+                    <a href=\"\" id=\"linkSearch\" onclick=\"createLink()\">
+                        <img src=\"images/Icons/search.png?name=\" class = \"search-icon\">
                     </a>
                 </div>
                 
@@ -54,7 +54,16 @@
             </ul>
         </nav>
         
-    </nav>";
+    </nav>
+    
+    <script>
+     function createLink()
+     {
+         var search = document.getElementById(\"searchInput\").value;
+        document.getElementById(\"linkSearch\").href = \"search.php?search=\" +  search;
+     }
+    </script>
+    ";
     echo $x;
     }
 
@@ -71,9 +80,9 @@
         <div class="justify-content-around form-inline mr-5">
             <form class=" my-2 my-lg-0" action="search.php" method="get">
                 <div class="search-box ">
-                    <input type="search" name="search"  class="search" placeholder="Search Computer Components and Peripherals">
-                    <a href="index.html">
-                        <img src="images/Icons/search.png" class = "search-icon">
+                    <input type="search" name="search"  id="searchInput"  class="search" placeholder="Search Computer Components and Peripherals">
+                    <a href="" id="linkSearch" onclick="createLink()">
+                        <img src="images/Icons/search.png" class = "search-icon" >
                     </a>
                 </div>
                 
@@ -111,7 +120,15 @@
             </ul>
         </nav>
         
-    </nav> ';
+    </nav> 
+    
+    <script>
+     function createLink()
+     {
+         var search = document.getElementById("searchInput").value;
+        document.getElementById("linkSearch").href = "search.php?search=" +  search;
+     }
+    </script>';
     echo $x;
     }
 

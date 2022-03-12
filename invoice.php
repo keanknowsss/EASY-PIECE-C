@@ -24,9 +24,17 @@ session_start();
         
         $sql = "SELECT * FROM $order_table WHERE order_placement_id = '$order_id' LIMIT 1";
 
-        $sample = mysqli_fetch_assoc(mysqli_query($con, $sql));
+        $result = mysqli_query($con, $sql);
 
-        $order_method = $sample['procurement'];
+        if($sample = mysqli_fetch_assoc($result)>0)
+        {
+            $order_method = $sample['procurement'];
+            
+        }
+        else
+        {
+            echo "Error:".mysqli_error();
+        }
 
     }
     else
