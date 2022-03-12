@@ -78,15 +78,19 @@ session_start();
             <div class="column-card container-fluid col-lg-8 col-md-8 col-sm-12 mr-3">
                 <form action="addToCart.php" method="POST">
                     <?php 
-                        switch($_SESSION['privilage'])
+                        if(isset($_SESSION['privilage']))
                         {
-                            case "customer":
-                                echo "<input type='hidden' name='id' value="; echo $user_data['user_id']; echo ">";
-                                break;
-                            case "business":
-                                echo "<input type='hidden' name='id' value='"; echo $user_data['business_id']; echo "'>";
-                                break;
+                            switch($_SESSION['privilage'])
+                            {
+                                case "customer":
+                                    echo "<input type='hidden' name='id' value="; echo $user_data['user_id']; echo ">";
+                                    break;
+                                case "business":
+                                    echo "<input type='hidden' name='id' value='"; echo $user_data['business_id']; echo "'>";
+                                    break;
+                            }
                         }
+                        
                     
                     ?>    
                     <input type='hidden' name='item_id' value="<?php echo $item['item_id'] ?>">
