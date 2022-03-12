@@ -60,6 +60,7 @@ session_start();
 
     ?>
             
+            <div class="row min-vh-100">
 
     <div class="main-content some-container container-fluid pb-4 ">
         <div class="row justify-content-center pt-3 mb-5 pb-5">
@@ -114,6 +115,7 @@ session_start();
             
             </div>
         </div>
+    </div>
     </div>
 
 

@@ -74,7 +74,7 @@ session_start();
    
 
     <form action="checkout.php" method="post">
-        <div id="main-cont" class="content-bg some-container container-fluid pb-4 content-1" id="profileCustom" >
+        <div id="main-cont" class="content-bg some-container container-fluid pb-4 content-1 min-vh-100" id="profileCustom" >
             <div class="row pt-3 mb-5 pb-5 add-padding content-1">
                 <div class="container-fluid col-lg-8 col-md 8 col-sm-12 mr-0 list-cart">
                     <div class="row mt-2">

@@ -61,7 +61,7 @@ session_start();
     ?>
             
 
-    <div class="main-content some-container container-fluid pb-4 ">
+    <div class="main-content some-container container-fluid pb-4">
         <div class="row justify-content-center pt-3 mb-5 pb-5">
             <div class="container-fluid col-lg-12 col-md 12 col-sm-12">
                 <div class="row mt-2 justify-content-center">

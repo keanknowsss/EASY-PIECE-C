@@ -137,14 +137,14 @@ session_start();
                                 <div class="profInfo">
                                     <p><?php echo $user_data['BusinessName']; ?></p><hr class="hr-underline">
                                 </div>
-                                <input type="text" name="businessName" class="profEdit">
+                                <input type="text" name="businessName" class="profEdit" value="<?php echo $user_data['BusinessName']; ?>">
                             </div>
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top: 3rem">
                                 <h4>Business Address:</h4>
                                 <div class="profInfo">
                                     <p><?php echo $user_data['BusinessAddress']; ?></p><hr class="hr-underline">
                                 </div>
-                                <input type="text" name="businessAddress" class="profEdit profAddress">
+                                <input type="text" name="businessAddress" class="profEdit profAddress" value="<?php echo $user_data['BusinessAddress']; ?>">
                             </div>
                         </div>
                         <div class="row  justify-content-start mr-5">
@@ -153,14 +153,14 @@ session_start();
                                 <div class="profInfo">
                                     <p><?php echo $user_data['BusinessContact']; ?></p><hr class="hr-underline">
                                 </div>
-                                <input type="tel" name="businessContact" class="profEdit profNum">
+                                <input type="tel" name="businessContact" class="profEdit profNum" value="<?php echo $user_data['BusinessContact']; ?>">
                             </div>
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top:2.9rem">
                                 <h4>Owner Name:</h4>
                                 <div class="profInfo">
                                     <p><?php echo $user_data['OwnerName']; ?></p><hr class="hr-underline">
                                 </div>
-                                <input type="text" name="ownerName" class="profEdit">
+                                <input type="text" name="ownerName" class="profEdit" value="<?php echo $user_data['OwnerName']; ?>">
                             </div>
                     
                         </div>
@@ -170,7 +170,7 @@ session_start();
                                 <div class="profInfo">
                                     <p><?php echo $user_data['BusinessEmail']; ?></p><hr class="hr-underline">
                                 </div>
-                                <input type="email" name="businessEmail" class="profEdit">
+                                <input type="email" name="businessEmail" class="profEdit" value="<?php echo $user_data['BusinessEmail']; ?>">
 
                             </div>
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12" style="margin-top:3rem">
@@ -179,7 +179,7 @@ session_start();
                                     <p><?php echo $user_data['OwnerContact']; ?></p>
                                     <hr class="hr-underline">
                                 </div>
-                                <input type="tel" name="ownerContact" class="profEdit profNum">
+                                <input type="tel" name="ownerContact" class="profEdit profNum" value="<?php echo $user_data['OwnerContact']; ?>">
                             </div>
                         </div>
                     </div>

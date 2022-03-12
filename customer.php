@@ -135,14 +135,14 @@ session_start();
                                 <div class="profInfo">
                                     <p><?php echo $user_data['FullName'];?></p><hr class="hr-underline">
                                 </div>
-                                <input type="text" name="fullName" class="profEdit">
+                                <input type="text" name="fullName" class="profEdit" value="<?php echo $user_data['FullName'];?>">
                             </div>
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Birthdate:</h4>
                                 <div class="profInfo">
                                     <p><?php echo $user_data['BirthDate'];?></p><hr class="hr-underline">
                                 </div>
-                                <input type="date" name="birthDate" class="profEdit profBday">
+                                <input type="date" name="birthDate" class="profEdit profBday" value="<?php echo $user_data['BirthDate'];?>">
                             </div>
                         </div>
                         <div class="row  justify-content-start mr-5">
@@ -151,7 +151,7 @@ session_start();
                                 <div class="profInfo">
                                     <p><?php echo $user_data['Email'];?></p><hr class="hr-underline">
                                 </div>
-                                <input type="email" name="emailCustomer" class="profEdit">
+                                <input type="email" name="emailCustomer" class="profEdit" value="<?php echo $user_data['Email'];?>">
 
                             </div>
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
@@ -172,7 +172,7 @@ session_start();
                                 <div class="profInfo">
                                     <p><?php echo $user_data['PhoneNumber'];?></p><hr class="hr-underline">
                                 </div>
-                                <input type="tel" name="numberCustomer" class="profEdit profNum">
+                                <input type="tel" name="numberCustomer" class="profEdit profNum" value="<?php echo $user_data['PhoneNumber'];?>">
                             </div>
                             <div class="custo-info col-lg-7 col-md-6 col-sm-6 col-xs-12">
                                 <h4>Address:</h4>
@@ -180,7 +180,7 @@ session_start();
                                     <p><?php echo $user_data['Addrss'];?></p>
                                     <hr class="hr-underline">
                                 </div>
-                                <input type="text" name="address" class="profEdit profAddress">
+                                <input type="text" name="address" class="profEdit profAddress" value="<?php echo $user_data['Addrss'];?>">
 
                             </div>
                         </div>
